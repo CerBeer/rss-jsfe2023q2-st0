@@ -339,10 +339,11 @@ li.favorites-seasons-item {
     margin-bottom: 22px;
 }
 
-.favorites-seasons-button {
+input.favorites-seasons-button {
     margin: 0;
     width: 17px;
     height: 17px;
+    accent-color: #000;
 }
 
 .favorites-seasons-item label {
