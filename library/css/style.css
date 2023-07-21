@@ -148,3 +148,111 @@ li {
     width: 28px;
     display: inline-flex
 }
+
+/* Welcome */
+
+.welcome {
+    display: flex;
+    padding: 0;
+    height: 600px;
+    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
+        url("../img/henry-be-TCsCykbwSJw-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.welcome-text {
+    display: flex;
+    flex-flow: row wrap;
+    width: 600px;
+    height: 220px;
+    padding: 35px 40px;
+    margin-top: 220px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #000;
+}
+
+.welcome-text-top {
+    margin-right: 10.5px;
+}
+
+/* About */
+
+.about {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.about-summary {
+    margin: 0 auto;
+    margin: 0 20px 20px 20px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
+
+.about-carousel {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    margin: 0 20px 0px 20px;
+}
+
+.about-carousel-images {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 36px;
+}
+
+.about-carousel-image {
+    width: 450px;
+    height: 560px;
+}
+
+.about-carousel-image-hide {
+    width: 450px;
+    height: 560px;
+    display: none;
+}
+
+.about-carousel-paginations {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 78px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0;
+    margin-bottom: 34px;
+}
+
+.about-carousel-paginations input[type=radio]{
+    display: none;
+}
+
+.custom-radio{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #0c0c0e;
+}
+
+.about-carousel-paginations input[type="radio"]:checked + .custom-radio {
+    border: 5px solid #fff;
+    background-color: #BB945F;
+}
