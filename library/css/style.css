@@ -81,6 +81,7 @@ div {
 }
 
 a {
+    color: #c1d5f0;
     text-decoration: none;  
     transition: color 0.2s;
 }
@@ -339,10 +340,11 @@ li.favorites-seasons-item {
     margin-bottom: 22px;
 }
 
-.favorites-seasons-button {
+input.favorites-seasons-button {
     margin: 0;
     width: 17px;
     height: 17px;
+    accent-color: #000;
 }
 
 .favorites-seasons-item label {
@@ -830,7 +832,6 @@ button[name="button-buy"]:hover {
 }
 
 .our-contacts-l-4-link {
-    color: #000;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -921,7 +922,7 @@ button[name="button-buy"]:hover {
     border: 0px solid #BB945F;
     border-radius: 10px;
     background: #FFF;
-    color: #8E8E8E;
+    color: #000;
     font-family: Forum;
     font-size: 30px;
     font-style: normal;
@@ -929,6 +930,10 @@ button[name="button-buy"]:hover {
     line-height: 50px; /* 166.667% */
     letter-spacing: 0.6px;
     text-align: left;
+}
+
+.library-card-card-l-form-form-input:hover {
+    cursor: text;
 }
 
 button.library-card-card-l-form-form-button {
@@ -1056,10 +1061,14 @@ button.library-card-card-r-login-button:hover {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    height: 250px;
+    height: 248px;
     padding: 20px;
     color: #FFF;
     background: #0C0C0E;
+}
+
+.footer-left-link{
+    color: #c1d5f0;
 }
 
 .footer-frames{
@@ -1088,7 +1097,7 @@ button.library-card-card-r-login-button:hover {
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #FFF;
-    padding-top: 43px;
+    padding-top: 45px;
     padding-bottom: 24px;
     width: 100%;
     height: 90px;
@@ -1103,7 +1112,7 @@ button.library-card-card-r-login-button:hover {
 
 .social-media {
     justify-content: flex-start;
-    align-items: flex-end;
+    padding-top: 6px;
     gap: 15px;
 }
 
@@ -1118,7 +1127,13 @@ button.library-card-card-r-login-button:hover {
     justify-content: center;
     align-items: center;
     padding-left: 60px;
+}
 
+.footer-school-center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
 }
 
 .footer-right {

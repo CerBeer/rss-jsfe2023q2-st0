@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brooklyn Public Library</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./img/favicon/site.webmanifest">
 </head>
 <body>
     <div class="outer_box">
@@ -32,10 +28,12 @@
             </div>
         </header>
         <section class="welcome">
-            <h1 class="welcome-text">
-                <div class="welcome-text-top">Welcome</div>
-                <div>to the Brooklyn Library</div>
-            </h1>
+            <div class="welcome-text-top">
+                <h1 class="welcome-text">
+                    Welcome&nbsp;<br>
+                    to the Brooklyn Library
+                </h1>
+            </div>
         </section>
         <section class="about" id="about">
             <div class="titel2">
@@ -68,7 +66,7 @@
             <div class="favorites-seasons">
                 <div class="favorites-seasons-title">Pick favorites of season</div>
                 <ul class="favorites-seasons-list">
-                    <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="winter" checked class="favorites-seasons-button"><label for="winter">Winter</label></li>
+                    <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="winter" class="favorites-seasons-button" checked><label for="winter">Winter</label></li>
                     <li class="favorites-seasons-item"><input type="radio" id="spring" name="favorites-seasons" value="spring" class="favorites-seasons-button"><label for="spring">Spring</label></li>
                     <li class="favorites-seasons-item"><input type="radio" id="summer" name="favorites-seasons" value="summer" class="favorites-seasons-button"><label for="summer">Summer</label></li>
                     <li class="favorites-seasons-item"><input type="radio" id="autumn" name="favorites-seasons" value="autumn" class="favorites-seasons-button"><label for="autumn">Autumn</label></li>
@@ -310,19 +308,19 @@
                         For all Library inquiries:
                     </div>
                     <ul class="our-contacts-l-2">
-                        <li class="our-contacts-l-2-line">Please call <a href="tel:(617) 730-2370" class="our-contacts-nav-link">(617) 730-2370</a></li>
-                        <li class="our-contacts-l-2-line">For TTY service, please call <a href="tel:(617) 730-2370" class="our-contacts-nav-link">(617) 730-2370</a></li>
-                        <li class="our-contacts-l-2-line">Putterham Library: <a href="tel:(617) 730-2385" class="our-contacts-nav-link">(617) 730-2385</a></li>
+                        <li class="our-contacts-l-2-line">Please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
+                        <li class="our-contacts-l-2-line">For TTY service, please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
+                        <li class="our-contacts-l-2-line">Putterham Library: <a href="tel:6177302385" class="our-contacts-nav-link">(617) 730-2385</a></li>
                     </ul>
                     <div class="our-contacts-l-3">
                         Senior Staff
                     </div>
-                    <div class="our-contacts-l-4">
-                        <li>Library Director:&nbsp <span class="our-contacts-l-4-link"><a href="mailto:AmandaHirst@gmail.com" class="our-contacts-nav-link">Amanda Hirst</span></a></li>
-                    </div>
+                    <ul class="our-contacts-l-4">
+                        <li>Library Director:&nbsp;<a href="mailto:AmandaHirst@gmail.com" class="our-contacts-nav-link"><span class="our-contacts-l-4-link">Amanda Hirst</span></a></li>
+                    </ul>
                 </div>
                 <div class="our-contacts-r">
-                    <a href="https://goo.gl/maps/XxpQRdDNnYCGpLqV6" target="_blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map"></a>
+                    <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map"></a>
                 </div>
             </div>
         </section>
@@ -365,8 +363,10 @@
                 <div class="frame6, footer-frames">
                     <div class="frame5, footer-frame">
                         <div class="footer-left">
-                            286 Cadman Plaza, New York,<br>
-                            NY 11238, United States
+                            <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="footer-left-link">
+                                286 Cadman Plaza, New York,<br>
+                                NY 11238, United States
+                            </a>
                         </div>
                         <div class="footer-right">
                             Mon - Fri<br>
@@ -375,9 +375,9 @@
                     </div>
                     <div class="frame4, footer-frame">
                         <div class="social-media">
-                            <a href="https://twitter.com/Twitter"><img src="./img/svg/u_twitter-alt.svg" alt="twitter"></a>
-                            <a href="https://www.instagram.com"><img src="./img/svg/u_instagram.svg" alt="instagram"></a>
-                            <a href="https://www.facebook.com"><img src="./img/svg/u_facebook-f.svg" alt="facebook"></a>
+                            <a href="#"><img src="./img/svg/u_twitter-alt.svg" alt="twitter"></a>
+                            <a href="#"><img src="./img/svg/u_instagram.svg" alt="instagram"></a>
+                            <a href="#"><img src="./img/svg/u_facebook-f.svg" alt="facebook"></a>
                         </div>
                         <div class="footer-right">
                             Sat - Sun<br>
@@ -387,8 +387,8 @@
                 </div>
                 <div class="footer-rss">
                     <div class="footer-left">2023</div>
-                    <div class="footer-center">The Rolling Scopes School</div>
-                    <div class="footer-right">Username</div>
+                    <div class="footer-school-center"><a href="https://rs.school/js-stage0/" target="_blank">The Rolling Scopes School</a></div>
+                    <div class="footer-right"><a href="https://github.com/CerBeer" target="_blank">CerBeer</a></div>
                 </div>
         </footer>
     </div>
