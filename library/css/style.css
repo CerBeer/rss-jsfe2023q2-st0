@@ -91,8 +91,14 @@ a:hover {
 }
 
 button {
+    background: #fff;
     transition: color 0.5s;
     transition: background-color 0.5s;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #BB945F;
 }
 
 ul {
@@ -482,11 +488,10 @@ button.favorites-book-description-l-c5-button {
     line-height: normal;
     letter-spacing: 1px;
     border: 1px solid #000;
-    background: #fff;
 }
 
-button.favorites-book-description-l-c5-button:hover {
-    background: #c7c7c7;
+button.favorites-book-description-l-c5-button1:hover {
+    background: #BB945F;
 }
 
 .favorites-book-description-r {
@@ -710,7 +715,7 @@ button.favorites-book-description-l-c5-button:hover {
     margin: 0 20px 0 20px;
 }
 
-.our-contacts-nav-link{
+.our-contacts-nav-link {
     color: #390e9b;
     line-height: 38px;
 }
@@ -902,11 +907,6 @@ button.library-card-card-l-form-form-button {
     margin-bottom: 12px;
 }
 
-button.library-card-card-l-form-form-button:hover {
-    cursor: pointer;
-    background: #c7c7c7;
-}
-
 .library-card-card-l-form-form-button-label {
     color: #0C0C0E;
     text-align: center;
@@ -969,11 +969,6 @@ button.library-card-card-r-signup-button {
     border: 1px solid #0C0C0E;
 }
 
-button.library-card-card-r-signup-button:hover {
-    cursor: pointer;
-    background: #c7c7c7;
-}
-
 .library-card-card-r-signup-button-label {
     color: #0C0C0E;
     text-align: center;
@@ -995,11 +990,6 @@ button.library-card-card-r-login-button {
     flex-shrink: 0;
     border-radius: 2px;
     border: 1px solid #0C0C0E;
-}
-
-button.library-card-card-r-login-button:hover {
-    cursor: pointer;
-    background: #c7c7c7;
 }
 
 .library-card-card-r-login-button-label {
