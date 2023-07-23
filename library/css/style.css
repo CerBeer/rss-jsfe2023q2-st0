@@ -372,7 +372,51 @@ input.favorites-seasons-button {
     cursor: pointer;
 }
 
-.favorites-seasons-item input[type=radio]:hover{
+.favorites-seasons-item input[type=radio]:hover {
+    cursor: pointer;
+}
+
+.favorites-seasons-item-spring {
+    line-height: 0;
+    width: 108px;
+}
+
+.favorites-seasons-item-spring label {
+    padding: 8px 0 5px 20px;
+}
+
+.favorites-seasons-item-spring input[type=radio]:checked + label {
+    font-weight: 700;
+}
+
+.favorites-seasons-item-spring label:hover {
+	color: #a08faa;
+    cursor: pointer;
+}
+
+.favorites-seasons-item-spring input[type=radio]:hover {
+    cursor: pointer;
+}
+
+.favorites-seasons-item-summer {
+    line-height: 0;
+    width: 124px;
+}
+
+.favorites-seasons-item-summer label {
+    padding: 8px 0 5px 20px;
+}
+
+.favorites-seasons-item-summer input[type=radio]:checked + label {
+    font-weight: 700;
+}
+
+.favorites-seasons-item-summer label:hover {
+	color: #a08faa;
+    cursor: pointer;
+}
+
+.favorites-seasons-item-summer input[type=radio]:hover {
     cursor: pointer;
 }
 
@@ -382,6 +426,13 @@ input.favorites-seasons-button {
     justify-content: space-between;
     margin: 0 20px 0 20px;
     background-color: #fff;
+}
+
+.favorites-book-descriptions-winter {
+}
+
+.favorites-book-descriptions-spring {
+    display: none;
 }
 
 .favorites-book-description {
@@ -487,11 +538,20 @@ button.favorites-book-description-l-c5-button {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1px;
+    border-radius: 2px;
     border: 1px solid #000;
 }
 
-button.favorites-book-description-l-c5-button1:hover {
-    background: #BB945F;
+button.favorites-book-description-l-c5-button:disabled {
+    padding: 6px 23px;
+    color: #BB945F;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+}
+
+button.favorites-book-description-l-c5-button:disabled:hover {
+    cursor: default;
+    background: #fff;
 }
 
 .favorites-book-description-r {
