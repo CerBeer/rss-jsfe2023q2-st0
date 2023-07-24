@@ -435,6 +435,14 @@ input.favorites-seasons-button {
     display: none;
 }
 
+.favorites-book-descriptions-summer {
+    display: none;
+}
+
+.favorites-book-descriptions-autumn {
+    display: none;
+}
+
 .favorites-book-description {
     margin-top: 20px;
     margin-bottom: 20px;
