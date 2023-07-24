@@ -35,6 +35,7 @@ html {
 }
 
 body {
+    min-height: 100vh;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -114,8 +115,7 @@ li {
 }
 
 .outer_box {
-    min-height: 100vh;
-    width: 1440px;
+    min-width: 1440px;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -127,6 +127,22 @@ li {
     line-height: 1.5;
     color: #000;
     background: #FFF;
+}
+
+.section_box_header {
+    background-color: #0c0c0e;
+}
+
+.section_box_main {
+    background-color: #d4d4d4;
+}
+
+.section_box_footer {
+    background-color: #0c0c0e;
+}
+
+.section_box_1440 {
+    width: 1440px;
 }
 
 .titel2 {

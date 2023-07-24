@@ -11,28 +11,28 @@
     <link rel="manifest" href="./img/favicon/site.webmanifest">
 </head>
 <body>
-    <div class="outer_box">
-        <header class="header">
-            <div class="header-left">
-                Brooklyn Public Library
-            </div>
-            <div class="header-right">
-                <nav class="header-nav">
-                    <ul class="header-nav-list">
-                        <li class="header-nav-item"><a href="#about" class="header-nav-link">About</a>
-                        <li class="header-nav-item"><a href="#favorites" class="header-nav-link">Favorites</a>
-                        <li class="header-nav-item"><a href="#coffee-shop" class="header-nav-link">Coffee shop</a>
-                        <li class="header-nav-item"><a href="#contacts" class="header-nav-link">Contacts</a>
-                        <li class="header-nav-item"><a href="#library-card" class="header-nav-link">Library Card</a>
-                    </ul>
-                </nav>
-                <div class="header-profile">
-                    <a href="#profile" class="header-profile-icon"><img src="./img/svg/icon_profile.svg" alt="Profile"></a>
+    <div class="section_box_header">
+        <div class="outer_box">
+            <header class="header section_box_1440">
+                <div class="header-left">
+                    Brooklyn Public Library
                 </div>
-            </div>
-        </header>
-        <main>
-            <section class="welcome">
+                <div class="header-right">
+                    <nav class="header-nav">
+                        <ul class="header-nav-list">
+                            <li class="header-nav-item"><a href="#about" class="header-nav-link">About</a>
+                            <li class="header-nav-item"><a href="#favorites" class="header-nav-link">Favorites</a>
+                            <li class="header-nav-item"><a href="#coffee-shop" class="header-nav-link">Coffee shop</a>
+                            <li class="header-nav-item"><a href="#contacts" class="header-nav-link">Contacts</a>
+                            <li class="header-nav-item"><a href="#library-card" class="header-nav-link">Library Card</a>
+                        </ul>
+                    </nav>
+                    <div class="header-profile">
+                        <a href="#profile" class="header-profile-icon"><img src="./img/svg/icon_profile.svg" alt="Profile"></a>
+                    </div>
+                </div>
+            </header>
+            <section class="welcome section_box_1440">
                 <div class="welcome-text-top">
                     <h1 class="welcome-text">
                         Welcome&nbsp;<br>
@@ -40,597 +40,607 @@
                     </h1>
                 </div>
             </section>
-            <section class="about" id="about">
-                <div class="titel2">
-                    <h2>About</h2>
-                    <hr class="titel2-hr">
-                </div>
-                <p class="about-summary">
-                    The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
-                </p>
-                <div class="about-carousel">
-                    <div class="about-carousel-images">
-                        <img src="./img/about-image1.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image1">
-                        <img src="./img/about-image2.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image2">
-                        <img src="./img/about-image3.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image3">
-                        <img src="./img/about-image4.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image4">
-                        <img src="./img/about-image5.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image5">
+        </div>
+    </div>
+    <div class="section_box_main">
+        <div class="outer_box">
+            <main>
+                <section class="about section_box_1440" id="about">
+                    <div class="titel2">
+                        <h2>About</h2>
+                        <hr class="titel2-hr">
                     </div>
-                    <div class="about-carousel-paginations">
-                        <label><input type="radio" id="left" name="about-carousel-paginations" value="left" checked><span class="custom-radio"></span></label>
-                        <label><input type="radio" id="middl" name="about-carousel-paginations" value="middl"><span class="custom-radio"></span></label>
-                        <label><input type="radio" id="right" name="about-carousel-paginations" value="right"><span class="custom-radio"></span></label>
-                    </div>
-                </div>
-            </section>
-            <section class="favorites" id="favorites">
-                <div class="titel2">
-                    <h2>Favorites</h2>
-                    <hr class="titel2-hr">
-                </div>
-                <div class="favorites-seasons">
-                    <div class="favorites-seasons-title">Pick favorites of season</div>
-                    <ul class="favorites-seasons-list">
-                        <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="winter" class="favorites-seasons-button" checked><label for="winter">Winter</label></li>
-                        <li class="favorites-seasons-item-spring"><input type="radio" id="spring" name="favorites-seasons" value="spring" class="favorites-seasons-button"><label for="spring">Spring</label></li>
-                        <li class="favorites-seasons-item-summer"><input type="radio" id="summer" name="favorites-seasons" value="summer" class="favorites-seasons-button"><label for="summer">Summer</label></li>
-                        <li class="favorites-seasons-item"><input type="radio" id="autumn" name="favorites-seasons" value="autumn" class="favorites-seasons-button"><label for="autumn">Autumn</label></li>
-                    </ul>
-                </div>
-                <div class="favorites-book-descriptions favorites-book-descriptions-winter">
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                The Book Eaters
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Sunyi Dean
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
+                    <p class="about-summary">
+                        The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
+                    </p>
+                    <div class="about-carousel">
+                        <div class="about-carousel-images">
+                            <img src="./img/about-image1.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image1">
+                            <img src="./img/about-image2.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image2">
+                            <img src="./img/about-image3.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image3">
+                            <img src="./img/about-image4.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image4">
+                            <img src="./img/about-image5.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image5">
                         </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-TheBookEaters.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                        <div class="about-carousel-paginations">
+                            <label><input type="radio" id="left" name="about-carousel-paginations" value="left" checked><span class="custom-radio"></span></label>
+                            <label><input type="radio" id="middl" name="about-carousel-paginations" value="middl"><span class="custom-radio"></span></label>
+                            <label><input type="radio" id="right" name="about-carousel-paginations" value="right"><span class="custom-radio"></span></label>
                         </div>
                     </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Cackle
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Rachel Harrison
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Cackle.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
+                </section>
+                <section class="favorites section_box_1440" id="favorites">
+                    <div class="titel2">
+                        <h2>Favorites</h2>
+                        <hr class="titel2-hr">
                     </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Dante: Poet of the Secular World
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Erich Auerbach
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Dante.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                The Last Queen
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Clive Irving
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-LastQueen.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="favorites-book-descriptions favorites-book-descriptions-spring">
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                The Body
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Stephen King
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-TheBody.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Carry: A Memoir of Survival on Stolen Land
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Toni Jenson
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Carry.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Days of Distraction
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Alexandra Chang
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-DaysOfDestraction.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Dominicana
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Angie Cruz
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Dominicana.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="favorites-book-descriptions favorites-book-descriptions-summer">
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Crude: A Memoir
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Pablo Fajardo & ​​Sophie Tardy-Joubert
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Crude.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Let My People Go Surfing
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Yvon Chouinard
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-LetMyPeopleGoSurfing.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                The Octopus Museum: Poems
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Brenda Shaughnessy
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Poems.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Shark Dialogues: A Novel
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Kiana Davenport
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-ANovel.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="favorites-book-descriptions favorites-book-descriptions-autumn">
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Casual Conversation
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Renia White
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-CasualConversation.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                The Great Fire
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Lou Ureneck
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-TheGreatFire.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Rickey: The Life and Legend
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Howard Bryant
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Rickey.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                    <div class="favorites-book-description">
-                        <div class="favorites-book-description-l">
-                            <div class="favorites-book-description-l-c1">
-                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                                <div class="favorites-book-description-l-c1-hr"></div>
-                            </div>
-                            <div class="favorites-book-description-l-c2">
-                                Slug: And Other Stories
-                            </div>
-                            <div class="favorites-book-description-l-c3">
-                                By Megan Milks
-                            </div>
-                            <div class="favorites-book-description-l-c4">
-                                Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
-                            </div>
-                            <div class="favorites-book-description-l-c5">
-                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                            </div>
-                        </div>
-                        <div class="favorites-book-description-r">
-                            <img src="./img/books/book-Slug.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="coffee-shop" id="coffee-shop">
-                <div class="titel2">
-                    <h2>Coffee shop</h2>
-                    <hr class="titel2-hr">
-                </div>
-                <div class="coffee-shop-about">
-                    <div class="coffee-shop-about1">
-                        In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.
-                    </div>
-                    <div class="coffee-shop-about2">
-                        You can get a favorite book and read in coffee shop. our barista to cook you best coffee, and also you can try desserts from bakery.
-                    </div>
-                </div>
-                <div class="coffee-shop-menu">
-                    <div class="coffee-shop-menu-tea">
-                        <div class="coffee-shop-menu-tea-title">Coffee & Tea</div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">Cold Brew Coffee</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$3</div>
-                        </div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">French Press Pot</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$5</div>
-                        </div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">Espresso</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$2</div>
-                        </div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">Cappuccino</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$4</div>
-                        </div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">Hot tea</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$2</div>
-                        </div>
-                        <div class="coffee-shop-menu-tea-line">
-                            <div class="coffee-shop-menu-tea-line-1">Cold tea</div>
-                            <div class="coffee-shop-menu-tea-line-2"></div>
-                            <div class="coffee-shop-menu-tea-line-3">$2</div>
-                        </div>
-                    </div>
-                    <div class="coffee-shop-menu-desserts">
-                        <div class="coffee-shop-menu-desserts-title">Desserts & Cakes</div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Forest Gateau</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$16</div>
-                        </div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Blue Moon</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$16</div>
-                        </div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Truffle Cake</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$15</div>
-                        </div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Chocolate Cake</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$18</div>
-                        </div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Poet’s Dream Cake</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$16</div>
-                        </div>
-                        <div class="coffee-shop-menu-desserts-line">
-                            <div class="coffee-shop-menu-desserts-line-1">Pineapple Cake</div>
-                            <div class="coffee-shop-menu-desserts-line-2"></div>
-                            <div class="coffee-shop-menu-desserts-line-3">$14</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="contacts" id="contacts">
-                <div class="titel2">
-                    <h2>Our Contacts</h2>
-                    <hr class="titel2-hr">
-                </div>
-                <div class="our-contacts">
-                    <div class="our-contacts-l">
-                        <div class="our-contacts-l-1">
-                            For all Library inquiries:
-                        </div>
-                        <ul class="our-contacts-l-2">
-                            <li class="our-contacts-l-2-line">Please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
-                            <li class="our-contacts-l-2-line">For TTY service, please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
-                            <li class="our-contacts-l-2-line">Putterham Library: <a href="tel:6177302385" class="our-contacts-nav-link">(617) 730-2385</a></li>
-                        </ul>
-                        <div class="our-contacts-l-3">
-                            Senior Staff
-                        </div>
-                        <ul class="our-contacts-l-4">
-                            <li>Library Director:&nbsp;<a href="mailto:AmandaHirst@gmail.com" class="our-contacts-nav-link"><span class="our-contacts-l-4-link">Amanda Hirst</span></a></li>
+                    <div class="favorites-seasons">
+                        <div class="favorites-seasons-title">Pick favorites of season</div>
+                        <ul class="favorites-seasons-list">
+                            <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="winter" class="favorites-seasons-button" checked><label for="winter">Winter</label></li>
+                            <li class="favorites-seasons-item-spring"><input type="radio" id="spring" name="favorites-seasons" value="spring" class="favorites-seasons-button"><label for="spring">Spring</label></li>
+                            <li class="favorites-seasons-item-summer"><input type="radio" id="summer" name="favorites-seasons" value="summer" class="favorites-seasons-button"><label for="summer">Summer</label></li>
+                            <li class="favorites-seasons-item"><input type="radio" id="autumn" name="favorites-seasons" value="autumn" class="favorites-seasons-button"><label for="autumn">Autumn</label></li>
                         </ul>
                     </div>
-                    <div class="our-contacts-r">
-                        <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map"></a>
-                    </div>
-                </div>
-            </section>
-            <section class="library-card" id="library-card">
-                <div class="titel2">
-                    <h2>Digital Library Cards</h2>
-                    <hr class="titel2-hr">
-                </div>
-                <div class="library-card-card">
-                    <div class="library-card-card-l">
-                        <div class="library-card-card-l-title">
-                            Find your Library card
-                        </div>
-                        <div class="library-card-card-l-form">
-                            <form action="index.html" method="post">
-                                <div class="library-card-card-l-form-form">
-                                    <div class="library-card-card-l-form-form-title">Brooklyn Public Library</div>
-                                    <input type="text" id="readers-name" name="readers-name" class="library-card-card-l-form-form-input" placeholder="Reader's name">
-                                    <input type="text" id="card-number" name="card-number" class="library-card-card-l-form-form-input" placeholder="Card number">
+                    <div class="favorites-book-descriptions favorites-book-descriptions-winter">
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
                                 </div>
-                                <div class="library-card-card-l-form-form-button">
-                                    <button type="submit" class="library-card-card-l-form-form-button"><span class="library-card-card-l-form-form-button-label">Check the card</span></button>
+                                <div class="favorites-book-description-l-c2">
+                                    The Book Eaters
                                 </div>
-                            </form>
+                                <div class="favorites-book-description-l-c3">
+                                    By Sunyi Dean
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-TheBookEaters.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Cackle
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Rachel Harrison
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Cackle.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Dante: Poet of the Secular World
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Erich Auerbach
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Dante.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    The Last Queen
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Clive Irving
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-LastQueen.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
                         </div>
                     </div>
-                    <div class="library-card-card-r">
-                        <div class="library-card-card-r-title">Get a reader card</div>
-                        <div class="library-card-card-r-descriptions">
-                            You will be able to see a reader card after logging into account or you can register a new account
+                    <div class="favorites-book-descriptions favorites-book-descriptions-spring">
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    The Body
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Stephen King
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-TheBody.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
                         </div>
-                        <div class="library-card-card-r-buttons">
-                            <button type="button" class="library-card-card-r-signup-button"><span class="library-card-card-r-signup-button-label">Sign Up</span></button>
-                            <button type="button" class="library-card-card-r-login-button"><span class="library-card-card-r-login-button-label">Log in</span></button>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Carry: A Memoir of Survival on Stolen Land
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Toni Jenson
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Carry.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Days of Distraction
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Alexandra Chang
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-DaysOfDestraction.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Dominicana
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Angie Cruz
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Dominicana.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
                     </div>
+                    <div class="favorites-book-descriptions favorites-book-descriptions-summer">
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Crude: A Memoir
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Pablo Fajardo & ​​Sophie Tardy-Joubert
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Crude.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Let My People Go Surfing
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Yvon Chouinard
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-LetMyPeopleGoSurfing.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    The Octopus Museum: Poems
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Brenda Shaughnessy
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Poems.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Shark Dialogues: A Novel
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Kiana Davenport
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-ANovel.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-                <div class="frame6, footer-frames">
-                    <div class="frame5, footer-frame">
-                        <div class="footer-left">
-                            <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="footer-left-link">
-                                286 Cadman Plaza, New York,<br>
-                                NY 11238, United States
-                            </a>
+                    <div class="favorites-book-descriptions favorites-book-descriptions-autumn">
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Casual Conversation
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Renia White
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-CasualConversation.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
                         </div>
-                        <div class="footer-right">
-                            Mon - Fri<br>
-                            08:00 am - 07:00 pm
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    The Great Fire
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Lou Ureneck
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-TheGreatFire.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Rickey: The Life and Legend
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Howard Bryant
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Rickey.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
+                        </div>
+                        <div class="favorites-book-description">
+                            <div class="favorites-book-description-l">
+                                <div class="favorites-book-description-l-c1">
+                                    <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                    <div class="favorites-book-description-l-c1-hr"></div>
+                                </div>
+                                <div class="favorites-book-description-l-c2">
+                                    Slug: And Other Stories
+                                </div>
+                                <div class="favorites-book-description-l-c3">
+                                    By Megan Milks
+                                </div>
+                                <div class="favorites-book-description-l-c4">
+                                    Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
+                                </div>
+                                <div class="favorites-book-description-l-c5">
+                                    <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                                </div>
+                            </div>
+                            <div class="favorites-book-description-r">
+                                <img src="./img/books/book-Slug.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                            </div>
                         </div>
                     </div>
-                    <div class="frame4, footer-frame">
-                        <div class="social-media">
-                            <a href="#"><img src="./img/svg/u_twitter-alt.svg" alt="twitter"></a>
-                            <a href="#"><img src="./img/svg/u_instagram.svg" alt="instagram"></a>
-                            <a href="#"><img src="./img/svg/u_facebook-f.svg" alt="facebook"></a>
+                </section>
+                <section class="coffee-shop section_box_1440" id="coffee-shop">
+                    <div class="titel2">
+                        <h2>Coffee shop</h2>
+                        <hr class="titel2-hr">
+                    </div>
+                    <div class="coffee-shop-about">
+                        <div class="coffee-shop-about1">
+                            In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.
                         </div>
-                        <div class="footer-right">
-                            Sat - Sun<br>
-                            10:00 am - 06:00 pm
+                        <div class="coffee-shop-about2">
+                            You can get a favorite book and read in coffee shop. our barista to cook you best coffee, and also you can try desserts from bakery.
                         </div>
                     </div>
-                </div>
-                <div class="footer-rss">
-                    <div class="footer-left">2023</div>
-                    <div class="footer-school-center"><a href="https://rs.school/js-stage0/" target="_blank">The Rolling Scopes School</a></div>
-                    <div class="footer-right"><a href="https://github.com/CerBeer" target="_blank">CerBeer</a></div>
-                </div>
-        </footer>
+                    <div class="coffee-shop-menu">
+                        <div class="coffee-shop-menu-tea">
+                            <div class="coffee-shop-menu-tea-title">Coffee & Tea</div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">Cold Brew Coffee</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$3</div>
+                            </div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">French Press Pot</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$5</div>
+                            </div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">Espresso</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$2</div>
+                            </div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">Cappuccino</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$4</div>
+                            </div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">Hot tea</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$2</div>
+                            </div>
+                            <div class="coffee-shop-menu-tea-line">
+                                <div class="coffee-shop-menu-tea-line-1">Cold tea</div>
+                                <div class="coffee-shop-menu-tea-line-2"></div>
+                                <div class="coffee-shop-menu-tea-line-3">$2</div>
+                            </div>
+                        </div>
+                        <div class="coffee-shop-menu-desserts">
+                            <div class="coffee-shop-menu-desserts-title">Desserts & Cakes</div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Forest Gateau</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$16</div>
+                            </div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Blue Moon</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$16</div>
+                            </div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Truffle Cake</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$15</div>
+                            </div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Chocolate Cake</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$18</div>
+                            </div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Poet’s Dream Cake</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$16</div>
+                            </div>
+                            <div class="coffee-shop-menu-desserts-line">
+                                <div class="coffee-shop-menu-desserts-line-1">Pineapple Cake</div>
+                                <div class="coffee-shop-menu-desserts-line-2"></div>
+                                <div class="coffee-shop-menu-desserts-line-3">$14</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts section_box_1440" id="contacts">
+                    <div class="titel2">
+                        <h2>Our Contacts</h2>
+                        <hr class="titel2-hr">
+                    </div>
+                    <div class="our-contacts">
+                        <div class="our-contacts-l">
+                            <div class="our-contacts-l-1">
+                                For all Library inquiries:
+                            </div>
+                            <ul class="our-contacts-l-2">
+                                <li class="our-contacts-l-2-line">Please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
+                                <li class="our-contacts-l-2-line">For TTY service, please call <a href="tel:6177302370" class="our-contacts-nav-link">(617) 730-2370</a></li>
+                                <li class="our-contacts-l-2-line">Putterham Library: <a href="tel:6177302385" class="our-contacts-nav-link">(617) 730-2385</a></li>
+                            </ul>
+                            <div class="our-contacts-l-3">
+                                Senior Staff
+                            </div>
+                            <ul class="our-contacts-l-4">
+                                <li>Library Director:&nbsp;<a href="mailto:AmandaHirst@gmail.com" class="our-contacts-nav-link"><span class="our-contacts-l-4-link">Amanda Hirst</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="our-contacts-r">
+                            <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map"></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="library-card section_box_1440" id="library-card">
+                    <div class="titel2">
+                        <h2>Digital Library Cards</h2>
+                        <hr class="titel2-hr">
+                    </div>
+                    <div class="library-card-card">
+                        <div class="library-card-card-l">
+                            <div class="library-card-card-l-title">
+                                Find your Library card
+                            </div>
+                            <div class="library-card-card-l-form">
+                                <form action="index.html" method="post">
+                                    <div class="library-card-card-l-form-form">
+                                        <div class="library-card-card-l-form-form-title">Brooklyn Public Library</div>
+                                        <input type="text" id="readers-name" name="readers-name" class="library-card-card-l-form-form-input" placeholder="Reader's name">
+                                        <input type="text" id="card-number" name="card-number" class="library-card-card-l-form-form-input" placeholder="Card number">
+                                    </div>
+                                    <div class="library-card-card-l-form-form-button">
+                                        <button type="submit" class="library-card-card-l-form-form-button"><span class="library-card-card-l-form-form-button-label">Check the card</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="library-card-card-r">
+                            <div class="library-card-card-r-title">Get a reader card</div>
+                            <div class="library-card-card-r-descriptions">
+                                You will be able to see a reader card after logging into account or you can register a new account
+                            </div>
+                            <div class="library-card-card-r-buttons">
+                                <button type="button" class="library-card-card-r-signup-button"><span class="library-card-card-r-signup-button-label">Sign Up</span></button>
+                                <button type="button" class="library-card-card-r-login-button"><span class="library-card-card-r-login-button-label">Log in</span></button>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div class="section_box_footer">
+        <div class="outer_box">
+            <footer class="footer section_box_1440">
+                    <div class="frame6, footer-frames">
+                        <div class="frame5, footer-frame">
+                            <div class="footer-left">
+                                <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="footer-left-link">
+                                    286 Cadman Plaza, New York,<br>
+                                    NY 11238, United States
+                                </a>
+                            </div>
+                            <div class="footer-right">
+                                Mon - Fri<br>
+                                08:00 am - 07:00 pm
+                            </div>
+                        </div>
+                        <div class="frame4, footer-frame">
+                            <div class="social-media">
+                                <a href="#"><img src="./img/svg/u_twitter-alt.svg" alt="twitter"></a>
+                                <a href="#"><img src="./img/svg/u_instagram.svg" alt="instagram"></a>
+                                <a href="#"><img src="./img/svg/u_facebook-f.svg" alt="facebook"></a>
+                            </div>
+                            <div class="footer-right">
+                                Sat - Sun<br>
+                                10:00 am - 06:00 pm
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-rss">
+                        <div class="footer-left">2023</div>
+                        <div class="footer-school-center"><a href="https://rs.school/js-stage0/" target="_blank">The Rolling Scopes School</a></div>
+                        <div class="footer-right"><a href="https://github.com/CerBeer" target="_blank">CerBeer</a></div>
+                    </div>
+            </footer>
+        </div>
     </div>
     <script src="./js/script.js"></script>
 </body>
