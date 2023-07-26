@@ -50,15 +50,10 @@ body {
 }
 
 h1 {
+    padding: 0;
+    margin: 0;
     color: #FFF;
-    text-align: center;
-    font-family: Forum;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 50px; /* 125% */
-    letter-spacing: 3px;
-    text-transform: uppercase;}
+}
 
 h2 {
     display: flex;
@@ -126,15 +121,24 @@ li {
     font-weight: 400;
     line-height: 1.5;
     color: #000;
-    background: #FFF;
 }
 
 .section_box_header {
     background-color: #0c0c0e;
+    background-size: cover;
+}
+
+.section_box_welcome {
+    background-color: #0c0c0e;
+    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
+        url("../img/henry-be-TCsCykbwSJw-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
 }
 
 .section_box_main {
-    background-color: #d4d4d4;
+    background-color: #fff;
 }
 
 .section_box_footer {
@@ -223,14 +227,10 @@ li {
     display: flex;
     padding: 0;
     height: 600px;
-    background-image: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%),
-        url("../img/henry-be-TCsCykbwSJw-unsplash.jpg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: cover;
+    background-blend-mode:multiply;
 }
 
-.welcome-text {
+h2.welcome-text {
     display: flex;
     flex-flow: row wrap;
     width: 600px;
@@ -241,6 +241,15 @@ li {
     align-items: center;
     flex-shrink: 0;
     background-color: #000;
+    color: #FFF;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 125% */
+    letter-spacing: 3px;
+    text-transform: uppercase;}
 }
 
 .welcome-text-top {
@@ -254,6 +263,7 @@ li {
     flex-flow: column wrap;
     padding: 0;
     margin: 0;
+    background-color: #fff;
 }
 
 .about-summary {
@@ -310,7 +320,7 @@ li {
     display: none;
 }
 
-.custom-radio{
+.about-carousel-paginations-custom-radio{
     display: inline-block;
     width: 26px;
     height: 26px;
@@ -318,12 +328,18 @@ li {
     border-radius: 50%;
     cursor: pointer;
     background-color: #0c0c0e;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
 }
 
-.about-carousel-paginations input[type="radio"]:checked + .custom-radio {
+.about-carousel-paginations input[type="radio"]:hover + .about-carousel-paginations-custom-radio {
+    background-color: #dfcbaf;
+}
+
+.about-carousel-paginations input[type="radio"]:checked + .about-carousel-paginations-custom-radio {
     border: 5px solid #fff;
     background-color: #BB945F;
-    }
+}
 
 /* Favorites */
 
@@ -604,6 +620,7 @@ button.favorites-book-description-l-c5-button:disabled:hover {
     padding-top: 0px;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
 .coffee-shop-about {
@@ -787,6 +804,7 @@ button.favorites-book-description-l-c5-button:disabled:hover {
     padding-bottom: 30px;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
 .our-contacts {
@@ -893,9 +911,10 @@ button.favorites-book-description-l-c5-button:disabled:hover {
 
 .library-card {
     display: flex;
-    margin-bottom: 41px;
+    padding-bottom: 41px;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
 .library-card-card {
