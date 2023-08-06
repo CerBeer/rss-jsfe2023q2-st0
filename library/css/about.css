@@ -1,0 +1,148 @@
+
+/* About */
+
+.about {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+.about-summary {
+    margin: 0 auto;
+    margin: 0 20px 20px 20px;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+}
+
+.about-carousel {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0;
+    margin: 0 20px 0px 20px;
+}
+
+.about-carousel-images {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto 36px auto;
+    gap: 25px;
+}
+
+.about-carousel-image {
+    width: 450px;
+    height: 560px;
+}
+
+.about-carousel-image-hide {
+    width: 450px;
+    height: 560px;
+    display: none;
+}
+
+.about-carousel-paginations {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0;
+    margin-bottom: 34px;
+}
+
+.about-carousel-image-arrows {
+    margin-top: 40px;
+    stroke: #000;
+    display: none;
+}
+
+.about-carousel-image-arrows:hover {
+    cursor: pointer;
+    stroke: #BB945F;
+}
+
+#about-carousel-image-arrow-prev {
+    margin-right: 33px;
+}
+
+#about-carousel-image-arrow-next {
+    margin-left: 33px;
+}
+
+.about-carousel-paginations-custom-radio{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #0c0c0e;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.about-carousel-paginations-custom-radio:hover{
+    background-color: #dfcbaf;
+}
+
+.about-carousel-paginations-custom-radio-checked {
+    border: 5px solid #fff;
+    background-color: #BB945F;
+}
+
+.about-carousel-paginations-custom-radio-checked:hover {
+    border: 5px solid #fff;
+    background-color: #BB945F;
+}
+
+.about-carousel-paginations-custom-radio4 {
+    display: none;
+}
+
+.about-carousel-paginations-custom-radio5 {
+    display: none;
+}
+
+@media (max-width: 1430px) {
+    
+    #about-image3 {
+        display: none;
+    }
+
+    .about-carousel-paginations-custom-radio4 {
+        display: inline-block;
+    }
+    
+}
+
+@media (max-width: 960px) {
+    
+    .about-summary {
+        max-width: 920px;
+    }
+
+    #about-image2 {
+        display: none;
+    }
+    
+    .about-carousel-images {
+        margin-bottom: 20px;
+    }
+
+    .about-carousel-image-arrows {
+        display: flex;
+    }
+    
+    .about-carousel-paginations-custom-radio5 {
+        display: inline-block;
+    }
+    
+}
