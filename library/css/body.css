@@ -97,13 +97,17 @@ hr {
 }
 
 a {
-    color: #c1d5f0;
+    color: #0C0C0E;
     text-decoration: none;  
     transition: color 0.5s;
 }
 
+.link-on-black{
+    color: #fff;
+}
+
 a:hover {
-    color: #a08faa;
+    color: #BB945F;
 }
 
 button {
