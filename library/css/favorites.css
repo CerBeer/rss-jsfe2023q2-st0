@@ -235,8 +235,6 @@ button.favorites-book-description-l-c5-button {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1px;
-    border-radius: 2px;
-    border: 1px solid #000;
 }
 
 button.favorites-book-description-l-c5-button:disabled {
@@ -278,7 +276,7 @@ button.favorites-book-description-l-c5-button:disabled:hover {
     
 }
 
-@media (max-width: 1260px) {
+@media (max-width: 700px) {
     
     .favorites-seasons-list {
         gap: 40px;

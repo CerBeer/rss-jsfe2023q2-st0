@@ -1,0 +1,127 @@
+
+/* Contacts */
+
+.contacts {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.our-contacts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0 20px 0 20px;
+}
+
+.our-contacts-nav-link {
+    color: #390e9b;
+    line-height: 38px;
+}
+
+.our-contacts-l {
+    margin: 0 20px 0 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:left;
+}
+
+.our-contacts-l-1 {
+    margin: 0 0 40px 0;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.our-contacts-l-2 {
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:left;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.our-contacts-l-2-line {
+    gap: 8px;
+    margin: 0 0 20px 0
+}
+
+.our-contacts-l-3 {
+    margin: 0 0 20px 0;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.our-contacts-l-4 {
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content:left;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    gap: 10px;
+}
+
+.our-contacts-l-4-link {
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.our-contacts-r {
+    margin: 0 20px 0 20px;
+}
+
+@media (max-width: 1260px) {
+
+    .coffee-shop-menu {
+        margin: 0 20px 20px 20px;
+    }
+ 
+    .our-contacts-r {
+        margin: 100px 35px 0 auto;
+    }
+
+    .our-contacts-r-link-img {
+        width: 100%;
+    }
+
+}

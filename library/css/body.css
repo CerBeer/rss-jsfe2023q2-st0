@@ -108,6 +108,8 @@ a:hover {
 
 button {
     background: #fff;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
     transition: color 0.5s;
     transition: background-color 0.5s;
 }
@@ -115,6 +117,7 @@ button {
 button:hover {
     cursor: pointer;
     background: #BB945F;
+    border: 1px solid #BB945F;
 }
 
 ul {
