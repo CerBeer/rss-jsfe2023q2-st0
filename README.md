@@ -10,4 +10,4 @@ Projects:
 
 [cv html](https://cerbeer.github.io/rsschool-cv/)
 
-[library#1](https://rolling-scopes-school.github.io/cerbeer-JSFEPRESCHOOL2023Q2/library/)
+[library](https://rolling-scopes-school.github.io/cerbeer-JSFEPRESCHOOL2023Q2/library/)
