@@ -145,7 +145,7 @@ li {
 .wrapper{
     width: 100vw;
     max-width: inherit;
-    min-width: 639px;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

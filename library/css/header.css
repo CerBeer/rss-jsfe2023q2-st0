@@ -100,12 +100,12 @@
     flex-direction: column;
     background: #000;
     color: #FFFFFF;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     transition: .3s all linear;
 }
 
 .header-burger-menu-active {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .header-burger-menu-top {
