@@ -1,3 +1,4 @@
+
 /* forum-regular - latin */
 @font-face {
 font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -102,7 +103,7 @@ a {
     transition: color 0.5s;
 }
 
-.link-on-black{
+.link-on-black {
     color: #fff;
 }
 
@@ -142,7 +143,7 @@ li {
     padding: 0;
 }
 
-.wrapper{
+.wrapper {
     width: 100vw;
     max-width: inherit;
     min-width: 600px;

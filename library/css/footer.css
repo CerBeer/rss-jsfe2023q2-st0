@@ -1,7 +1,7 @@
 
 /* Footer */
 
-.footer{
+.footer {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -11,7 +11,7 @@
     background: #0C0C0E;
 }
 
-.footer-frames{
+.footer-frames {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -19,7 +19,7 @@
     height: 90px;
 }
 
-.footer-frame{
+.footer-frame {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -32,7 +32,7 @@
     line-height: 20px;
 }
 
-.footer-rss{
+.footer-rss {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
