@@ -11,9 +11,14 @@ function burgerMenuOpen(e) {
 }
 
 function burgerMenuClose(e) {
-    if (burgerMenu.classList.contains('header-burger-menu-active')) {
-        document.removeEventListener('click', burgerMenuClose);
-        burgerMenu.classList.remove('header-burger-menu-active');
+    const target = e.target;
+    //const its_burgerMenu = target == burgerMenu || burgerMenu.contains(target);
+    const its_burgerMenu = target == burgerMenu;
+    if (!its_burgerMenu) {
+        if (burgerMenu.classList.contains('header-burger-menu-active')) {
+            document.removeEventListener('click', burgerMenuClose);
+            burgerMenu.classList.remove('header-burger-menu-active');
+        }
     }
 }
 
