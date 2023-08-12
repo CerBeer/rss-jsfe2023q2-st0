@@ -1,5 +1,5 @@
 
-const burgerButtonOpen = document.querySelector('.header-burger-icon');
+const burgerButtonOpen = document.querySelector('.header-burger-button-open');
 const burgerMenu = document.querySelector('.header-burger-menu');
 
 function burgerMenuOpen(e) {
@@ -7,6 +7,7 @@ function burgerMenuOpen(e) {
     if (!burgerMenu.classList.contains('header-burger-menu-active')) {
         document.addEventListener('click', burgerMenuClose);
         burgerMenu.classList.add('header-burger-menu-active');
+        burgerButtonOpen.classList.add('header-burger-button-open-hide');
     }
 }
 
@@ -18,6 +19,7 @@ function burgerMenuClose(e) {
         if (burgerMenu.classList.contains('header-burger-menu-active')) {
             document.removeEventListener('click', burgerMenuClose);
             burgerMenu.classList.remove('header-burger-menu-active');
+            burgerButtonOpen.classList.remove('header-burger-button-open-hide');
         }
     }
 }

@@ -70,7 +70,7 @@
     opacity: 0;
 }
 
-.header-burger-icon {
+.header-burger-button-open {
     padding: 0;
     margin: auto;
     margin-top: 25px;
@@ -83,12 +83,16 @@
     height: 40px;
 }
 
-.header-burger-icon:hover {
-    gap: 10px;
+.header-burger-button-open-hide {
+    visibility: hidden;
+}
+
+.header-burger-button-open:hover {
+    gap: 12px;
     cursor: pointer;
 }
 
-.header-burger-icon-line {
+.header-burger-button-open-line {
     height: 1px;
 }
 
