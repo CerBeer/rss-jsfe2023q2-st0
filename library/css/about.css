@@ -146,3 +146,15 @@
     }
     
 }
+
+@media (max-width: 700px) {
+    
+    #about-carousel-image-arrow-prev {
+        margin-right: 0;
+    }
+    
+    #about-carousel-image-arrow-next {
+        margin-left: 0;
+    }
+    
+}

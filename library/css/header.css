@@ -55,6 +55,7 @@
 .header-profile {
     padding: 20px;
     display: inline-flex;
+    z-index: 10;
 }
 
 .header-profile-icon {
@@ -69,7 +70,7 @@
     opacity: 0;
 }
 
-.header-burger-icon {
+.header-burger-button-open {
     padding: 0;
     margin: auto;
     margin-top: 25px;
@@ -82,12 +83,16 @@
     height: 40px;
 }
 
-.header-burger-icon:hover {
-    gap: 10px;
+.header-burger-button-open-hide {
+    visibility: hidden;
+}
+
+.header-burger-button-open:hover {
+    gap: 12px;
     cursor: pointer;
 }
 
-.header-burger-icon-line {
+.header-burger-button-open-line {
     height: 1px;
 }
 
@@ -119,6 +124,7 @@
     height: 28px;
     flex-shrink: 0;
     margin: 31px 20px;
+    display: none;
 }
 
 .header-burger-menu-icon {
@@ -126,7 +132,7 @@
     height: 45px;
     border-radius: 50%;
     flex-shrink: 0;
-    margin: 25px 14px;
+    margin: 25px 20px;
     background-image: url("../img/burger-close.png");
     background-repeat: no-repeat;
     background-position: 50%;
