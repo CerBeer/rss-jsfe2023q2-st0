@@ -48,6 +48,8 @@ body {
     line-height: 1.5;
     color: #000;
     background: #FFF;
+    overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 div {
@@ -155,4 +157,24 @@ li {
     font-weight: 400;
     line-height: 1.5;
     color: #000;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'Forum', normal;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #000;
+        background: #FFF;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
 }
