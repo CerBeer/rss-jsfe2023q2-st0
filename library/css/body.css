@@ -48,8 +48,8 @@ body {
     line-height: 1.5;
     color: #000;
     background: #FFF;
-    overflow-x: hidden;
-	overflow-y: scroll;
+    /* overflow-x: hidden;
+	overflow-y: scroll; */
 }
 
 div {
