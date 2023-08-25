@@ -1,4 +1,10 @@
 
+/* .favorites * {
+    border-style: solid;
+    border-width: 1px;
+    border-color: aqua;
+} */
+
 /* Favorites */
 
 .favorites {
@@ -25,7 +31,7 @@
 
 .favorites-seasons-title {
     padding: 0;
-    margin-bottom: 44px;
+    margin-bottom: 24px;
     font-weight: 700;
 }
 
@@ -33,7 +39,14 @@
     list-style: none;
     display: inline-flex;
     align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
     margin-bottom: 22px;
+    background-color: #fff;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
     gap: 80px;
 }
 
@@ -117,22 +130,43 @@ input.favorites-seasons-button {
     margin: 20px;
     background-color: #fff;
     gap: 40px;
+    display: none;
 }
 
-.favorites-book-descriptions-winter {
+.favorites-book-descriptions-visible {
     display: flex;
+    opacity: 1; 
+    visibility: visible;
+    animation: fadeIn .5s ease-in-out;
 }
 
-.favorites-book-descriptions-spring {
-    display: none;
+.favorites-book-descriptions-hide {
+    display: flex;
+    opacity: 0; 
+    visibility: hidden;
+    animation: fadeOut .5s ease-in-out;
 }
 
-.favorites-book-descriptions-summer {
-    display: none;
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility:visible;
+    }
 }
 
-.favorites-book-descriptions-autumn {
-    display: none;
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+      visibility:visible;
+      }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
 }
 
 .favorites-book-description {
@@ -273,8 +307,29 @@ button.favorites-book-description-l-c5-button:disabled:hover {
     
     .favorites-book-descriptions {
         justify-content: center;
+        margin-top: 0;
     }
     
+    .favorites-seasons-title {
+        margin-bottom: 4px;
+    }
+    
+    .favorites-seasons-list {
+        position: sticky;
+        top: 0;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        z-index: 1;
+    }
+    
+    .is-sticky {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
+    }
+
 }
 
 @media (max-width: 700px) {

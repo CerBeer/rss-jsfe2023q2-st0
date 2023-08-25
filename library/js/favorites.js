@@ -1,0 +1,66 @@
+
+	function favorites_book_descriptions_case_setState(index) {
+
+		if (favorites_book_case.children[index].classList.contains(class_favorites_book_descriptions_visible)) return;
+
+		let i = 0;
+		for (let element of favorites_book_case.children) {
+			
+			if (element.classList.contains(class_favorites_book_descriptions_visible)) {
+				element.classList.add(class_favorites_book_descriptions_hide);
+				element.addEventListener("animationend", favorites_book_descriptions_case_waitCompletedAnimationHidden);
+				return;
+			}
+			i++;
+		}
+
+	}
+
+	function favorites_book_descriptions_case_waitCompletedAnimationHidden() {
+
+		let i = 0;
+		for (let element of favorites_book_case.children) {
+			
+			if (element.classList.contains(class_favorites_book_descriptions_visible)) {
+				element.removeEventListener('animationend', favorites_book_descriptions_case_waitCompletedAnimationHidden);
+				element.classList.remove(class_favorites_book_descriptions_visible);
+				element.classList.remove(class_favorites_book_descriptions_hide);
+				// break;
+			}
+			i++;
+		}
+
+		for (let element of favorites_seasons_buttons) {
+			if (element.checked) {
+				let value = +element.defaultValue;
+				favorites_book_case.children[value].classList.add(class_favorites_book_descriptions_visible);
+				break;
+			}
+		}
+
+	}
+
+	function favorites_seasons_list_click(e) {
+		
+		let target = e.target;
+		let parent = target.parentElement;
+		let defaultValue = target.defaultValue;
+		if (defaultValue === undefined) return;
+		let value = +defaultValue;
+
+		favorites_book_descriptions_case_setState(value);
+
+	}
+
+	const favorites_book_case = document.querySelector('.favorites-book-case');
+	const favorites_seasons_list_case = document.querySelector('.favorites-seasons-list');
+	const favorites_seasons_buttons = document.querySelectorAll('.favorites-seasons-button');
+
+	const class_favorites_book_descriptions_visible = 'favorites-book-descriptions-visible';
+	const class_favorites_book_descriptions_hide = 'favorites-book-descriptions-hide';
+
+	for (let element of favorites_seasons_list_case.children) {
+		element.addEventListener('click', favorites_seasons_list_click);
+	};
+
+	favorites_book_descriptions_case_setState(0);
