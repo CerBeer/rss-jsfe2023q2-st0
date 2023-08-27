@@ -6,12 +6,19 @@
 		if (index < 0) index = 0;
 		else if (index > maxIndex) index = maxIndex;
 		
+		// document.activeElement.blur();
+
 		let i = 0;
 		for (let element of about_pagination_case.children) {
 			
-			if (index === i) element.classList.add(about_class_radioAlreadyChecked);
-			else element.classList.remove(about_class_radioAlreadyChecked);
-			
+			if (index === i) {
+				element.classList.add(about_class_radioAlreadyChecked);
+				console.log(element);
+			}
+			else {
+				element.classList.remove(about_class_radioAlreadyChecked);
+				console.log(-i);
+			}
 			i++;
 		}
 
@@ -20,8 +27,13 @@
 
 		if (index === 0) about_arrow_prev.classList.add(about_class_arrowDisabled);
 		else if (index === maxIndex) about_arrow_next.classList.add(about_class_arrowDisabled);
-	
-		const parentX = about_images_case_parent.getBoundingClientRect().left;
+
+		about_images_case_translateX(index);
+
+	}
+
+	function about_images_case_translateX(index) {
+			// const parentX = about_images_case_parent.getBoundingClientRect().left;
 		const childWidth  = about_images_case.children[index].getBoundingClientRect().width;
 		let positionX = index * childWidth * -1;
 		about_images_case.style["transform"] = `translateX(${positionX}px)`;
@@ -43,7 +55,7 @@
 
 	function about_pagination_click(e) {
 		let target = e.target;
-		if (target.classList.contains(about_class_radioAlreadyChecked)) return;
+		// if (target.classList.contains(about_class_radioAlreadyChecked)) return;
 		let i = 0;
 		let index = 0;
 		for (let element of about_pagination_case.children) {
@@ -54,6 +66,7 @@
 			}
 			i++;
 		};
+		// console.log(i);
 		about_images_case_setState(index);
 	}
 
@@ -72,6 +85,7 @@
 	const about_images_case_parent = document.querySelector('.about-carousel-carousel-images');
 	const about_images_case = document.querySelector('.about-carousel-carousel-images-case');
 	const about_pagination_case = document.querySelector('.about-carousel-paginations');
+	const about_pagination_button_min = document.querySelector('.about-carousel-paginations-custom-radio3');
 	const about_arrow_prev = document.querySelector('.about-carousel-carousel-arrows-prev');
 	const about_arrow_next = document.querySelector('.about-carousel-carousel-arrows-next');
 

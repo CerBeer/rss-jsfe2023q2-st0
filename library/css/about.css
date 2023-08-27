@@ -93,10 +93,10 @@
     stroke: #bbb;
 }
 
-.about-carousel-carousel-arrows-disabled:hover {
+/* .about-carousel-carousel-arrows-disabled:hover {
     stroke: #bbb;
     cursor: unset;
-}
+} */
 
 .about-carousel-paginations {
     flex-flow: row nowrap;

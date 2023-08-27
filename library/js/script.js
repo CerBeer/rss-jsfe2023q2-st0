@@ -9,7 +9,10 @@ window.addEventListener('resize', function(event) {
     if ((docWidth >= 1030) & (burgerMenu.classList.contains('header-nav-slow-mo'))) {
         burgerMenu.classList.remove('header-nav-slow-mo');
     }
-    if (about_pagination_currenIndex() > 2) about_images_case_setState(2);
+    if ((docWidth >= 1430) & (about_pagination_currenIndex() > 2)) about_images_case_translateX(2);
+    else if ((docWidth >= 960) & (about_pagination_currenIndex() > 3)) about_images_case_translateX(3);
+    else if (docWidth < 960) about_images_case_translateX(about_pagination_currenIndex());
+    // if (about_pagination_currenIndex() > 2) about_pagination_button_min.click();
 }, true);
 
 window.addEventListener('scroll', function(event) {
