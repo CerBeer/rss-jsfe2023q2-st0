@@ -1,12 +1,4 @@
 
-    const burgerButtonOpen = document.querySelector('.header-burger-button-open');
-    const burgerMenu = document.querySelector('.header-nav');
-
-    const profileMenuButton = document.querySelector('.header-profile-icon');
-    const profileMenu = document.querySelector('.header-profile-drop-menu-profile');
-    const profileMenuLoggedOut = document.querySelector('.header-profile-drop-menu-profile-menu-logged-out');
-    const profileMenuLoggedIn = document.querySelector('.header-profile-drop-menu-profile-menu-logged-in');
-
     function burgerMenuClickOpen(e) {
         e.stopPropagation();
         profileMenuClose();
@@ -64,6 +56,52 @@
         }
     }
 
-    burgerButtonOpen.addEventListener('click', burgerMenuClickOpen);
+    function profileMenuClick_action_login(e) {
+        e.stopPropagation();
+        profileMenuClose();
+        modal_windows_login.classList.remove('modal-windows-none');
+        document.body.classList.add('modal-windows-open');
+        document.addEventListener('click', profileMenuClick_action_login_Close);
+    }
 
-    profileMenuButton.addEventListener('click', profileMenuClickOpen);
+    function profileMenuClick_action_login_Close(e) {
+        const target = e.target;
+        const its_modal_windows_login = target == modal_windows_login;
+        if (its_modal_windows_login) {
+            profileMenuClick_action_login_Close_Close();
+        }
+    }
+
+    function profileMenuClick_action_login_Close_Close() {
+        modal_windows_login.classList.add('modal-windows-none');
+        document.body.classList.remove('modal-windows-open');
+        document.removeEventListener('click', profileMenuClick_action_login_Close);
+    }
+
+    function profileMenuClick_action(e) {
+        //        console.log(e.target);
+    }
+        
+    const burgerButton_Open = document.querySelector('.header-burger-button-open');
+    const burgerMenu = document.querySelector('.header-nav');
+
+    const profileMenuButton_Open = document.querySelector('.header-profile-icon');
+    const profileMenu = document.querySelector('.header-profile-drop-menu-profile');
+    const profileMenuLoggedOut = document.querySelector('.header-profile-drop-menu-profile-menu-logged-out');
+    const profileMenuLoggedIn = document.querySelector('.header-profile-drop-menu-profile-menu-logged-in');
+
+    const profileMenuButton_LogIn = document.querySelector('.header-profile-drop-menu-profile-menu-login');
+    const profileMenuButton_Register = document.querySelector('.header-profile-drop-menu-profile-menu-register');
+    const profileMenuButton_MyProfile = document.querySelector('.header-profile-drop-menu-profile-menu-myprofile');
+    const profileMenuButton_LogOut = document.querySelector('.header-profile-drop-menu-profile-menu-logout');
+
+    const modal_windows_login = document.querySelector('.modal-windows-login');
+
+    burgerButton_Open.addEventListener('click', burgerMenuClickOpen);
+
+    profileMenuButton_Open.addEventListener('click', profileMenuClickOpen);
+
+    profileMenuButton_LogIn.addEventListener('click', profileMenuClick_action_login);
+    profileMenuButton_Register.addEventListener('click', profileMenuClick_action);
+    profileMenuButton_MyProfile.addEventListener('click', profileMenuClick_action);
+    profileMenuButton_LogOut.addEventListener('click', profileMenuClick_action);

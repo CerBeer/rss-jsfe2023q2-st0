@@ -1,6 +1,4 @@
 
-// #section-start main
-
 "use strict";
 
 window.addEventListener('resize', function(event) {
@@ -18,9 +16,10 @@ window.addEventListener('resize', function(event) {
 
 window.addEventListener('scroll', function(event) {
     burgerMenuClose();
+    profileMenuClose();
 });
 
-// #section-end main
+console.log(generateID());
 
 // #section-start self-esteemate
 
