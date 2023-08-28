@@ -53,6 +53,7 @@
 }
 
 .header-profile {
+    position:relative;
     padding: 20px;
     display: inline-flex;
     z-index: 10;
@@ -171,4 +172,79 @@
 
 .header-nav-slow-mo {
     transition: .3s all linear;
+}
+
+.header-profile-drop-menu-profile {
+    position: absolute;
+    top: 60px;
+    right: 40px;
+
+    width: 80px;
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    animation: fadeIn .6s ease-in-out;
+}
+
+.header-profile-drop-menu-profile-header {
+    font-weight: 700;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.header-profile-drop-menu-profile-hr {
+    height: 1px;
+    width: 40px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.header-profile-drop-menu-profile-menu {
+    padding: 0;
+    margin: 0;
+}
+
+.header-profile-drop-menu-profile-menu-logged-out {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-profile-drop-menu-profile-menu-logged-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-profile-drop-menu-profile-menu-display-none {
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility:visible;
+    }
 }

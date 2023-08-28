@@ -5,7 +5,8 @@
 
 window.addEventListener('resize', function(event) {
     burgerMenuClose();
-    let docWidth = document.documentElement.offsetWidth;
+    // let docWidth = document.documentElement.offsetWidth;
+    let docWidth = document.documentElement.scrollWidth;
     if ((docWidth >= 1030) & (burgerMenu.classList.contains('header-nav-slow-mo'))) {
         burgerMenu.classList.remove('header-nav-slow-mo');
     }

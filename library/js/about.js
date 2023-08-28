@@ -13,11 +13,9 @@
 			
 			if (index === i) {
 				element.classList.add(about_class_radioAlreadyChecked);
-				console.log(element);
 			}
 			else {
 				element.classList.remove(about_class_radioAlreadyChecked);
-				console.log(-i);
 			}
 			i++;
 		}
@@ -55,7 +53,6 @@
 
 	function about_pagination_click(e) {
 		let target = e.target;
-		// if (target.classList.contains(about_class_radioAlreadyChecked)) return;
 		let i = 0;
 		let index = 0;
 		for (let element of about_pagination_case.children) {
@@ -66,7 +63,6 @@
 			}
 			i++;
 		};
-		// console.log(i);
 		about_images_case_setState(index);
 	}
 

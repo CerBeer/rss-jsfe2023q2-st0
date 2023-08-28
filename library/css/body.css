@@ -139,6 +139,17 @@ li {
     margin: 0;
 }
 
+.href {
+    color: #0C0C0E;
+    text-decoration: none;  
+    transition: color 0.5s;
+}
+
+.href:hover {
+    color: #BB945F;
+    cursor: pointer;
+}
+
 .outer_box {
     max-width: 1440px;
     margin: 0 auto;
