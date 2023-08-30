@@ -43,7 +43,7 @@
                 <div class="header-profile-icon href"><img src="./img/svg/icon_profile.svg" alt="Profile"></div>
                 <div class="header-profile-drop-menu-profile header-profile-drop-menu-profile-menu-display-none">
                     <p class="header-profile-drop-menu-profile-header">Profile</p>
-                    <hr class="header-profile-drop-menu-profile-hr"></hr>
+                    <hr class="header-profile-drop-menu-profile-hr">
                     <div class="header-profile-drop-menu-profile-menu">
                         <div class="header-profile-drop-menu-profile-menu-logged-out">
                             <div class="header-profile-drop-menu-profile-menu-login href">Log In</div>
@@ -692,13 +692,88 @@
             <div class="modal-windows-window-login modal-windows-window">
                 <p class="modal-windows-window-header">login</p>
                 <p class="modal-windows-window-namefield">E-mail or readers card</p>
-                <input type="text" id="modal-windows-window-login-e-mail" name="e-mail" class="modal-windows-window-input">
+                <input type="text" id="modal-windows-window-login-e-mail" name="login-e-mail" class="modal-windows-window-input">
                 <p class="modal-windows-window-namefield">Password</p>
-                <input type="text" id="modal-windows-window-password" name="password" class="modal-windows-window-input">
-                <button type="button" class="modal-windows-window-button"><span class="modal-windows-window-button-label">Log in</span></button>
+                <input type="text" id="modal-windows-window-login-password" name="login-password" class="modal-windows-window-input">
+                <button type="button" class="modal-windows-window-button modal-windows-login-button"><span class="modal-windows-window-button-label">Log in</span></button>
                 <div class="modal-windows-window-small-print-below">
-                    <span class="modal-windows-window-small-print-below-normal">Don’t have an account?</span>
-                    <span class="modal-windows-window-small-print-below-bold href">Register</span>
+                    <div class="modal-windows-window-small-print-below-normal">Don’t have an account?</div>
+                    <div class="modal-windows-login-linkregister modal-windows-window-small-print-below-bold href">Register</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-windows-register modal-windows-overlay modal-windows-none">
+            <div class="modal-windows-window-register modal-windows-window">
+                <p class="modal-windows-window-header">Register</p>
+                <p class="modal-windows-window-namefield">First name</p>
+                <input type="text" id="modal-windows-window-register-firstname" name="register-firstname" class="modal-windows-window-input">
+                <p class="modal-windows-window-namefield">Last name</p>
+                <input type="text" id="modal-windows-window-register-lastname" name="register-lastname" class="modal-windows-window-input">
+                <p class="modal-windows-window-namefield">E-mail</p>
+                <input type="text" id="modal-windows-window-register-e-mail" name="register-e-mail" class="modal-windows-window-input">
+                <p class="modal-windows-window-namefield">Password</p>
+                <input type="text" id="modal-windows-window-register-password" name="register-password" class="modal-windows-window-input">
+                <button type="button" class="modal-windows-window-button modal-windows-register-button"><span class="modal-windows-window-button-label">Sign Up</span></button>
+                <div class="modal-windows-window-small-print-below">
+                    <div class="modal-windows-window-small-print-below-normal">Already have an account?</div>
+                    <div class="modal-windows-register-linklogin modal-windows-window-small-print-below-bold href">Login</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-windows-profile modal-windows-overlay modal-windows-none">
+            <div class="modal-windows-window-profile">
+                <div class="modal-windows-window-profile-closebtn href">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00001" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14928L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="modal-windows-window-profile-left">
+                    <div class="modal-windows-window-profile-left-usericon">JD</div>
+                    <div class="modal-windows-window-profile-left-username">John Doe</div>
+                </div>
+                <div class="modal-windows-window-profile-right">
+                    <p class="modal-windows-window-profile-header">My profile</p>
+                    <div class="modal-windows-window-profile-right-cardsprofile">
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Visits</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count">23</p>
+                        </div>
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Bonuses</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count">1240</p>
+                        </div>
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Books</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                <rect width="20" height="21" fill="#BB945F"/>
+                                <rect x="2" width="1" height="19" fill="#826844"/>
+                                <rect x="1" width="1" height="21" fill="white"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count">2</p>
+                        </div>
+                    </div>
+                    <p class="modal-windows-window-profile-right-rentedbooks-header">Rented books</p>
+                    <ul class="modal-windows-window-profile-right-rentedbooks-listbooks">
+                        <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">The Last Queen, Clive Irving
+                        <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">Dominicana, Angie Cruz
+                    </ul>
+                    <div class="modal-windows-window-profile-right-cardnumber">
+                        <div class="modal-windows-window-profile-right-cardnumber-header">Card number</div>
+                        <div class="modal-windows-window-profile-right-cardnumber-cardnumber href">F00234030</div>
+                        <div class="modal-windows-window-profile-right-cardnumber-copy href">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                                <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+                                <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -706,11 +781,17 @@
 
 </div>
 </div>
+<script src="./js/defaultData.js"></script>
 <script src="./js/func.js"></script>
 <script src="./js/header.js"></script>
+<script src="./js/profileMenu.js"></script>
+<script src="./js/modalWindow.js"></script>
 <script src="./js/about.js"></script>
 <script src="./js/favorites.js"></script>
 <script src="./js/service.js"></script>
+<script src="./js/localStor.js"></script>
+<script src="./js/users.js"></script>
+<script src="./js/state.js"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>

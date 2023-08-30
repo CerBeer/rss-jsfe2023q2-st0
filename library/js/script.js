@@ -19,6 +19,8 @@ window.addEventListener('scroll', function(event) {
     profileMenuClose();
 });
 
+setStateView();
+
 console.log(generateID());
 
 // #section-start self-esteemate
