@@ -272,14 +272,22 @@ button.favorites-book-description-l-c5-button {
     letter-spacing: 1px;
 }
 
-button.favorites-book-description-l-c5-button:disabled {
+button.favorites-book-description-l-c5-button:before {
+    content: 'Bay';
+}
+
+button.favorites-book-description-l-c5-button-disabled {
     padding: 6px 23px;
     color: #BB945F;
     border-radius: 2px;
     border: 1px solid #BB945F;
 }
 
-button.favorites-book-description-l-c5-button:disabled:hover {
+button.favorites-book-description-l-c5-button-disabled:before {
+    content: 'Own';
+}
+
+button.favorites-book-description-l-c5-button-disabled:hover {
     cursor: default;
     background: #fff;
 }
