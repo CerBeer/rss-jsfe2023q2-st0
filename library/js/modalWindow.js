@@ -1,41 +1,62 @@
+
+// modal window splash message
+function modal_windows_splash(owner, message) {
+    const new_div = document.createElement('div');
+    new_div.innerHTML = message;
+    new_div.classList.add('splash-message');
+    owner.append(new_div);
+    setTimeout(() => {new_div.remove();}, 2000);
+}
+
+// modal window register
 function modal_windows_register_button_action(e) {
 
     // e.stopPropagation();
-    e.preventDefault();
     let user = getEmptyUser();
     user.firstName = document.querySelector('#modal-windows-window-register-firstname').value;
     user.lastName = document.querySelector('#modal-windows-window-register-lastname').value;
     user.email = document.querySelector('#modal-windows-window-register-e-mail').value;
     user.password = document.querySelector('#modal-windows-window-register-password').value;
-    if (userCanRegister(user)) {
+    const isUserCanRegister = userCanRegister(user);
+    if (!isUserCanRegister.err) {
+        // e.preventDefault();
         registerUser(user);
+        //profileMenuClick_action_register_Close_Close();
         profileMenuButton_LogIn.click();
+    } else {
+        // e.preventDefault();
+        if (isUserCanRegister.message.length > 0)
+            modal_windows_splash(modal_windows_window_register, isUserCanRegister.message);
     }
-    return false;
 }
 
-function modal_windows_login_button_action(e) {
-    
-    e.preventDefault();
-    userLogin = document.querySelector('#modal-windows-window-login-e-mail').value;
-    userPassword = document.querySelector('#modal-windows-window-login-password').value;
-    if (userCanLogin(userLogin, userPassword)) {
-        authorizeUser(userLogin);
-        profileMenuClick_action_login_Close_Close();
-        setStateView();
-        //profileMenuButton_MyProfile.click();
-    }
-    return false;
-}
-
+const modal_windows_window_register = document.querySelector('.modal-windows-window-register');
 const modal_windows_register_button = document.querySelector('.modal-windows-register-button');
 modal_windows_register_button.addEventListener('click', modal_windows_register_button_action);
 
+// modal window login
+function modal_windows_login_button_action(e) {
+    
+    userLogin = document.querySelector('#modal-windows-window-login-e-mail').value;
+    userPassword = document.querySelector('#modal-windows-window-login-password').value;
+    if (userLogin.length * userPassword.length > 0) {
+        // e.preventDefault();
+        if (userCanLogin(userLogin, userPassword)) {
+        authorizeUser(userLogin);
+        profileMenuClick_action_login_Close_Close();
+        setStateView();
+        } else {
+            modal_windows_splash(modal_windows_window_login, "Incorrect login or password!");
+        }
+    }
+}
+
+const modal_windows_window_login = document.querySelector('.modal-windows-window-login');
 const modal_windows_login_button = document.querySelector('.modal-windows-login-button');
 modal_windows_login_button.addEventListener('click', modal_windows_login_button_action);
 
 
-// profile menu click buy a library card
+// modal window buy a library card
 function modal_windows_buyer_open() {
     modal_windows_buyer.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');

@@ -691,7 +691,7 @@
         <div class="modal-windows-login modal-windows-overlay modal-windows-none">
             <div class="modal-windows-window-login modal-windows-window">
                 <p class="modal-windows-window-header">login</p>
-                <form class="modal-windows-window-form">
+                <form onsubmit="return false" class="modal-windows-window-form">
                     <p class="modal-windows-window-namefield">E-mail or readers card</p>
                     <input type="text" id="modal-windows-window-login-e-mail" name="login-e-mail" class="modal-windows-window-input" required>
                     <p class="modal-windows-window-namefield">Password</p>
@@ -705,7 +705,7 @@
             </div>
         </div>
         <div class="modal-windows-register modal-windows-overlay modal-windows-none">
-            <form class="modal-windows-window-register modal-windows-window">
+            <form onsubmit="return false" class="modal-windows-window-register modal-windows-window">
                 <p class="modal-windows-window-header">Register</p>
                 <p class="modal-windows-window-namefield">First name</p>
                 <input type="text" maxlength="12" id="modal-windows-window-register-firstname" name="register-firstname" class="modal-windows-window-input" required>
