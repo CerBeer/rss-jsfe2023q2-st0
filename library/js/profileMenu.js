@@ -6,7 +6,7 @@ function profileMenuClick_action_login(e) {
     profileMenuClick_action_register_Close_Close();
     modal_windows_login.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');
-    document.addEventListener('click', profileMenuClick_action_login_Close);
+    document.addEventListener('mousedown', profileMenuClick_action_login_Close);
 }
 
 function profileMenuClick_action_login_Close(e) {
@@ -20,7 +20,7 @@ function profileMenuClick_action_login_Close(e) {
 function profileMenuClick_action_login_Close_Close() {
     modal_windows_login.classList.add('modal-windows-none');
     document.body.classList.remove('modal-windows-open');
-    document.removeEventListener('click', profileMenuClick_action_login_Close);
+    document.removeEventListener('mousedown', profileMenuClick_action_login_Close);
 }
 
 // profile menu click register    
@@ -30,7 +30,7 @@ function profileMenuClick_action_register(e) {
     profileMenuClick_action_login_Close_Close();
     modal_windows_register.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');
-    document.addEventListener('click', profileMenuClick_action_register_Close);
+    document.addEventListener('mousedown', profileMenuClick_action_register_Close);
 }
 
 function profileMenuClick_action_register_Close(e) {
@@ -44,7 +44,7 @@ function profileMenuClick_action_register_Close(e) {
 function profileMenuClick_action_register_Close_Close() {
     modal_windows_register.classList.add('modal-windows-none');
     document.body.classList.remove('modal-windows-open');
-    document.removeEventListener('click', profileMenuClick_action_register_Close);
+    document.removeEventListener('mousedown', profileMenuClick_action_register_Close);
 }
 
 // profile menu click my profile
@@ -54,7 +54,7 @@ function profileMenuClick_action_myProfile(e) {
     profileMenuClick_action_login_Close_Close();
     modal_windows_profile.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');
-    document.addEventListener('click', profileMenuClick_action_myProfile_Close);
+    document.addEventListener('mousedown', profileMenuClick_action_myProfile_Close);
 }
 
 function profileMenuClick_action_myProfile_Close(e) {
@@ -68,7 +68,7 @@ function profileMenuClick_action_myProfile_Close(e) {
 function profileMenuClick_action_myProfile_Close_Close() {
     modal_windows_profile.classList.add('modal-windows-none');
     document.body.classList.remove('modal-windows-open');
-    document.removeEventListener('click', profileMenuClick_action_myProfile_Close);
+    document.removeEventListener('mousedown', profileMenuClick_action_myProfile_Close);
 }
 
 function profileMenuClick_action_LogOut(e) {

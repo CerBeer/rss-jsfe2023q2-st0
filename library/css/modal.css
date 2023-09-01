@@ -48,6 +48,10 @@
     text-transform: uppercase;
 }
 
+.modal-windows-window-form {
+    margin-left: 20px;
+}
+
 .modal-windows-window-namefield {
     margin: 0;
     margin-bottom: 10px;
@@ -70,6 +74,15 @@
     border: 1px solid #BB945F;
 }
 
+.modal-windows-window-input-small {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 45px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
 .modal-windows-window-button {
     width: 75px;
     height: 30px;
@@ -77,7 +90,7 @@
     border-radius: 2px;
     border: 1px solid #0C0C0E;
     align-self: start;
-    margin: 10px 25px;
+    margin: 10px 0;
 }
 
 .modal-windows-window-button-label {
@@ -330,4 +343,103 @@
 
 .modal-windows-window-profile-right-cardnumber-copy {
     align-items: center;
+}
+
+.modal-windows-window-bayer {
+    width: 650px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+
+    box-shadow: 0 0 10px #777;
+    position: fixed;
+    /* top: 50%;
+    width: 100%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 11;
+}
+
+.modal-windows-window-bayer-header {
+    width: 650px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content:center;
+    background-color: #0C0C0E;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-bayer-closebtn {
+    position: absolute;
+    /* top: 50%;
+    width: 100%; */
+    right: 25px;
+    top: 25px;
+}
+
+.modal-windows-window-buyer-body {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color: #000;
+}
+
+.modal-windows-window-body-buyer-left {
+    width: 200px;
+    height: 410px;
+    margin-top: 30px;
+    margin-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.modal-windows-window-body-buyer-left-expirationcode {
+    gap: 10px;
+}
+
+.modal-windows-window-body-buyer-left-footer-price {
+    box-sizing: border-box;
+    padding: 0;
+    margin-left: 25px;
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-body-buyer-right {
+    width: 330px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 2px;
 }
