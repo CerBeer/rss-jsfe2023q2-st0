@@ -1,24 +1,44 @@
 
-function userCanLogin(userLogin, userPassword) {
-
-    if (!registeredUsers.has(userLogin)) return false;
-    
-    let checkedUser = registeredUsers.get(userLogin);
-    if (userPassword !== checkedUser.password) return false;
-
-    return true;
+function registerUser(user) {
+    user.cardId = generateLibraryCardNumber();
+    // user.booksOwn = ['04', '08'];
+    registeredUsers.set(user.email, user);
+    localStorage_saveKey('registeredUsers');
 }
 
-function authorizeUser(userLogin) {
+function loginUser(userLogin) {
 
     authorizedUser = userLogin;
     localStorage_saveKey('authorizedUser');
+
+    setStateView();
+
 }
 
 function logoutUser() {
 
     authorizedUser = '';
     localStorage_saveKey('authorizedUser');
+
+    setStateView();
+    
+}
+
+function userRegistered(userLogin) {
+
+    if (!registeredUsers.has(userLogin)) return false;
+
+    return true;
+}
+
+function userCanLogin(userLogin, userPassword) {
+
+    if (!userRegistered(userLogin)) return false;
+    
+    let checkedUser = registeredUsers.get(userLogin);
+    if (userPassword !== checkedUser.password) return false;
+
+    return true;
 }
 
 function userCanRegister(user) {
@@ -41,12 +61,44 @@ function passwordCanBeUsed(password) {
 }
 
 function eMailIsValid(email) {
-    const re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    // const re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    const re = /^[\w-\.]+@[\w-.]+$/i; // do the check similar to the rules of the browser
     return re.test(email);
 }
 
-function registerUser(user) {
-    user.cardId = generateID();
-    registeredUsers.set(user.email, user);
-    localStorage_saveKey('registeredUsers');
+function getRegisteredUserByLogin(userLogin) {
+
+    if (!registeredUsers.has(userLogin)) return getEmptyUser();
+    
+    let User = registeredUsers.get(userLogin);
+    
+    return User;
+}
+
+function userOwnBookByBookid(userLogin, bookId) {
+   
+    if (!registeredUsers.has(userLogin)) return false;
+
+    let user = getRegisteredUserByLogin(userLogin);
+    if (user.booksOwn.indexOf(bookId) >= 0) return true;
+    
+    return false;
+}
+
+function userInitials(userLogin) {
+
+    if (!registeredUsers.has(userLogin)) return '';
+
+    let user = getRegisteredUserByLogin(userLogin);
+        
+    return `${user.firstName.slice(0, 1)}${user.lastName.slice(0, 1)}`.toUpperCase();
+}
+
+function userFullName(userLogin) {
+
+    if (!registeredUsers.has(userLogin)) return '';
+
+    let user = getRegisteredUserByLogin(userLogin);
+        
+    return `${user.firstName} ${user.lastName}`;
 }

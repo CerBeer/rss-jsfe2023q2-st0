@@ -52,15 +52,36 @@
 
 	}
 
+	function favorites_book_buttonsBuy_click(e) {
+		
+		if (authorizedUser === '') {
+			profileMenuClick_action_login_open();
+		}
+	}
+
+	function favorites_book_buttonsBuy_setEvent() {
+
+		for (let season of favorites_book_case.children) {
+			for (let book of season.children) {
+				let buttonBuy = book.querySelector('.favorites-book-description-l-c5-button');
+				buttonBuy.addEventListener('click', favorites_book_buttonsBuy_click);
+			}
+		}
+	}
+	
 	const favorites_book_case = document.querySelector('.favorites-book-case');
 	const favorites_seasons_list_case = document.querySelector('.favorites-seasons-list');
 	const favorites_seasons_buttons = document.querySelectorAll('.favorites-seasons-button');
-
+	
 	const class_favorites_book_descriptions_visible = 'favorites-book-descriptions-visible';
 	const class_favorites_book_descriptions_hide = 'favorites-book-descriptions-hide';
+
+	const class_favorites_book_own = 'favorites-book-description-l-c5-button-disabled';
 
 	for (let element of favorites_seasons_list_case.children) {
 		element.addEventListener('click', favorites_seasons_list_click);
 	};
+	
+	favorites_book_buttonsBuy_setEvent();
 
 	favorites_book_descriptions_case_setState(0);

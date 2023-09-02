@@ -19,6 +19,7 @@ window.addEventListener('scroll', function(event) {
     profileMenuClose();
 });
 
+if (!userRegistered(authorizedUser)) authorizedUser = '';
 setStateView();
 
 console.log(generateID());

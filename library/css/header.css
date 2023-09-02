@@ -61,9 +61,34 @@
 
 .header-profile-icon {
     width: 28px;
-    padding-top: 10px;
+    height: 28px;
+    margin-top: 10px;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.header-profile-icon[data-authorized-user=""] {
+    /* content: '<img src="./img/svg/icon_profile.svg" alt="Profile">'; */
+    background-image: url("../img/svg/icon_profile.svg");
+    background-repeat: no-repeat;
+    /* background-position: 75%; */
+    background-size: 100% 100%;
+}
+
+.header-profile-icon:not([data-authorized-user=""]) {
+    background-color: #FFF;
+    color: #BB945F;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px
+}
+
+.header-profile-icon:before {
+    content: attr(data-authorized-user);
 }
 
 .header-burger-button-open {

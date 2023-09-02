@@ -157,6 +157,20 @@
     text-decoration-line: underline;
 }
 
+.modal-windows-window-closebtn {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    color: black;
+
+    position: absolute;
+    /* top: 50%;
+    width: 100%; */
+    right: 15px;
+    top: 15px;
+
+}
+
 .modal-windows-window-login {
     width: 250px;
     height: 262px;

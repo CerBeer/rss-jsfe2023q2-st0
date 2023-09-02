@@ -26,3 +26,23 @@ function generateID_1() {
     // Make function return the result
     return uniqueId;
 } 
+
+function generateLibraryCardNumber() {
+
+    const first = generateID_1();
+    const second = generateID_1();
+
+    let uniqueId = first + second;
+
+    if (`${uniqueId}`.length < 12) uniqueId = (Date.now() % 1000000000000) + uniqueId;
+
+    uniqueId = uniqueId % 1000000000000;
+
+    let LibraryCardNumber = uniqueId.toString(16);
+
+    while (LibraryCardNumber.length < 9) {
+        LibraryCardNumber = `${LibraryCardNumber}${generateID().toString(16)}`;
+    }
+
+    return LibraryCardNumber.slice(0, 9).toUpperCase();
+} 

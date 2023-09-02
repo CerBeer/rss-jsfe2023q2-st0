@@ -12,6 +12,7 @@ function modal_windows_splash(owner, message) {
 function modal_windows_register_button_action(e) {
 
     // e.stopPropagation();
+    // e.preventDefault();
     let user = getEmptyUser();
     user.firstName = document.querySelector('#modal-windows-window-register-firstname').value;
     user.lastName = document.querySelector('#modal-windows-window-register-lastname').value;
@@ -19,12 +20,9 @@ function modal_windows_register_button_action(e) {
     user.password = document.querySelector('#modal-windows-window-register-password').value;
     const isUserCanRegister = userCanRegister(user);
     if (!isUserCanRegister.err) {
-        // e.preventDefault();
         registerUser(user);
-        //profileMenuClick_action_register_Close_Close();
         profileMenuButton_LogIn.click();
     } else {
-        // e.preventDefault();
         if (isUserCanRegister.message.length > 0)
             modal_windows_splash(modal_windows_window_register, isUserCanRegister.message);
     }
@@ -40,11 +38,9 @@ function modal_windows_login_button_action(e) {
     userLogin = document.querySelector('#modal-windows-window-login-e-mail').value;
     userPassword = document.querySelector('#modal-windows-window-login-password').value;
     if (userLogin.length * userPassword.length > 0) {
-        // e.preventDefault();
         if (userCanLogin(userLogin, userPassword)) {
-        authorizeUser(userLogin);
+        loginUser(userLogin);
         profileMenuClick_action_login_Close_Close();
-        setStateView();
         } else {
             modal_windows_splash(modal_windows_window_login, "Incorrect login or password!");
         }

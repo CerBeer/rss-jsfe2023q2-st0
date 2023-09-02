@@ -1,9 +1,18 @@
 
+function modal_windows_window_closebtn(e) {
+    profileMenuClick_action_register_Close_Close();
+    profileMenuClick_action_login_Close_Close();
+}
+
 // profile menu click login
 function profileMenuClick_action_login(e) {
     e.stopPropagation();
     profileMenuClose();
     profileMenuClick_action_register_Close_Close();
+    profileMenuClick_action_login_open();
+}
+
+function profileMenuClick_action_login_open() {
     modal_windows_login.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');
     document.addEventListener('mousedown', profileMenuClick_action_login_Close);
@@ -86,13 +95,17 @@ const modal_windows_login_linkregister = document.querySelector('.modal-windows-
 const modal_windows_register_linklogin = document.querySelector('.modal-windows-register-linklogin');
 
 const modal_windows_login = document.querySelector('.modal-windows-login');
+const modal_windows_login_closebtn = document.querySelector('.modal-windows-window-login-closebtn');
 const modal_windows_register = document.querySelector('.modal-windows-register');
+const modal_windows_register_closebtn = document.querySelector('.modal-windows-window-register-closebtn');
 const modal_windows_profile = document.querySelector('.modal-windows-profile');
 const modal_windows_profile_closebtn = document.querySelector('.modal-windows-window-profile-closebtn');
 
 
 profileMenuButton_LogIn.addEventListener('click', profileMenuClick_action_login);
+modal_windows_login_closebtn.addEventListener('click', modal_windows_window_closebtn);
 profileMenuButton_Register.addEventListener('click', profileMenuClick_action_register);
+modal_windows_register_closebtn.addEventListener('click', modal_windows_window_closebtn);
 profileMenuButton_MyProfile.addEventListener('click', profileMenuClick_action_myProfile);
 profileMenuButton_LogOut.addEventListener('click', profileMenuClick_action_LogOut);
 

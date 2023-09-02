@@ -24,6 +24,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content:left;
+    width: 600px;
     height: 453px;
     flex-shrink: 0;
 }
@@ -91,13 +92,14 @@
     cursor: text;
 }
 
-button.library-card-card-l-form-form-button {
+.library-card-card-l-form-form-button {
     margin: 0 auto;
     height: 44px;
-    display: inline-flex;
-    padding: 10px 39px;
-    align-items: flex-end;
     margin-bottom: 12px;
+}
+
+.library-card-card-l-form-form-button-button {
+    padding: 10px 39px;
 }
 
 .library-card-card-l-form-form-button-label {

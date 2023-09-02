@@ -1,5 +1,5 @@
 
-const bpl_books = [
+const listOfBooks = [
     {id: '01', season: 'Winter', name: 'The Book Eaters', author: 'Sunyi Dean'},
     {id: '02', season: 'Winter', name: 'Cackle', author: 'Rachel Harrison'},
     {id: '03', season: 'Winter', name: 'Dante: Poet of the Secular World', author: 'Erich Auerbach'},
@@ -28,7 +28,7 @@ function getEmptyUser() {
         email: '',
         password: '',
         cardId: '',
-        books: ''
+        booksOwn: []
     }
     return emptyUser;
 }
