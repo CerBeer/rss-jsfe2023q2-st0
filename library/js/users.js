@@ -1,10 +1,14 @@
 
+function saveUser(user) {
+    registeredUsers.set(user.email, user);
+    localStorage_saveKey('registeredUsers');
+}
+
 function registerUser(user) {
     user.libraryCard = generateLibraryCardNumber();
     user.bonuses = generateID() % 100;
     // user.booksOwn = ['04', '08'];
-    registeredUsers.set(user.email, user);
-    localStorage_saveKey('registeredUsers');
+    saveUser(user);
 }
 
 function loginUser(userLogin) {
@@ -149,6 +153,15 @@ function userLibraryCardByLogin(userLogin) {
     return `${userLibraryCard(user)}`;
 }
 
+function userBooksByLogin(userLogin) {
+   
+    if (!userRegistered(userLogin)) return [];
+
+    let user = getRegisteredUserByLogin(userLogin);
+    
+    return booksOwn;
+}
+
 function userLibraryCard(user) {
     return `${user.libraryCard}`;
 }
@@ -162,9 +175,14 @@ function userBonuses(user) {
 }
 
 function userBooks(user) {
-    return `${user.booksOwn}`;
+    return user.booksOwn;
 }
 
 function userBooks_count(user) {
     return `${user.booksOwn.length}`;
+}
+
+function userAddBooksOwn(user, bookid) {
+    user.booksOwn.push(bookid);
+    return user;
 }

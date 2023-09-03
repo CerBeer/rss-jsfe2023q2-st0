@@ -23,6 +23,24 @@
     z-index: 11;
 }
 
+.tooltip-message {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #888;
+    transform: translate(0, -100%);
+    z-index: 12;
+    animation: fadeOut 2s ease-in-out;
+}
+
 .modal-windows-open {
     overflow: hidden;
 }
@@ -187,7 +205,7 @@
 
 .modal-windows-window-profile {
     width: 600px;
-    height: 400px;
+    min-height: 400px;
     
     display: flex;
     flex-direction: row;
@@ -202,7 +220,7 @@
     width: 100%; */
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -75%);
+    transform: translate(-50%, -50%);
     z-index: 11;
 }
 
@@ -222,7 +240,6 @@
 
 .modal-windows-window-profile-left {
     width: 170px;
-    height: 100%;
     
     display: flex;
     flex-direction: column;
@@ -231,6 +248,7 @@
     color: white;
     align-items: center;
     justify-content: center;
+    align-self: stretch;
 }
 
 .modal-windows-window-profile-left-usericon {
@@ -356,12 +374,14 @@
 
 .modal-windows-window-profile-right-rentedbooks-listbooks {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+    /* gap: 10px; */
+    /* flex-direction: column; */
     list-style-type: disc;
     margin-left: 30px;
-    height: 90px;;
+    min-height: 100px;
+    width: 350px;
 }
 
 .modal-windows-window-profile-right-rentedbooks-listbooks-item {
@@ -374,6 +394,10 @@
     line-height: 20px; /* 100% */
     letter-spacing: 2px;
     text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
 }
 
 .modal-windows-window-profile-right-cardnumber {
@@ -460,6 +484,7 @@
 .modal-windows-window-body-buyer-left-footer-price {
     box-sizing: border-box;
     padding: 0;
+    margin-bottom: 0;
     margin-left: 25px;
     color: #0C0C0E;
     font-family: Inter;

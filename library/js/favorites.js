@@ -43,7 +43,6 @@
 	function favorites_seasons_list_click(e) {
 		
 		let target = e.target;
-		let parent = target.parentElement;
 		let defaultValue = target.defaultValue;
 		if (defaultValue === undefined) return;
 		let value = +defaultValue;
@@ -55,7 +54,11 @@
 	function favorites_book_buttonsBuy_click(e) {
 		
 		if (authorizedUser === '') profileMenuClick_action_login_open();
-		else modal_windows_buyer_open();
+		else {
+			let parentElement = e.target.closest('.favorites-book-description');
+			let bookid = parentElement.dataset.bookid;
+			modal_windows_buyer_open(bookid);
+		}
 	}
 
 	function favorites_book_buttonsBuy_setEvent() {

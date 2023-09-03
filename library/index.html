@@ -774,10 +774,10 @@
                         </div>
                     </div>
                     <p class="modal-windows-window-profile-right-rentedbooks-header">Rented books</p>
-                    <ul class="modal-windows-window-profile-right-rentedbooks-listbooks">
+                    <div class="modal-windows-window-profile-right-rentedbooks-listbooks">
                         <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">The Last Queen, Clive Irving
                         <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">Dominicana, Angie Cruz
-                    </ul>
+                    </div>
                     <div class="modal-windows-window-profile-right-cardnumber">
                         <div class="modal-windows-window-profile-right-cardnumber-header">Card number</div>
                         <div class="modal-windows-window-profile-right-cardnumber-cardnumber">F00234030</div>
@@ -803,22 +803,22 @@
                     </div>
                 </div>
                 <div class="modal-windows-window-buyer-body">
-                    <form class="modal-windows-window-body-buyer-left">
+                    <form onsubmit="return false" class="modal-windows-window-body-buyer-left">
                         <p class="modal-windows-window-namefield">Bank card number</p>
-                        <input type="text" id="modal-windows-window-buyer-bankcardnumber" name="buyer-bankcardnumber" class="modal-windows-window-input" required>
+                        <input type="text" id="modal-windows-window-buyer-bankcardnumber" name="bankCardNumber" class="modal-windows-window-input" required>
                         <p class="modal-windows-window-namefield">Expiration code</p>
                         <div class="modal-windows-window-body-buyer-left-expirationcode">
-                            <input type="text" id="modal-windows-window-buyer-expirationcode1" name="buyer-expirationcode1" class="modal-windows-window-input-small" required>
-                            <input type="text" id="modal-windows-window-buyer-expirationcode2" name="buyer-expirationcode2" class="modal-windows-window-input-small" required>
+                            <input type="text" id="modal-windows-window-buyer-expirationcode1" name="bankCardExpirationCode1" class="modal-windows-window-input-small" required>
+                            <input type="text" id="modal-windows-window-buyer-expirationcode2" name="bankCardExpirationCode2" class="modal-windows-window-input-small" required>
                         </div>
                         <p class="modal-windows-window-namefield">CVC</p>
-                        <input type="text" id="modal-windows-window-buyer-cvc" name="buyer-cvc" class="modal-windows-window-input-small" required>
+                        <input type="text" id="modal-windows-window-buyer-cvc" name="bankCardCVC" class="modal-windows-window-input-small" required>
                         <p class="modal-windows-window-namefield">Cardholder name</p>
-                        <input type="text" id="modal-windows-window-buyer-cardholdername" name="buyer-cardholdername" class="modal-windows-window-input" required>
+                        <input type="text" id="modal-windows-window-buyer-cardholdername" name="bankCardCardholderName" class="modal-windows-window-input" required>
                         <p class="modal-windows-window-namefield">Postal code</p>
-                        <input type="text" id="modal-windows-window-buyer-postalcode" name="buyer-postalcode" class="modal-windows-window-input" required>
+                        <input type="text" id="modal-windows-window-buyer-postalcode" name="bankCardPoastlCode" class="modal-windows-window-input" required>
                         <p class="modal-windows-window-namefield">City / Town</p>
-                        <input type="text" id="modal-windows-window-buyer-city" name="buyer-city" class="modal-windows-window-input" required>
+                        <input type="text" id="modal-windows-window-buyer-city" name="bankCardCity" class="modal-windows-window-input" required>
                         <div class="modal-windows-window-body-buyer-left-footer">
                             <button class="modal-windows-window-button modal-windows-buyer-button"><span class="modal-windows-window-button-label">Buy</span></button>
                             <p class="modal-windows-window-body-buyer-left-footer-price">$ 25.00</p>

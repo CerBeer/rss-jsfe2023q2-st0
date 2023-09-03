@@ -8,20 +8,20 @@ function modal_windows_splash(owner, message) {
     setTimeout(() => {new_div.remove();}, 2000);
 }
 
-function tooltip_splash(owner, message) {
+function tooltip_splash(owner, message, addCSS) {
     const new_div = document.createElement('div');
     new_div.innerHTML = message;
-    new_div.classList.add('splash-message');
+    new_div.classList.add('tooltip-message');
 
-    let x = owner.offsetLeft + 10;
-    let y = owner.offsetTop - 10;
+    let x = owner.offsetLeft;
+    let y = owner.offsetTop;
     new_div.style.left = x + "px";
     new_div.style.top = y + "px";
-    new_div.style.color = '#888';
-    new_div.style.width = 'auto';
+    
+    new_div.style.cssText = new_div.style.cssText + addCSS;
 
     owner.append(new_div);
-    setTimeout(() => {new_div.remove();}, 2000);
+    setTimeout(() => {new_div.remove();}, 1600);
 }
 
 // modal window register
@@ -69,43 +69,13 @@ const modal_windows_login_button = document.querySelector('.modal-windows-login-
 modal_windows_login_button.addEventListener('click', modal_windows_login_button_action);
 
 
-// modal window buy a library card
-function modal_windows_buyer_open() {
-    modal_windows_buyer.classList.remove('modal-windows-none');
-    document.body.classList.add('modal-windows-open');
-    document.addEventListener('mousedown', modal_windows_buyer_Close);
-}
-
-function modal_windows_buyer_Close(e) {
-    const target = e.target;
-    const its_modal_windows_buyer = (target == modal_windows_buyer || target == modal_windows_buyer_closebtn || modal_windows_buyer_closebtn.contains(target));
-    if (its_modal_windows_buyer) {
-        modal_windows_buyer_Close_Close();
-    }
-}
-
-function modal_windows_buyer_Close_Close() {
-    modal_windows_buyer.classList.add('modal-windows-none');
-    document.body.classList.remove('modal-windows-open');
-    document.removeEventListener('mousedown', modal_windows_buyer_Close);
-}
-
-function modal_windows_buyer_closebtn_click(e) {
-    logoutUser();
-    setStateView();
-}
-
-const modal_windows_buyer = document.querySelector('.modal-windows-bayer');
-const modal_windows_buyer_closebtn = document.querySelector('.modal-windows-window-bayer-closebtn');
-
-
 // modal window my profile
 
 function modalWindow_myProfile_setStateView() {
-    //console.log(`'${authorizedUser}'`);
+
     if (authorizedUser === '') return;
     
-    user = getRegisteredUserByLogin(authorizedUser);
+    let user = getRegisteredUserByLogin(authorizedUser);
     modal_window_profile_usericon.innerText = userInitials(user);
     modal_window_profile_username.innerText = userFullNameWithHyphenation(user, 10);
     modal_window_profile_visits.innerText = userVisits(user);
@@ -115,22 +85,20 @@ function modalWindow_myProfile_setStateView() {
 
     let books = userBooks(user);
     let booksList = '';
-    for (let bookId of books) {
-        book = listOfBooks.get(bookId);
+    for (let bookid of books) {
+        book = listOfBooks[bookid];
         booksList = `${booksList}\n<li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">${book.name}, ${book.author}`;
     }
     modal_window_profile_listbooks.innerHTML = booksList;
 }
 
-function modalWindow_myProfile_copyLibraryCardToClipboard() {
+function modalWindow_myProfile_copyLibraryCardToClipboard(e) {
     navigator.clipboard.writeText(userLibraryCardByLogin(authorizedUser))
     .then(() => {
-        tooltip_splash(modal_window_button_copyLibraryCardToClipboard, 'Success');
-        console.log('Success');
+        tooltip_splash(modal_window_button_copyLibraryCardToClipboard, 'Success', 'transform: translate(20px, 6px);');
     })
     .catch(err => {
-        tooltip_splash(document.querySelector('.modal-windows-window-profile-right-cardnumber'), 'Something went wrong');
-        console.log('Something went wrong', err);
+        tooltip_splash(modal_window_button_copyLibraryCardToClipboard, 'Something went wrong');
     });
 }
 
@@ -144,3 +112,101 @@ const modal_window_profile_cardnumber = document.querySelector('.modal-windows-w
 const modal_window_button_copyLibraryCardToClipboard = document.querySelector('.modal-windows-window-profile-right-cardnumber-copy');
 
 modal_window_button_copyLibraryCardToClipboard.addEventListener('click', modalWindow_myProfile_copyLibraryCardToClipboard);
+
+
+// modal window buy a library card
+
+function modal_windows_buyer_open(bookid) {
+    if (!userOwnBookByLogin(authorizedUser, bookid)) {
+        modal_window_buyer_button_buy.dataset.bookid = bookid;
+        fillFieldsSavedUserPayment(getRegisteredUserByLogin(authorizedUser));
+        modal_window_buyer.classList.remove('modal-windows-none');
+        document.body.classList.add('modal-windows-open');
+        document.addEventListener('mousedown', modal_windows_buyer_Close);
+    }
+}
+
+function modal_windows_buyer_Close(e) {
+    const target = e.target;
+    const its_modal_windows_buyer = (target == modal_window_buyer || target == modal_window_buyer_closebtn || modal_window_buyer_closebtn.contains(target));
+    if (its_modal_windows_buyer) {
+        modal_windows_buyer_Close_Close();
+    }
+}
+
+function modal_windows_buyer_Close_Close() {
+    modal_window_buyer.classList.add('modal-windows-none');
+    document.body.classList.remove('modal-windows-open');
+    document.removeEventListener('mousedown', modal_windows_buyer_Close);
+    favorites_book_ownership_setStateView();
+}
+
+function modalWindow_buyer_setStateView() {
+}
+
+function modalWindow_buyer_buy(e) {
+    if (allFieldsFilledInCorrectly()) {
+        let bookid = modal_window_buyer_button_buy.dataset.bookid;
+        if (!userOwnBookByLogin(authorizedUser, bookid)) {
+            let user = getRegisteredUserByLogin(authorizedUser);
+            fillUserPaymentFields(user);
+            userAddBooksOwn(user, bookid);
+            saveUser(user);
+            tooltip_splash(modal_window_buyer_button_buy, 'Book bought', 'transform: translate(0, 40px); color: green;');
+            setTimeout(() => {modal_windows_buyer_Close_Close();}, 1000);
+        } else {
+            tooltip_splash(modal_window_buyer_button_buy, 'You are alredy owned it', 'transform: translate(0, 40px); color: red;');
+            setTimeout(() => {modal_windows_buyer_Close_Close();}, 1000);
+        }
+    } else {
+        tooltip_splash(modal_window_buyer_button_buy, 'Not all fields are filled correctly', 'transform: translate(0, 40px); color: red;');
+    }
+}
+
+function allFieldsFilledInCorrectly() {
+
+    let allFieldsFilled = true;
+    for (let field of modal_window_buyer_form) {
+
+        const {name} = field;
+        if (name) {
+            const {type, checked, value} = field;
+            data = ['checkbox', 'radio'].includes(type) ? true : value;
+            allFieldsFilled = allFieldsFilled && data.length > 0;
+        }
+    }
+
+    return allFieldsFilled;
+}
+
+function fillUserPaymentFields(user) {
+
+    for (let field of modal_window_buyer_form) {
+
+        const {name} = field;
+        if (name) {
+            const {type, checked, value} = field;
+            user[name] = ['checkbox', 'radio'].includes(type) ? checked : value;
+        }
+    }
+
+    return user;
+}
+
+function fillFieldsSavedUserPayment(user) {
+
+    for (let field of modal_window_buyer_form) {
+
+        const {name} = field;
+        if (name) {
+            field.value = user[name];
+        }
+    }
+}
+
+const modal_window_buyer = document.querySelector('.modal-windows-bayer');
+const modal_window_buyer_closebtn = document.querySelector('.modal-windows-window-bayer-closebtn');
+const modal_window_buyer_button_buy = document.querySelector('.modal-windows-buyer-button');
+const modal_window_buyer_form = document.querySelector('.modal-windows-window-body-buyer-left');
+
+modal_window_buyer_button_buy.addEventListener('click', modalWindow_buyer_buy);
