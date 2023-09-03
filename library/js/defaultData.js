@@ -28,6 +28,8 @@ function getEmptyUser() {
         email: '',
         password: '',
         libraryCard: '',
+        visits: '0',
+        bonuses: '0',
         booksOwn: []
     }
     return emptyUser;

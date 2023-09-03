@@ -61,6 +61,7 @@ function profileMenuClick_action_myProfile(e) {
     e.stopPropagation();
     profileMenuClose();
     profileMenuClick_action_login_Close_Close();
+    modalWindow_myProfile_setStateView();
     modal_windows_profile.classList.remove('modal-windows-none');
     document.body.classList.add('modal-windows-open');
     document.addEventListener('mousedown', profileMenuClick_action_myProfile_Close);

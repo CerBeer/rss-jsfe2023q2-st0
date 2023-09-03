@@ -13,16 +13,15 @@ function setStateView() {
 function header_profile_icon_setStateView() {
     //console.log(`'${authorizedUser}'`);
     let header_profile_icon = document.querySelector('.header-profile-icon');
-    header_profile_icon.dataset.authorizedUser = userInitials(authorizedUser);
-    header_profile_icon.title = userFullName(authorizedUser);
+    const user = getRegisteredUserByLogin(authorizedUser);
+    header_profile_icon.dataset.authorizedUser = userInitials(user);
+    header_profile_icon.title = userFullName(user);
 }
 
 function header_profile_drop_menu_profile_header_setStateView() {
     //console.log(`'${authorizedUser}'`);
     let header_profile_drop_menu_profile_header = document.querySelector('.header-profile-drop-menu-profile-header');
-    header_profile_drop_menu_profile_header.dataset.authorizedUserLibraryCard = userLibraryCard(authorizedUser);
-    console.log(userLibraryCard(authorizedUser));
-    console.log(header_profile_drop_menu_profile_header);
+    header_profile_drop_menu_profile_header.dataset.authorizedUserLibraryCard = userLibraryCardByLogin(authorizedUser);
 }
 
 function header_profile_drop_menu_setStateView() {
@@ -43,7 +42,7 @@ function favorites_book_ownership_setStateView() {
         for (let book of season.children) {
             bookid = book.dataset.bookid;
             let buttonBuy = book.querySelector('.favorites-book-description-l-c5-button');
-            if (userOwnBookByBookid(authorizedUser, bookid)) {
+            if (userOwnBookByLogin(authorizedUser, bookid)) {
                 buttonBuy.classList.add(class_favorites_book_own);
             } else {
                 buttonBuy.classList.remove(class_favorites_book_own);

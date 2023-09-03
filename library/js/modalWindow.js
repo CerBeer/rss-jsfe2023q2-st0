@@ -8,6 +8,22 @@ function modal_windows_splash(owner, message) {
     setTimeout(() => {new_div.remove();}, 2000);
 }
 
+function tooltip_splash(owner, message) {
+    const new_div = document.createElement('div');
+    new_div.innerHTML = message;
+    new_div.classList.add('splash-message');
+
+    let x = owner.offsetLeft + 10;
+    let y = owner.offsetTop - 10;
+    new_div.style.left = x + "px";
+    new_div.style.top = y + "px";
+    new_div.style.color = '#888';
+    new_div.style.width = 'auto';
+
+    owner.append(new_div);
+    setTimeout(() => {new_div.remove();}, 2000);
+}
+
 // modal window register
 function modal_windows_register_button_action(e) {
 
@@ -21,7 +37,8 @@ function modal_windows_register_button_action(e) {
     const isUserCanRegister = userCanRegister(user);
     if (!isUserCanRegister.err) {
         registerUser(user);
-        profileMenuButton_LogIn.click();
+        // profileMenuButton_LogIn.click();
+        loginUser(user.email);
     } else {
         if (isUserCanRegister.message.length > 0)
             modal_windows_splash(modal_windows_window_register, isUserCanRegister.message);
@@ -80,3 +97,50 @@ function modal_windows_buyer_closebtn_click(e) {
 
 const modal_windows_buyer = document.querySelector('.modal-windows-bayer');
 const modal_windows_buyer_closebtn = document.querySelector('.modal-windows-window-bayer-closebtn');
+
+
+// modal window my profile
+
+function modalWindow_myProfile_setStateView() {
+    //console.log(`'${authorizedUser}'`);
+    if (authorizedUser === '') return;
+    
+    user = getRegisteredUserByLogin(authorizedUser);
+    modal_window_profile_usericon.innerText = userInitials(user);
+    modal_window_profile_username.innerText = userFullNameWithHyphenation(user, 10);
+    modal_window_profile_visits.innerText = userVisits(user);
+    modal_window_profile_bonuses.innerText = userBonuses(user);
+    modal_window_profile_books.innerText = userBooks_count(user);
+    modal_window_profile_cardnumber.innerText = userLibraryCard(user);
+
+    let books = userBooks(user);
+    let booksList = '';
+    for (let bookId of books) {
+        book = listOfBooks.get(bookId);
+        booksList = `${booksList}\n<li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">${book.name}, ${book.author}`;
+    }
+    modal_window_profile_listbooks.innerHTML = booksList;
+}
+
+function modalWindow_myProfile_copyLibraryCardToClipboard() {
+    navigator.clipboard.writeText(userLibraryCardByLogin(authorizedUser))
+    .then(() => {
+        tooltip_splash(modal_window_button_copyLibraryCardToClipboard, 'Success');
+        console.log('Success');
+    })
+    .catch(err => {
+        tooltip_splash(document.querySelector('.modal-windows-window-profile-right-cardnumber'), 'Something went wrong');
+        console.log('Something went wrong', err);
+    });
+}
+
+const modal_window_profile_usericon = document.querySelector('.modal-windows-window-profile-left-usericon');
+const modal_window_profile_username = document.querySelector('.modal-windows-window-profile-left-username');
+const modal_window_profile_visits = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-visits');
+const modal_window_profile_bonuses = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-bonuses');
+const modal_window_profile_books = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-books');
+const modal_window_profile_listbooks = document.querySelector('.modal-windows-window-profile-right-rentedbooks-listbooks');
+const modal_window_profile_cardnumber = document.querySelector('.modal-windows-window-profile-right-cardnumber-cardnumber');
+const modal_window_button_copyLibraryCardToClipboard = document.querySelector('.modal-windows-window-profile-right-cardnumber-copy');
+
+modal_window_button_copyLibraryCardToClipboard.addEventListener('click', modalWindow_myProfile_copyLibraryCardToClipboard);

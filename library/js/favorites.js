@@ -54,9 +54,8 @@
 
 	function favorites_book_buttonsBuy_click(e) {
 		
-		if (authorizedUser === '') {
-			profileMenuClick_action_login_open();
-		}
+		if (authorizedUser === '') profileMenuClick_action_login_open();
+		else modal_windows_buyer_open();
 	}
 
 	function favorites_book_buttonsBuy_setEvent() {
@@ -81,7 +80,7 @@
 	for (let element of favorites_seasons_list_case.children) {
 		element.addEventListener('click', favorites_seasons_list_click);
 	};
-	
+
 	favorites_book_buttonsBuy_setEvent();
 
 	favorites_book_descriptions_case_setState(0);
