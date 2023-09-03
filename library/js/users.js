@@ -1,6 +1,6 @@
 
 function registerUser(user) {
-    user.cardId = generateLibraryCardNumber();
+    user.libraryCard = generateLibraryCardNumber();
     // user.booksOwn = ['04', '08'];
     registeredUsers.set(user.email, user);
     localStorage_saveKey('registeredUsers');
@@ -43,7 +43,7 @@ function userCanLogin(userLogin, userPassword) {
 
 function userCanRegister(user) {
 
-    if (registeredUsers.has(user.email)) return {err: true, message: "The specified email has already been used for registration"};
+    if (userRegistered(userLogin)) return {err: true, message: "The specified email has already been used for registration"};
     if (!passwordCanBeUsed(user.password)) return {err: true, message: ""};
     if (!eMailIsValid(user.email)) return {err: true, message: "eMail is no valid"};
     if (user.firstName.length === 0) return {err: true, message: ""};
@@ -68,16 +68,34 @@ function eMailIsValid(email) {
 
 function getRegisteredUserByLogin(userLogin) {
 
-    if (!registeredUsers.has(userLogin)) return getEmptyUser();
+    if (!userRegistered(userLogin)) return getEmptyUser();
     
     let User = registeredUsers.get(userLogin);
     
     return User;
 }
 
+// ToDo: to correct
+function libraryCardRegistered(libraryCard) {
+
+    if (!registeredUsers.has(libraryCard)) return false;
+
+    return true;
+}
+
+function getRegisteredUserByLibraryCard(libraryCard) {
+
+    if (!libraryCardRegistered(libraryCard)) return getEmptyUser();
+    
+    let User = registeredUsers.get(libraryCard);
+    
+    return User;
+}
+// ToDo: to correct
+
 function userOwnBookByBookid(userLogin, bookId) {
    
-    if (!registeredUsers.has(userLogin)) return false;
+    if (!userRegistered(userLogin)) return false;
 
     let user = getRegisteredUserByLogin(userLogin);
     if (user.booksOwn.indexOf(bookId) >= 0) return true;
@@ -87,7 +105,7 @@ function userOwnBookByBookid(userLogin, bookId) {
 
 function userInitials(userLogin) {
 
-    if (!registeredUsers.has(userLogin)) return '';
+    if (!userRegistered(userLogin)) return '';
 
     let user = getRegisteredUserByLogin(userLogin);
         
@@ -96,9 +114,18 @@ function userInitials(userLogin) {
 
 function userFullName(userLogin) {
 
-    if (!registeredUsers.has(userLogin)) return '';
+    if (!userRegistered(userLogin)) return '';
 
     let user = getRegisteredUserByLogin(userLogin);
         
     return `${user.firstName} ${user.lastName}`;
+}
+
+function userLibraryCard(userLogin) {
+
+    if (!userRegistered(userLogin)) return '';
+
+    let user = getRegisteredUserByLogin(userLogin);
+        
+    return `${user.libraryCard}`;
 }

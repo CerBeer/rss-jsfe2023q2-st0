@@ -2,6 +2,7 @@
 function setStateView() {
     
     header_profile_icon_setStateView();
+    header_profile_drop_menu_profile_header_setStateView();
 
     header_profile_drop_menu_setStateView();
 
@@ -14,7 +15,14 @@ function header_profile_icon_setStateView() {
     let header_profile_icon = document.querySelector('.header-profile-icon');
     header_profile_icon.dataset.authorizedUser = userInitials(authorizedUser);
     header_profile_icon.title = userFullName(authorizedUser);
+}
 
+function header_profile_drop_menu_profile_header_setStateView() {
+    //console.log(`'${authorizedUser}'`);
+    let header_profile_drop_menu_profile_header = document.querySelector('.header-profile-drop-menu-profile-header');
+    header_profile_drop_menu_profile_header.dataset.authorizedUserLibraryCard = userLibraryCard(authorizedUser);
+    console.log(userLibraryCard(authorizedUser));
+    console.log(header_profile_drop_menu_profile_header);
 }
 
 function header_profile_drop_menu_setStateView() {

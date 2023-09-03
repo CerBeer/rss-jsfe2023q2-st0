@@ -70,10 +70,8 @@
 }
 
 .header-profile-icon[data-authorized-user=""] {
-    /* content: '<img src="./img/svg/icon_profile.svg" alt="Profile">'; */
     background-image: url("../img/svg/icon_profile.svg");
     background-repeat: no-repeat;
-    /* background-position: 75%; */
     background-size: 100% 100%;
 }
 
@@ -84,7 +82,7 @@
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px
+    line-height: 20px;
 }
 
 .header-profile-icon:before {
@@ -227,6 +225,15 @@
     font-weight: 700;
     padding: 0;
     margin: 5px 0;
+}
+
+.header-profile-drop-menu-profile-header:not([data-authorized-user-library-card=""]):before {
+    font-size: 12px;
+    content: attr(data-authorized-user-library-card);
+}
+
+.header-profile-drop-menu-profile-header[data-authorized-user-library-card=""]:before {
+    content: "Profile";
 }
 
 .header-profile-drop-menu-profile-hr {

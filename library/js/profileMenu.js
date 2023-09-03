@@ -81,6 +81,7 @@ function profileMenuClick_action_myProfile_Close_Close() {
 }
 
 function profileMenuClick_action_LogOut(e) {
+    profileMenuClose();
     logoutUser();
     setStateView();
 }

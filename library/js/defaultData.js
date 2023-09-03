@@ -27,7 +27,7 @@ function getEmptyUser() {
         lastName: '',
         email: '',
         password: '',
-        cardId: '',
+        libraryCard: '',
         booksOwn: []
     }
     return emptyUser;

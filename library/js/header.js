@@ -44,7 +44,7 @@
 
     function profileMenuClickClose(e) {
         const target = e.target;
-        const its_profileMenu = target == profileMenu;
+        const its_profileMenu = target == profileMenu || profileMenu.contains(target);
         if (!its_profileMenu) {
             profileMenuClose();
         }
