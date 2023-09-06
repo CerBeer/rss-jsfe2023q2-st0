@@ -34,14 +34,15 @@ function modal_windows_register_button_action(e) {
     user.lastName = document.querySelector('#modal-windows-window-register-lastname').value;
     user.email = document.querySelector('#modal-windows-window-register-e-mail').value;
     user.password = document.querySelector('#modal-windows-window-register-password').value;
-    const isUserCanRegister = userCanRegister(user);
-    if (!isUserCanRegister.err) {
-        registerUser(user);
-        // profileMenuButton_LogIn.click();
-        loginUser(user.email);
+    const canRegister = userCanRegister(user);
+    if (canRegister.err) {
+        if (canRegister.message.length > 0)
+            modal_windows_splash(modal_windows_window_register, canRegister.message);
     } else {
-        if (isUserCanRegister.message.length > 0)
-            modal_windows_splash(modal_windows_window_register, isUserCanRegister.message);
+        registerUser(user);
+        loginUser(user.email);
+        profileMenuClick_action_register_Close_Close();
+        console.log(user.password);
     }
 }
 
@@ -71,27 +72,6 @@ modal_windows_login_button.addEventListener('click', modal_windows_login_button_
 
 // modal window my profile
 
-function modalWindow_myProfile_setStateView() {
-
-    if (authorizedUser === '') return;
-    
-    let user = getRegisteredUserByLogin(authorizedUser);
-    modal_window_profile_usericon.innerText = userInitials(user);
-    modal_window_profile_username.innerText = userFullNameWithHyphenation(user, 10);
-    modal_window_profile_visits.innerText = userVisits(user);
-    modal_window_profile_bonuses.innerText = userBonuses(user);
-    modal_window_profile_books.innerText = userBooks_count(user);
-    modal_window_profile_cardnumber.innerText = userLibraryCard(user);
-
-    let books = userBooks(user);
-    let booksList = '';
-    for (let bookid of books) {
-        book = listOfBooks[bookid];
-        booksList = `${booksList}\n<li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">${book.name}, ${book.author}`;
-    }
-    modal_window_profile_listbooks.innerHTML = booksList;
-}
-
 function modalWindow_myProfile_copyLibraryCardToClipboard(e) {
     navigator.clipboard.writeText(userLibraryCardByLogin(authorizedUser))
     .then(() => {
@@ -104,9 +84,10 @@ function modalWindow_myProfile_copyLibraryCardToClipboard(e) {
 
 const modal_window_profile_usericon = document.querySelector('.modal-windows-window-profile-left-usericon');
 const modal_window_profile_username = document.querySelector('.modal-windows-window-profile-left-username');
-const modal_window_profile_visits = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-visits');
-const modal_window_profile_bonuses = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-bonuses');
-const modal_window_profile_books = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-books');
+// const modal_window_profile_visits = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-visits');
+// const modal_window_profile_bonuses = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-bonuses');
+// const modal_window_profile_books = document.querySelector('.modal-windows-window-profile-right-cardsprofile-column-count-books');
+const modal_window_profile_cardprofile = document.querySelector('.modal-windows-window-profile-right-cardsprofile');
 const modal_window_profile_listbooks = document.querySelector('.modal-windows-window-profile-right-rentedbooks-listbooks');
 const modal_window_profile_cardnumber = document.querySelector('.modal-windows-window-profile-right-cardnumber-cardnumber');
 const modal_window_button_copyLibraryCardToClipboard = document.querySelector('.modal-windows-window-profile-right-cardnumber-copy');
@@ -117,7 +98,7 @@ modal_window_button_copyLibraryCardToClipboard.addEventListener('click', modalWi
 // modal window buy a library card
 
 function modal_windows_buyer_open(bookid) {
-    if (!userOwnBookByLogin(authorizedUser, bookid)) {
+    if (!userOwnBookByLogin(authorizedUser, bookid) || true) {
         modal_window_buyer_button_buy.dataset.bookid = bookid;
         fillFieldsSavedUserPayment(getRegisteredUserByLogin(authorizedUser));
         modal_window_buyer.classList.remove('modal-windows-none');
@@ -146,13 +127,16 @@ function modalWindow_buyer_setStateView() {
 
 function modalWindow_buyer_buy(e) {
     if (allFieldsFilledInCorrectly()) {
+        let user = getRegisteredUserByLogin(authorizedUser);
+        fillUserPaymentFields(user);
+        userBuysLibraryCard(user);
+        saveUser(user);
+    // e.preventDefault();
         let bookid = modal_window_buyer_button_buy.dataset.bookid;
-        if (!userOwnBookByLogin(authorizedUser, bookid)) {
-            let user = getRegisteredUserByLogin(authorizedUser);
-            fillUserPaymentFields(user);
+        if (!userOwnBook(user, bookid)) {
             userAddBooksOwn(user, bookid);
             saveUser(user);
-            tooltip_splash(modal_window_buyer_button_buy, 'Book bought', 'transform: translate(0, 40px); color: green;');
+            tooltip_splash(modal_window_buyer_button_buy, 'Purchase in progress ...', 'transform: translate(0, 40px); color: green;');
             setTimeout(() => {modal_windows_buyer_Close_Close();}, 1000);
         } else {
             tooltip_splash(modal_window_buyer_button_buy, 'You are alredy owned it', 'transform: translate(0, 40px); color: red;');
@@ -161,9 +145,10 @@ function modalWindow_buyer_buy(e) {
     } else {
         tooltip_splash(modal_window_buyer_button_buy, 'Not all fields are filled correctly', 'transform: translate(0, 40px); color: red;');
     }
+    return false;
 }
 
-function allFieldsFilledInCorrectly() {
+function allFieldsFilledIn(e) {
 
     let allFieldsFilled = true;
     for (let field of modal_window_buyer_form) {
@@ -173,6 +158,22 @@ function allFieldsFilledInCorrectly() {
             const {type, checked, value} = field;
             data = ['checkbox', 'radio'].includes(type) ? true : value;
             allFieldsFilled = allFieldsFilled && data.length > 0;
+        }
+    }
+
+    modal_window_buyer_button_buy.disabled = !allFieldsFilled;
+
+    return allFieldsFilled;
+}
+
+function allFieldsFilledInCorrectly() {
+
+    let allFieldsFilled = true;
+    for (let field of modal_window_buyer_form) {
+
+        const {name} = field;
+        if (name) {
+            allFieldsFilled = allFieldsFilled && field.validity.valid;
         }
     }
 
@@ -190,6 +191,8 @@ function fillUserPaymentFields(user) {
         }
     }
 
+    normalizeUserBankCardNumber(user);
+
     return user;
 }
 
@@ -199,7 +202,8 @@ function fillFieldsSavedUserPayment(user) {
 
         const {name} = field;
         if (name) {
-            field.value = user[name];
+            if (name === 'bankCardNumber') field.value = stateUserBankCardNumber(user);
+            else field.value = user[name];
         }
     }
 }
@@ -209,4 +213,5 @@ const modal_window_buyer_closebtn = document.querySelector('.modal-windows-windo
 const modal_window_buyer_button_buy = document.querySelector('.modal-windows-buyer-button');
 const modal_window_buyer_form = document.querySelector('.modal-windows-window-body-buyer-left');
 
+modal_window_buyer_form.addEventListener('change', allFieldsFilledIn);
 modal_window_buyer_button_buy.addEventListener('click', modalWindow_buyer_buy);

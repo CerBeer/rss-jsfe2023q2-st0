@@ -49,6 +49,7 @@ function getEmptyUser() {
         libraryCard: '',
         visits: '0',
         bonuses: '0',
+        libraryCardPurchased: false,
         booksOwn: [],
         bankCardNumber: '',
         bankCardExpirationCode1: '',

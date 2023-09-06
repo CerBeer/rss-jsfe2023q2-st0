@@ -17,7 +17,7 @@ function loginUser(userLogin) {
     localStorage_saveKey('authorizedUser');
 
     let user = getRegisteredUserByLogin(userLogin);
-    user.visits = (user.visits || 0) + 1;
+    user.visits = parseInt(user.visits || 0) + 1;
     registeredUsers.set(user.email, user);
     localStorage_saveKey('registeredUsers');
 
@@ -36,9 +36,9 @@ function logoutUser() {
 
 function userRegistered(userLogin) {
 
-    if (!registeredUsers.has(userLogin)) return false;
+    if (registeredUsers.has(userLogin)) return true;
 
-    return true;
+    return false;
 }
 
 function userCanLogin(userLogin, userPassword) {
@@ -53,7 +53,7 @@ function userCanLogin(userLogin, userPassword) {
 
 function userCanRegister(user) {
 
-    if (userRegistered(user.userLogin)) return {err: true, message: "The specified email has already been used for registration"};
+    if (userRegistered(user.email)) return {err: true, message: "The specified email has already been used for registration"};
     if (!passwordCanBeUsed(user.password)) return {err: true, message: ""};
     if (!eMailIsValid(user.email)) return {err: true, message: "eMail is no valid"};
     if (user.firstName.length === 0) return {err: true, message: ""};
@@ -65,8 +65,8 @@ function userCanRegister(user) {
 
 function passwordCanBeUsed(password) {
 
-    let checkedPassword = password.split(' ').join('');
-    if (checkedPassword.length < 1) return false;
+    let checkedPassword = password.replaceAll(' ', '');
+    if (checkedPassword.length < 8) return false;
     return true;
 }
 
@@ -86,20 +86,30 @@ function getRegisteredUserByLogin(userLogin) {
 }
 
 // ToDo: to correct
-function libraryCardRegistered(libraryCard) {
+function isLibraryCardRegistered(libraryCard) {
 
-    if (!registeredUsers.has(libraryCard)) return false;
+    for (let value of registeredUsers.values()) {
+        if (value.libraryCard === libraryCard) return true;
+    }
 
-    return true;
+    return false;
 }
 
 function getRegisteredUserByLibraryCard(libraryCard) {
 
-    if (!libraryCardRegistered(libraryCard)) return getEmptyUser();
+    for (let value of registeredUsers.values()) {
+        if (value.libraryCard === libraryCard) return value;
+    }
+
+    return getEmptyUser();
+}
+
+function getRegisteredUserByLibraryCardAndFullName(libraryCard, FullName) {
     
-    let User = registeredUsers.get(libraryCard);
+    let user = getRegisteredUserByLibraryCard(libraryCard);
+    if (userFullName(user) === FullName) return user;
     
-    return User;
+    return getEmptyUser();
 }
 // ToDo: to correct
 
@@ -108,6 +118,12 @@ function userOwnBookByLogin(userLogin, bookId) {
     if (!userRegistered(userLogin)) return false;
 
     let user = getRegisteredUserByLogin(userLogin);
+    
+    return userOwnBook(user, bookId);
+}
+
+function userOwnBook(user, bookId) {
+   
     if (user.booksOwn.indexOf(bookId) >= 0) return true;
     
     return false;
@@ -167,11 +183,11 @@ function userLibraryCard(user) {
 }
 
 function userVisits(user) {
-    return `${+(user.visits || 0)}`;
+    return `${user.visits || 0}`;
 }
 
 function userBonuses(user) {
-    return `${+(user.bonuses || 0)}`;
+    return `${user.bonuses || 0}`;
 }
 
 function userBooks(user) {
@@ -179,10 +195,34 @@ function userBooks(user) {
 }
 
 function userBooks_count(user) {
-    return `${user.booksOwn.length}`;
+    return `${user.booksOwn.length || 0}`;
 }
 
 function userAddBooksOwn(user, bookid) {
-    user.booksOwn.push(bookid);
+    if (user.booksOwn.indexOf(bookid) < 0) {
+        user.booksOwn.push(bookid);
+        return user;
+    }
+}
+
+function userBuysLibraryCard(user) {
+    user.libraryCardPurchased = true;
     return user;
+}
+
+function isUserBoughtLibraryCard(user) {
+    return user.libraryCardPurchased;
+}
+
+function normalizeUserBankCardNumber(user) {
+
+    user.bankCardNumber = user.bankCardNumber.replaceAll(' ', '');
+    return user;
+}
+
+function stateUserBankCardNumber(user) {
+
+    if (user.bankCardNumber.length < 16) return user.bankCardNumber;
+    let card = user.bankCardNumber;
+    return `${card.slice(0, 4)} ${card.slice(4, 8)} ${card.slice(8, 12)} ${card.slice(12)}`;
 }

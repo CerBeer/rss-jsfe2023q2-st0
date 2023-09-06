@@ -52,12 +52,22 @@
 	}
 
 	function favorites_book_buttonsBuy_click(e) {
-		
+	
 		if (authorizedUser === '') profileMenuClick_action_login_open();
 		else {
 			let parentElement = e.target.closest('.favorites-book-description');
 			let bookid = parentElement.dataset.bookid;
-			modal_windows_buyer_open(bookid);
+			let user = getRegisteredUserByLogin(authorizedUser);
+			if (!userOwnBook(user, bookid)) {
+				if (isUserBoughtLibraryCard(user)) {
+					tooltip_splash(e.target.parentElement, 'in progress ...', 'position: absolute; transform: translate(100px, 5px); color: #BB945F;');
+					userAddBooksOwn(user, bookid);
+					saveUser(user);
+					setStateView();
+				} else {
+					modal_windows_buyer_open(bookid);
+				}
+			}
 		}
 	}
 
