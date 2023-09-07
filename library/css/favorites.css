@@ -39,8 +39,8 @@
     list-style: none;
     display: inline-flex;
     align-items: flex-start;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 22px;
     background-color: #fff;
     font-family: Inter;
@@ -48,6 +48,10 @@
     font-style: normal;
     line-height: normal;
     gap: 80px;
+}
+
+.favorites-seasons-list-sticky {
+    border-bottom: 1px solid #f3ddbf;
 }
 
 .favorites-seasons-item {
@@ -336,6 +340,15 @@ button.favorites-book-description-l-c5-button-disabled:hover {
     
     .favorites-seasons-list {
         gap: 40px;
+    }
+    
+}
+
+
+@media (min-width: 1261px) {
+    
+    .favorites-seasons-list-sticky {
+        border-bottom: unset;
     }
     
 }

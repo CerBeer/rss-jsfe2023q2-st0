@@ -14,17 +14,23 @@ window.addEventListener('resize', function(event) {
     // if (about_pagination_currenIndex() > 2) about_pagination_button_min.click();
 }, true);
 
-window.addEventListener('scroll', function(event) {
-    burgerMenuClose();
-    profileMenuClose();
-});
+// window.addEventListener('scroll', function(event) {
+//     burgerMenuClose();
+//     profileMenuClose();
+//     // favorites_favorites_seasons_list_sticky_setStateView();
+// });
+
+
 
 if (!userRegistered(authorizedUser)) authorizedUser = '';
 setStateView();
+menuIntersection_set();
+stickyIntersection_set();
+matchMedia_set();
 
 // console.log(generateID());
 
-// #section-start self-esteemate
+// #self-esteemate
 
     let self_esteem = 'Самооценка работы: 200 баллов \n \
     Выполнено: \n \
@@ -42,6 +48,7 @@ setStateView();
     \n \
     Этап 4: Пользователь после входа в учетную запись \n \
     - Доступно окно профиля, возможность купить абонемент, отображение информации в Digital Library Cards.'
-    //console.log(self_esteem);
+    console.log(self_esteem);
 
-// #section-end self-esteemate
+// #self-esteemate
+

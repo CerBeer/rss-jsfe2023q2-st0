@@ -99,3 +99,56 @@ function library_card_cardsprofile_setStateView(cardprofile, user) {
     field.innerText = userBooks_count(user);
 
 }
+
+// #close menu when profile-icon not visible
+
+function menuIntersection(entries) {
+
+    burgerMenuClose();
+    profileMenuClose();
+}
+
+function menuIntersection_set() {
+
+    let options = {root: null, threshold: 0};
+
+    let observerMenu = new IntersectionObserver(menuIntersection, options);
+    let targetMenu = document.querySelector('.header-profile-icon');
+    observerMenu.observe(targetMenu);
+}
+
+// #make border-bottom on element when is sticky
+
+function stickyIntersection(entries){
+
+    const sticky  = document.querySelector('.favorites-seasons-list');
+
+    if (window.getComputedStyle(sticky).position !== 'sticky') {
+        sticky.classList.remove('favorites-seasons-list-sticky');
+        return;
+    }
+
+    if (sticky.getBoundingClientRect().y <= 0) sticky.classList.add('favorites-seasons-list-sticky');
+    else if (entries[0].isIntersecting) sticky.classList.remove('favorites-seasons-list-sticky');
+        else  sticky.classList.add('favorites-seasons-list-sticky');
+}
+
+function stickyIntersection_set() {
+
+    let options = {root: null, threshold: 0};
+    let observerSticky = new IntersectionObserver(stickyIntersection, options);
+    let targetSticky = document.querySelector('.favorites-seasons');
+    observerSticky.observe(targetSticky);
+}
+
+// #make or delete border-bottom on element when it not sticky
+
+function matchMedia_set() {
+
+    const mediaQuery = window.matchMedia('(min-width: 1261px)');
+    mediaQuery.addEventListener("change", (e) => {
+        const sticky  = document.querySelector('.favorites-seasons-list');
+        if (e.matches) sticky.classList.remove('favorites-seasons-list-sticky');
+        else if (sticky.getBoundingClientRect().y <= 0) sticky.classList.add('favorites-seasons-list-sticky');
+    });
+}
