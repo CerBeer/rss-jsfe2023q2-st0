@@ -16,16 +16,21 @@
     <link rel="stylesheet" href="./css/contacts.css">
     <link rel="stylesheet" href="./css/librarycard.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/modal.css">
 </head>
 <body>
-<div class="outer_box">
+<div class="outer-box">
 <div class="wrapper">
+
     <header class="header">
         <h1 class="header-left">
             Brooklyn Public Library
         </h1>
         <div class="header-right">
             <nav class="header-nav">
+                <div class="header-burger-top">
+                    <div class="header-burger-button-close"></div>
+                </div>
                 <ul class="header-nav-list">
                     <li class="header-nav-item"><a href="#about" class="header-nav-link link-on-black">About</a>
                     <li class="header-nav-item"><a href="#favorites" class="header-nav-link link-on-black">Favorites</a>
@@ -35,7 +40,21 @@
                 </ul>
             </nav>
             <div class="header-profile">
-                <a href="#profile" class="header-profile-icon"><img src="./img/svg/icon_profile.svg" alt="Profile"></a>
+                <div class="header-profile-icon href" data-authorized-user=""></div>
+                <div class="header-profile-drop-menu-profile header-profile-drop-menu-profile-menu-display-none">
+                    <p class="header-profile-drop-menu-profile-header" data-authorized-user-library-card=""></p>
+                    <hr class="header-profile-drop-menu-profile-hr">
+                    <div class="header-profile-drop-menu-profile-menu">
+                        <div class="header-profile-drop-menu-profile-menu-logged-out">
+                            <div class="header-profile-drop-menu-profile-menu-login href">Log In</div>
+                            <div class="header-profile-drop-menu-profile-menu-register href">Register</div>
+                        </div>
+                        <div class="header-profile-drop-menu-profile-menu-logged-in header-profile-drop-menu-profile-menu-display-none">
+                            <div class="header-profile-drop-menu-profile-menu-myprofile href">My profile</div>
+                            <div class="header-profile-drop-menu-profile-menu-logout href">Log Out</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="header-burger">
                 <div class="header-burger-button-open">
@@ -43,34 +62,20 @@
                     <hr class="header-burger-button-open-line">
                     <hr class="header-burger-button-open-line">
                 </div>
-                <div class="header-burger-menu">
-                    <div class="header-burger-menu-top">
-                        <div class="header-burger-menu-profile">
-                            <a href="#profile" class="header-burger-menu-profile-icon"><img src="./img/svg/icon_profile.svg" alt="Profile"></a>
-                        </div>
-                        <div class="header-burger-menu-icon">
-                        </div>
-                    </div>
-                    <ul class="header-burger-menu-list">
-                        <li class="header-burger-menu-item"><a href="#about" class="header-burger-menu-link link-on-black">About</a>
-                        <li class="header-burger-menu-item"><a href="#favorites" class="header-burger-menu-link link-on-black">Favorites</a>
-                        <li class="header-burger-menu-item"><a href="#coffee-shop" class="header-burger-menu-link link-on-black">Coffee shop</a>
-                        <li class="header-burger-menu-item"><a href="#contacts" class="header-burger-menu-link link-on-black">Contacts</a>
-                        <li class="header-burger-menu-item"><a href="#library-card" class="header-burger-menu-link link-on-black">Library Card</a>
-                    </ul>
-                </div>
             </div>
         </div>
     </header>
-    <section class="welcome">
+
+    <main>
+
+        <section class="welcome">
             <h2 class="welcome-text">
                 Welcome&nbsp;<br>
                 to the Brooklyn<br>
                 Library
             </h2>
-    </section>
+        </section>
 
-    <main>
         <section class="about" id="about">
             <div class="titel2">
                 <h2>About</h2>
@@ -80,23 +85,27 @@
                 The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
             </p>
             <div class="about-carousel">
-                <div class="about-carousel-images">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" class="about-carousel-image-arrows" id="about-carousel-image-arrow-prev">
+                <div class="about-carousel-carousel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" class="about-carousel-carousel-arrows about-carousel-carousel-arrows-prev">
                         <path d="M15 7.5L9 12.5L15 17.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <img src="./img/about-image1.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image1">
-                    <img src="./img/about-image2.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image2">
-                    <img src="./img/about-image3.png" alt="Brooklyn Public Library" class="about-carousel-image" id="about-image3">
-                    <img src="./img/about-image4.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image4">
-                    <img src="./img/about-image5.png" alt="Brooklyn Public Library" class="about-carousel-image-hide" id="about-image5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" class="about-carousel-image-arrows" id="about-carousel-image-arrow-next">
+                    <div class="about-carousel-carousel-images">
+                        <div class="about-carousel-carousel-images-case">
+                            <img src="./img/about-image1.png" alt="Brooklyn Public Library" class="about-carousel-carousel-images-case-image">
+                            <img src="./img/about-image2.png" alt="Brooklyn Public Library" class="about-carousel-carousel-images-case-image">
+                            <img src="./img/about-image3.png" alt="Brooklyn Public Library" class="about-carousel-carousel-images-case-image">
+                            <img src="./img/about-image4.png" alt="Brooklyn Public Library" class="about-carousel-carousel-images-case-image">
+                            <img src="./img/about-image5.png" alt="Brooklyn Public Library" class="about-carousel-carousel-images-case-image">
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" class="about-carousel-carousel-arrows about-carousel-carousel-arrows-next">
                         <path d="M9 17.5L15 12.5L9 7.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
                 <div class="about-carousel-paginations">
                     <div class="about-carousel-paginations-custom-radio about-carousel-paginations-custom-radio-checked"></div>
                     <div class="about-carousel-paginations-custom-radio"></div>
-                    <div class="about-carousel-paginations-custom-radio"></div>
+                    <div class="about-carousel-paginations-custom-radio about-carousel-paginations-custom-radio3"></div>
                     <div class="about-carousel-paginations-custom-radio about-carousel-paginations-custom-radio4"></div>
                     <div class="about-carousel-paginations-custom-radio about-carousel-paginations-custom-radio5"></div>
                 </div>
@@ -110,390 +119,393 @@
             </div>
             <div class="favorites-seasons">
                 <div class="favorites-seasons-title">Pick favorites of season</div>
-                <ul class="favorites-seasons-list">
-                    <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="winter" class="favorites-seasons-button" checked><label for="winter">Winter</label></li>
-                    <li class="favorites-seasons-item-spring"><input type="radio" id="spring" name="favorites-seasons" value="spring" class="favorites-seasons-button"><label for="spring">Spring</label></li>
-                    <li class="favorites-seasons-item-summer"><input type="radio" id="summer" name="favorites-seasons" value="summer" class="favorites-seasons-button"><label for="summer">Summer</label></li>
-                    <li class="favorites-seasons-item"><input type="radio" id="autumn" name="favorites-seasons" value="autumn" class="favorites-seasons-button"><label for="autumn">Autumn</label></li>
-                </ul>
             </div>
-            <div class="favorites-book-descriptions favorites-book-descriptions-winter">
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+            <ul class="favorites-seasons-list">
+                <li class="favorites-seasons-item"><input type="radio" id="winter" name="favorites-seasons" value="0" class="favorites-seasons-button" checked><label for="winter">Winter</label></li>
+                <li class="favorites-seasons-item-spring"><input type="radio" id="spring" name="favorites-seasons" value="1" class="favorites-seasons-button"><label for="spring">Spring</label></li>
+                <li class="favorites-seasons-item-summer"><input type="radio" id="summer" name="favorites-seasons" value="2" class="favorites-seasons-button"><label for="summer">Summer</label></li>
+                <li class="favorites-seasons-item"><input type="radio" id="autumn" name="favorites-seasons" value="3" class="favorites-seasons-button"><label for="autumn">Autumn</label></li>
+            </ul>
+            <div class="favorites-book-case">
+                <div class="favorites-book-descriptions favorites-book-descriptions-visible">
+                    <div class="favorites-book-description" data-bookid="01">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                The Book Eaters
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Sunyi Dean
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            The Book Eaters
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Sunyi Dean
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-TheBookEaters.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            Cackle
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Rachel Harrison
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-TheBookEaters.png" alt="The Book Eaters" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Cackle.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description" data-bookid="02">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Cackle
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Rachel Harrison
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Dante: Poet of the Secular World
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Erich Auerbach
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Dante.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            The Last Queen
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Clive Irving
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Cackle.png" alt="Cackle" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-LastQueen.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-            </div>
-            <div class="favorites-book-descriptions favorites-book-descriptions-spring">
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description" data-bookid="03">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Dante: Poet of the Secular World
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Erich Auerbach
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            The Body
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Stephen King
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Dante.png" alt="Dante: Poet of the Secular World" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-TheBody.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                    <div class="favorites-book-description favorites-book-description-4" data-bookid="04">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                The Last Queen
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Clive Irving
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-LastQueen.png" alt="The Last Queen" class="favorites-book-description-r-img">
+                        </div>
                     </div>
                 </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                <div class="favorites-book-descriptions">
+                    <div class="favorites-book-description" data-bookid="05">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                The Body
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Stephen King
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Carry: A Memoir of Survival on Stolen Land
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Toni Jenson
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Carry.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            Days of Distraction
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Alexandra Chang
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-TheBody.png" alt="The Body" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-DaysOfDestraction.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description"  data-bookid="06">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Carry: A Memoir of Survival on Stolen Land
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Toni Jenson
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Dominicana
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Angie Cruz
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button" disabled>Own</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Dominicana.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-            </div>
-            <div class="favorites-book-descriptions favorites-book-descriptions-summer">
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            Crude: A Memoir
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Pablo Fajardo & ​​Sophie Tardy-Joubert
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Carry.png" alt="Carry: A Memoir of Survival on Stolen Land" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Crude.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                    <div class="favorites-book-description" data-bookid="07">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Days of Distraction
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Alexandra Chang
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-DaysOfDestraction.png" alt="Days of Distraction" class="favorites-book-description-r-img">
+                        </div>
                     </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description" data-bookid="08">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Dominicana
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Angie Cruz
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Let My People Go Surfing
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Dominicana.png" alt="Dominicana" class="favorites-book-description-r-img">
                         </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Yvon Chouinard
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-LetMyPeopleGoSurfing.png" alt="The Book Eaters" class="favorites-book-description-r-img">
                     </div>
                 </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                <div class="favorites-book-descriptions">
+                    <div class="favorites-book-description" data-bookid="09">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Crude: A Memoir
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Pablo Fajardo & ​​Sophie Tardy-Joubert
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            The Octopus Museum: Poems
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Brenda Shaughnessy
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Poems.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            Shark Dialogues: A Novel
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Kiana Davenport
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Crude.png" alt="Crude: A Memoir" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-ANovel.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-            </div>
-            <div class="favorites-book-descriptions favorites-book-descriptions-autumn">
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description" data-bookid="10">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Let My People Go Surfing
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Yvon Chouinard
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Casual Conversation
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Renia White
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-LetMyPeopleGoSurfing.png" alt="Let My People Go Surfing" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-CasualConversation.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                    <div class="favorites-book-description" data-bookid="11">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                The Octopus Museum: Poems
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Brenda Shaughnessy
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            The Great Fire
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Lou Ureneck
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
-                        </div>
-                    </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-TheGreatFire.png" alt="The Book Eaters" class="favorites-book-description-r-img">
-                    </div>
-                </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
-                        </div>
-                        <div class="favorites-book-description-l-c2">
-                            Rickey: The Life and Legend
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Howard Bryant
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Poems.png" alt="The Octopus Museum: Poems" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Rickey.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                    <div class="favorites-book-description" data-bookid="12">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Shark Dialogues: A Novel
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Kiana Davenport
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-ANovel.png" alt="Shark Dialogues: A Novel" class="favorites-book-description-r-img">
+                        </div>
                     </div>
                 </div>
-                <div class="favorites-book-description">
-                    <div class="favorites-book-description-l">
-                        <div class="favorites-book-description-l-c1">
-                            <div class="favorites-book-description-l-c1-text">Staff Picks</div>
-                            <div class="favorites-book-description-l-c1-hr"></div>
+                <div class="favorites-book-descriptions">
+                    <div class="favorites-book-description" data-bookid="13">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Casual Conversation
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Renia White
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
                         </div>
-                        <div class="favorites-book-description-l-c2">
-                            Slug: And Other Stories
-                        </div>
-                        <div class="favorites-book-description-l-c3">
-                            By Megan Milks
-                        </div>
-                        <div class="favorites-book-description-l-c4">
-                            Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
-                        </div>
-                        <div class="favorites-book-description-l-c5">
-                            <button type="button" name="button-buy" class="favorites-book-description-l-c5-button">Buy</button>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-CasualConversation.png" alt="asual Conversation" class="favorites-book-description-r-img">
                         </div>
                     </div>
-                    <div class="favorites-book-description-r">
-                        <img src="./img/books/book-Slug.png" alt="The Book Eaters" class="favorites-book-description-r-img">
+                    <div class="favorites-book-description" data-bookid="14">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                The Great Fire
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Lou Ureneck
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-TheGreatFire.png" alt="The Great Fire" class="favorites-book-description-r-img">
+                        </div>
+                    </div>
+                    <div class="favorites-book-description" data-bookid="15">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Rickey: The Life and Legend
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Howard Bryant
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Rickey.png" alt="Rickey: The Life and Legend" class="favorites-book-description-r-img">
+                        </div>
+                    </div>
+                    <div class="favorites-book-description" data-bookid="16">
+                        <div class="favorites-book-description-l">
+                            <div class="favorites-book-description-l-c1">
+                                <div class="favorites-book-description-l-c1-text">Staff Picks</div>
+                                <div class="favorites-book-description-l-c1-hr"></div>
+                            </div>
+                            <div class="favorites-book-description-l-c2">
+                                Slug: And Other Stories
+                            </div>
+                            <div class="favorites-book-description-l-c3">
+                                By Megan Milks
+                            </div>
+                            <div class="favorites-book-description-l-c4">
+                                Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.
+                            </div>
+                            <div class="favorites-book-description-l-c5">
+                                <button type="button" name="button-buy" class="favorites-book-description-l-c5-button"></button>
+                            </div>
+                        </div>
+                        <div class="favorites-book-description-r">
+                            <img src="./img/books/book-Slug.png" alt="Slug: And Other Stories" class="favorites-book-description-r-img">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <section class="coffee-shop" id="coffee-shop">
             <div class="titel2">
                 <h2>Coffee shop</h2>
@@ -576,6 +588,7 @@
                 </div>
             </div>
         </section>
+
         <section class="contacts" id="contacts">
             <div class="titel2">
                 <h2>Our Contacts</h2>
@@ -599,31 +612,57 @@
                     </ul>
                 </div>
                 <div class="our-contacts-r">
-                    <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map" class="our-contacts-r-link-img"></a>
+                    <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="-blank" class="our-contacts-r-link"><img src="./img/map.png" alt="map" class="our-contacts-r-link-img"></a>
                 </div>
             </div>
         </section>
+
         <section class="library-card" id="library-card">
             <div class="titel2">
                 <h2>Digital Library Cards</h2>
                 <hr class="titel2-hr">
             </div>
-            <div class="library-card-card">
+            <div class="library-card-card library-card-card-nologin">
                 <div class="library-card-card-l">
                     <div class="library-card-card-l-title">
                         Find your Library card
                     </div>
                     <div class="library-card-card-l-form">
-                        <form action="index.html" method="post">
+                        <form onsubmit="return false">
                             <div class="library-card-card-l-form-form">
                                 <div class="library-card-card-l-form-form-title">Brooklyn Public Library</div>
-                                <input type="text" id="readers-name" name="readers-name" class="library-card-card-l-form-form-input" placeholder="Reader's name">
-                                <input type="text" id="card-number" name="card-number" class="library-card-card-l-form-form-input" placeholder="Card number">
+                                <input type="text" id="readers-name" name="readers-name" class="library-card-card-l-form-form-input library-card-card-check-username" placeholder="Reader's name">
+                                <input type="text" id="card-number" name="card-number" class="library-card-card-l-form-form-input library-card-card-check-cardnumber" placeholder="Card number">
                             </div>
                             <div class="library-card-card-l-form-form-button">
-                                <button type="submit" class="library-card-card-l-form-form-button"><span class="library-card-card-l-form-form-button-label">Check the card</span></button>
+                                <button class="library-card-card-l-form-form-button-button"><span class="library-card-card-l-form-form-button-label">Check the card</span></button>
                             </div>
                         </form>
+                        <div class="library-card-card-l-check-cardsprofile class-display-none">
+                            <div class="library-card-card-l-cardsprofile-column">
+                                <p class="library-card-card-l-cardsprofile-column-header">Visits</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                                </svg>
+                                <p class="modal-windows-window-profile-right-cardsprofile-column-count-visits modal-windows-window-profile-right-cardsprofile-column-count">23</p>
+                            </div>
+                            <div class="library-card-card-l-cardsprofile-column">
+                                <p class="library-card-card-l-cardsprofile-column-header">Bonuses</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                                </svg>
+                                <p class="modal-windows-window-profile-right-cardsprofile-column-count-bonuses modal-windows-window-profile-right-cardsprofile-column-count">1240</p>
+                            </div>
+                            <div class="library-card-card-l-cardsprofile-column">
+                                <p class="library-card-card-l-cardsprofile-column-header">Books</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                    <rect width="20" height="21" fill="#BB945F"/>
+                                    <rect x="2" width="1" height="19" fill="#826844"/>
+                                    <rect x="1" width="1" height="21" fill="white"/>
+                                </svg>
+                                <p class="modal-windows-window-profile-right-cardsprofile-column-count-books modal-windows-window-profile-right-cardsprofile-column-count">2</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="library-card-card-r">
@@ -634,7 +673,55 @@
                     <div class="library-card-card-r-buttons">
                         <button type="button" class="library-card-card-r-signup-button"><span class="library-card-card-r-signup-button-label">Sign Up</span></button>
                         <button type="button" class="library-card-card-r-login-button"><span class="library-card-card-r-login-button-label">Log in</span></button>
+                    </div>
                 </div>
+            </div>
+            <div class="library-card-card library-card-card-login class-display-none">
+                <div class="library-card-card-l">
+                    <div class="library-card-card-l-title">
+                        Your Library card
+                    </div>
+                    <div class="library-card-card-l-form">
+                            <div class="library-card-card-l-form-form">
+                                <div class="library-card-card-l-form-form-title">Brooklyn Public Library</div>
+                                <input type="text" class="library-card-card-l-form-form-input library-card-card-login-username" disabled>
+                                <input type="text" class="library-card-card-l-form-form-input library-card-card-login-cardnumber" disabled>
+                            </div>
+                            <div class="library-card-card-l-cardsprofile">
+                                <div class="library-card-card-l-cardsprofile-column">
+                                    <p class="library-card-card-l-cardsprofile-column-header">Visits</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                                    </svg>
+                                    <p class="modal-windows-window-profile-right-cardsprofile-column-count-visits modal-windows-window-profile-right-cardsprofile-column-count">23</p>
+                                </div>
+                                <div class="library-card-card-l-cardsprofile-column">
+                                    <p class="library-card-card-l-cardsprofile-column-header">Bonuses</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                        <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                                    </svg>
+                                    <p class="modal-windows-window-profile-right-cardsprofile-column-count-bonuses modal-windows-window-profile-right-cardsprofile-column-count">1240</p>
+                                </div>
+                                <div class="library-card-card-l-cardsprofile-column">
+                                    <p class="library-card-card-l-cardsprofile-column-header">Books</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                        <rect width="20" height="21" fill="#BB945F"/>
+                                        <rect x="2" width="1" height="19" fill="#826844"/>
+                                        <rect x="1" width="1" height="21" fill="white"/>
+                                    </svg>
+                                    <p class="modal-windows-window-profile-right-cardsprofile-column-count-books modal-windows-window-profile-right-cardsprofile-column-count">2</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="library-card-card-r">
+                    <div class="library-card-card-r-title">Visit your profile</div>
+                    <div class="library-card-card-r-descriptions">
+                        With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.
+                    </div>
+                    <div class="library-card-card-r-buttons">
+                        <button type="button" class="library-card-card-r-profile-button"><span class="library-card-card-r-login-profile-label">Profile</span></button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -644,7 +731,7 @@
         <div class="frame6, footer-frames">
             <div class="frame5, footer-frame">
                 <div class="footer-left">
-                    <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="_blank" class="link-on-black">
+                    <a href="https://goo.gl/maps/j7P5m1saT7RdmhTc6" target="-blank" class="link-on-black">
                         286 Cadman Plaza, New York,<br>
                         NY 11238, United States
                     </a>
@@ -668,13 +755,170 @@
         </div>
         <div class="footer-rss">
             <div class="footer-left find-offset-width">2023</div>
-            <div class="footer-school-center"><a href="https://rs.school/js-stage0/" target="_blank" class="link-on-black">The Rolling Scopes School</a></div>
-            <div class="footer-right"><a href="https://github.com/CerBeer" target="_blank" class="link-on-black">CerBeer</a></div>
+            <div class="footer-school-center"><a href="https://rs.school/js-stage0/" target="-blank" class="link-on-black">The Rolling Scopes School</a></div>
+            <div class="footer-right"><a href="https://github.com/CerBeer" target="-blank" class="link-on-black">CerBeer</a></div>
         </div>
     </footer>
 
+    <div class="modal-windows">
+        <div class="modal-windows-login modal-windows-overlay modal-windows-none">
+            <div class="modal-windows-window-login modal-windows-window">
+                <div class="modal-windows-window-login-closebtn modal-windows-window-closebtn href">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                      </svg>
+                </div>
+                <p class="modal-windows-window-header">login</p>
+                <form onsubmit="return false" class="modal-windows-window-form">
+                    <p class="modal-windows-window-namefield">E-mail or readers card</p>
+                    <input type="text" id="modal-windows-window-login-e-mail" name="login-e-mail" class="modal-windows-window-input" required>
+                    <p class="modal-windows-window-namefield">Password</p>
+                    <input type="password" minlength="8" id="modal-windows-window-login-password" name="login-password" class="modal-windows-window-input" required>
+                    <button class="modal-windows-window-button modal-windows-login-button"><span class="modal-windows-window-button-label">Log in</span></button>
+               </form>
+                <div class="modal-windows-window-small-print-below">
+                    <div class="modal-windows-window-small-print-below-normal">Don’t have an account?</div>
+                    <div class="modal-windows-login-linkregister modal-windows-window-small-print-below-bold href">Register</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-windows-register modal-windows-overlay modal-windows-none">
+            <form onsubmit="return false" class="modal-windows-window-register modal-windows-window">
+                <div class="modal-windows-window-register-closebtn modal-windows-window-closebtn href">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                      </svg>
+                </div>
+                <p class="modal-windows-window-header">Register</p>
+                <p class="modal-windows-window-namefield">First name</p>
+                <input type="text" id="modal-windows-window-register-firstname" name="register-firstname" class="modal-windows-window-input" required>
+                <p class="modal-windows-window-namefield">Last name</p>
+                <input type="text" id="modal-windows-window-register-lastname" name="register-lastname" class="modal-windows-window-input" required>
+                <p class="modal-windows-window-namefield">E-mail</p>
+                <input type="email" id="modal-windows-window-register-e-mail" name="register-e-mail" class="modal-windows-window-input" required>
+                <p class="modal-windows-window-namefield">Password</p>
+                <input type="text" pattern="[\S]{8}" title="at least 8 characters without space" id="modal-windows-window-register-password" name="register-password" class="modal-windows-window-input" required>
+                <button class="modal-windows-window-button modal-windows-register-button"><span class="modal-windows-window-button-label">Sign Up</span></button>
+                <div class="modal-windows-window-small-print-below">
+                    <div class="modal-windows-window-small-print-below-normal">Already have an account?</div>
+                    <div class="modal-windows-register-linklogin modal-windows-window-small-print-below-bold href">Login</div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-windows-profile modal-windows-overlay modal-windows-none">
+            <div class="modal-windows-window-profile">
+                <div class="modal-windows-window-profile-closebtn href">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00001" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14928L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="modal-windows-window-profile-left">
+                    <div class="modal-windows-window-profile-left-usericon">JD</div>
+                    <div class="modal-windows-window-profile-left-username">John Doe</div>
+                </div>
+                <div class="modal-windows-window-profile-right">
+                    <p class="modal-windows-window-profile-header">My profile</p>
+                    <div class="modal-windows-window-profile-right-cardsprofile">
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Visits</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 10C13.2614 10 15.5 7.76143 15.5 5C15.5 2.23857 13.2614 0 10.5 0C7.73857 0 5.5 2.23857 5.5 5C5.5 7.76143 7.73857 10 10.5 10ZM17.5711 13.9289C19.4464 15.8043 20.5 18.3478 20.5 21H10.5H0.5C0.5 18.3478 1.55357 15.8043 3.42894 13.9289C5.30429 12.0536 7.84784 11 10.5 11C13.1522 11 15.6957 12.0536 17.5711 13.9289Z" fill="#BB945F"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count-visits modal-windows-window-profile-right-cardsprofile-column-count">23</p>
+                        </div>
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Bonuses</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                <path d="M10 0L12.2249 3.31001L15.8779 2.00532L15.8249 6.05634L19.5106 7.25532L17.2 10.5L19.5106 13.7447L15.8249 14.9437L15.8779 18.9947L12.2249 17.69L10 21L7.77508 17.69L4.12215 18.9947L4.17508 14.9437L0.489435 13.7447L2.8 10.5L0.489435 7.25532L4.17508 6.05634L4.12215 2.00532L7.77508 3.31001L10 0Z" fill="#BB945F"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count-bonuses modal-windows-window-profile-right-cardsprofile-column-count">1240</p>
+                        </div>
+                        <div class="modal-windows-window-profile-right-cardsprofile-column">
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-header">Books</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                <rect width="20" height="21" fill="#BB945F"/>
+                                <rect x="2" width="1" height="19" fill="#826844"/>
+                                <rect x="1" width="1" height="21" fill="white"/>
+                            </svg>
+                            <p class="modal-windows-window-profile-right-cardsprofile-column-count-books modal-windows-window-profile-right-cardsprofile-column-count">2</p>
+                        </div>
+                    </div>
+                    <p class="modal-windows-window-profile-right-rentedbooks-header">Rented books</p>
+                    <div class="modal-windows-window-profile-right-rentedbooks-listbooks">
+                        <!-- <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">The Last Queen, Clive Irving
+                        <li class="modal-windows-window-profile-right-rentedbooks-listbooks-item">Dominicana, Angie Cruz -->
+                    </div>
+                    <div class="modal-windows-window-profile-right-cardnumber">
+                        <div class="modal-windows-window-profile-right-cardnumber-header">Card number</div>
+                        <div class="modal-windows-window-profile-right-cardnumber-cardnumber">F00234030</div>
+                        <div class="modal-windows-window-profile-right-cardnumber-copy href">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                                <rect x="2.46826" y="0.25" width="10.5917" height="9.5" rx="0.75" stroke="black" stroke-width="0.5"/>
+                                <rect x="0.25" y="2.25" width="10.5917" height="9.5" rx="0.75" fill="white" stroke="black" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-windows-bayer modal-windows-overlay modal-windows-none">
+            <div class="modal-windows-window-bayer">
+                <div class="modal-windows-window-bayer-header">
+                    Buy a library card
+                    <div class="modal-windows-window-bayer-closebtn href">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                            <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+                            <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-windows-window-buyer-body">
+                    <form class="modal-windows-window-body-buyer-left" onsubmit="return false">
+                        <p class="modal-windows-window-namefield">Bank card number</p>
+                        <input type="text" id="modal-windows-window-buyer-bankcardnumber" name="bankCardNumber" class="modal-windows-window-input" required pattern="^\d{4} ?\d{4} ?\d{4} ?\d{4}$" title="16 digits">
+                        <p class="modal-windows-window-namefield">Expiration code</p>
+                        <div class="modal-windows-window-body-buyer-left-expirationcode">
+                            <input type="text" id="modal-windows-window-buyer-expirationcode1" name="bankCardExpirationCode1" class="modal-windows-window-input-small" required pattern="^\d\d$" title="2 digits">
+                            <input type="text" id="modal-windows-window-buyer-expirationcode2" name="bankCardExpirationCode2" class="modal-windows-window-input-small" required pattern="^\d\d$" title="2 digits">
+                        </div>
+                        <p class="modal-windows-window-namefield">CVC</p>
+                        <input type="text" id="modal-windows-window-buyer-cvc" name="bankCardCVC" class="modal-windows-window-input-small" required pattern="^\d{3}$" title="3 digits">
+                        <p class="modal-windows-window-namefield">Cardholder name</p>
+                        <input type="text" id="modal-windows-window-buyer-cardholdername" name="bankCardCardholderName" class="modal-windows-window-input" required>
+                        <p class="modal-windows-window-namefield">Postal code</p>
+                        <input type="text" id="modal-windows-window-buyer-postalcode" name="bankCardPoastlCode" class="modal-windows-window-input" required>
+                        <p class="modal-windows-window-namefield">City / Town</p>
+                        <input type="text" id="modal-windows-window-buyer-city" name="bankCardCity" class="modal-windows-window-input" required>
+                        <div class="modal-windows-window-body-buyer-left-footer">
+                            <button class="modal-windows-window-button modal-windows-buyer-button"><span class="modal-windows-window-button-label">Buy</span></button>
+                            <p class="modal-windows-window-body-buyer-left-footer-price">$ 25.00</p>
+                        </div>
+                    </form>
+                    <div class="modal-windows-window-body-buyer-right">
+                        If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </div>
+<script src="./js/defaultData.js"></script>
+<script src="./js/func.js"></script>
+<script src="./js/header.js"></script>
+<script src="./js/profileMenu.js"></script>
+<script src="./js/modalWindow.js"></script>
+<script src="./js/about.js"></script>
+<script src="./js/favorites.js"></script>
+<script src="./js/libraryCards.js"></script>
+<script src="./js/service.js"></script>
+<script src="./js/localStor.js"></script>
+<script src="./js/users.js"></script>
+<script src="./js/state.js"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>

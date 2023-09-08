@@ -1,0 +1,524 @@
+
+.splash-message{
+    color: #bd0404;
+    /* background: rgba(0,0,0,0); */
+    background-image: linear-gradient(to right, white, pink, white);
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    position: fixed;
+    /* left: 50%; */
+    bottom: 100%;
+    /* transform: translate(-50%, 0); */
+    z-index: 11;
+}
+
+.tooltip-message {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #888;
+    transform: translate(0, -100%);
+    z-index: 12;
+    animation: fadeOut 2s ease-in-out;
+}
+
+.modal-windows-open {
+    overflow: hidden;
+}
+
+.modal-windows-none {
+    display: none;
+}
+
+.modal-windows-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.9);
+    z-index: 10;
+}
+
+.modal-windows-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    color: #000;
+
+    box-shadow: 0 0 10px #777;
+    position: fixed;
+    /* top: 50%;
+    width: 100%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -75%);
+    z-index: 11;
+}
+
+.modal-windows-window-header {
+    margin: 20px auto;
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-form {
+    margin-left: 20px;
+}
+
+.modal-windows-window-namefield {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 200px;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+}
+
+.modal-windows-window-input {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+.modal-windows-window-input-small {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 45px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+.modal-windows-window-button {
+    color: #0C0C0E;
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    align-self: start;
+    margin: 10px 0;
+}
+
+.modal-windows-buyer-button:disabled {
+    color:#bbb;
+    border-color: #bbb;
+}
+
+.modal-windows-buyer-button:disabled:hover {
+    color:#bbb;
+    border-color: #bbb;
+    background-color: #fff;
+    cursor: default;
+}
+
+.modal-windows-window-button-label {
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.modal-windows-window-small-print-below {
+    margin-left: 25px;
+    align-self: start;
+}
+
+.modal-windows-window-small-print-below-normal {
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: start;
+}
+
+.modal-windows-window-small-print-below-bold {
+    margin-left: 10px;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+}
+
+.modal-windows-window-closebtn {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    color: black;
+
+    position: absolute;
+    /* top: 50%;
+    width: 100%; */
+    right: 15px;
+    top: 15px;
+
+}
+
+.modal-windows-window-login {
+    width: 250px;
+    height: 262px;
+}
+
+.modal-windows-window-register {
+    width: 250px;
+    height: 382px;
+}
+
+.modal-windows-register-button {
+    margin-left: 25px;
+}
+
+.modal-windows-window-profile {
+    width: 600px;
+    min-height: 400px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    color: #000;
+
+    box-shadow: 0 0 10px #777;
+    position: fixed;
+    /* top: 50%;
+    width: 100%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+.modal-windows-window-profile-closebtn {
+    width: 18px;
+    height: 18px;
+    padding: 3px;
+    color: black;
+
+    position: absolute;
+    /* top: 50%;
+    width: 100%; */
+    right: 25px;
+    top: 25px;
+
+}
+
+.modal-windows-window-profile-left {
+    width: 170px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #0C0C0E;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+}
+
+.modal-windows-window-profile-left-usericon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-bottom: 15px;
+    
+    align-items: center;
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    text-transform: uppercase;
+}
+
+.modal-windows-window-profile-left-username {
+    width: 120px;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    align-items: center;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    word-break:break-all;
+}
+
+.modal-windows-window-profile-right {
+    width: 430px;
+    height: 100%;
+    padding-left: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: flex-start;
+    color: #0C0C0E;
+}
+
+.modal-windows-window-profile-header {
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-profile-right-cardsprofile {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.modal-windows-window-profile-right-cardsprofile-column{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.modal-windows-window-profile-right-cardsprofile-column-header {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: capitalize;    
+
+    padding: 0;
+    margin: 0;
+}
+
+.modal-windows-window-profile-right-cardsprofile-column-count {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;    
+
+    padding: 0;
+    margin: 0;
+}
+
+.modal-windows-window-profile-right-rentedbooks-header{
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 80% */
+}
+
+.modal-windows-window-profile-right-rentedbooks-listbooks {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+    /* gap: 10px; */
+    /* flex-direction: column; */
+    list-style-type: disc;
+    margin-left: 30px;
+    min-height: 100px;
+    width: 350px;
+}
+
+.modal-windows-window-profile-right-rentedbooks-listbooks-item {
+    display: list-item;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
+}
+
+.modal-windows-window-profile-right-cardnumber {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.modal-windows-window-profile-right-cardnumber-copy {
+    align-items: center;
+}
+
+.modal-windows-window-bayer {
+    width: 640px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+
+    box-shadow: 0 0 10px #777;
+    position: fixed;
+    /* top: 50%;
+    width: 100%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 11;
+}
+
+.modal-windows-window-bayer-header {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content:center;
+    background-color: #0C0C0E;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-bayer-closebtn {
+    position: absolute;
+    /* top: 50%;
+    width: 100%; */
+    right: 25px;
+    top: 25px;
+}
+
+.modal-windows-window-buyer-body {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color: #000;
+}
+
+.modal-windows-window-body-buyer-left {
+    width: 200px;
+    height: 410px;
+    margin-top: 30px;
+    margin-left: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.modal-windows-window-body-buyer-left-expirationcode {
+    gap: 10px;
+}
+
+.modal-windows-window-body-buyer-left-footer-price {
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 25px;
+    color: #0C0C0E;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.modal-windows-window-body-buyer-right {
+    width: 330px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 2px;
+}
