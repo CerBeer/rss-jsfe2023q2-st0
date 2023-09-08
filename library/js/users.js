@@ -13,6 +13,8 @@ function registerUser(user) {
 
 function loginUser(userLogin) {
 
+    if (!userRegistered(userLogin)) return;
+    
     authorizedUser = userLogin;
     localStorage_saveKey('authorizedUser');
 
@@ -31,7 +33,6 @@ function logoutUser() {
     localStorage_saveKey('authorizedUser');
 
     setStateView();
-    
 }
 
 function userRegistered(userLogin) {
@@ -85,7 +86,6 @@ function getRegisteredUserByLogin(userLogin) {
     return User;
 }
 
-// ToDo: to correct
 function isLibraryCardRegistered(libraryCard) {
 
     for (let value of registeredUsers.values()) {
@@ -111,7 +111,6 @@ function getRegisteredUserByLibraryCardAndFullName(libraryCard, FullName) {
     
     return getEmptyUser();
 }
-// ToDo: to correct
 
 function userOwnBookByLogin(userLogin, bookId) {
    
@@ -156,7 +155,7 @@ function userFullName(user) {
 }
 
 function userFullNameWithHyphenation(user, maxLenght) {
-    if (user.firstName.length > maxLenght || user.lastName.length > maxLenght) return `${user.firstName}\n${user.lastName}`;
+    if (user.lastName.length + user.firstName.length + 1 > maxLenght) return `${user.firstName}\n${user.lastName}`;
     return `${user.firstName} ${user.lastName}`;
 }
 

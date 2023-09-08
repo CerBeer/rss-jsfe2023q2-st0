@@ -23,7 +23,8 @@ window.addEventListener('resize', function(event) {
 
 
 if (!userRegistered(authorizedUser)) authorizedUser = '';
-setStateView();
+else loginUser(authorizedUser);
+// setStateView();
 menuIntersection_set();
 stickyIntersection_set();
 matchMedia_set();
