@@ -1,5 +1,11 @@
+// Can be considered an entry point. 
+// After opening the page, reads the current user and vars from local storage, authorizes him if the user is correct and calls the page display settings.
+// Reaction to global events (scroll and resize).
 
 "use strict";
+
+localStorage_init();
+localStorage_readVars();
 
 window.addEventListener('resize', function(event) {
     burgerMenuClose();

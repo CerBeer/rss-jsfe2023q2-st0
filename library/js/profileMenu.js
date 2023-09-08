@@ -1,3 +1,4 @@
+// Reaction to user menu item selection including opening modal windows.
 
 function modal_windows_window_closebtn(e) {
     profileMenuClick_action_register_Close_Close();

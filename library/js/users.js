@@ -1,3 +1,5 @@
+// Functions for working with the states of registered users and the current user. 
+// Registration, login, purchases and reading/setting user details.
 
 function saveUser(user) {
     registeredUsers.set(user.email, user);
@@ -14,7 +16,7 @@ function registerUser(user) {
 function loginUser(userLogin) {
 
     if (!userRegistered(userLogin)) return;
-    
+
     authorizedUser = userLogin;
     localStorage_saveKey('authorizedUser');
 

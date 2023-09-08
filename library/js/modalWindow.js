@@ -1,3 +1,4 @@
+//Management and logic of modal windows.
 
 // modal window splash message
 function modal_windows_splash(owner, message) {

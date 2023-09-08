@@ -1,3 +1,4 @@
+// Various support functions.
 
 // Creating a unique ID function
 function generateID() {

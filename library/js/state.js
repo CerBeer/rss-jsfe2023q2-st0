@@ -1,3 +1,5 @@
+// Functions for customizing the display of page elements depending on the internal state of the logic. 
+// Called after the page has loaded and when the state of the logic changes
 
 function setStateView() {
     

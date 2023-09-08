@@ -1,3 +1,4 @@
+// Working with local storage.
 
 function localStorage_init() {
 
@@ -25,7 +26,4 @@ function localStorage_saveKey(key) {
     if (key === 'registeredUsers') localStorage.setItem('registeredUsers', JSON.stringify(Array.from(registeredUsers.entries())));
     if (key === 'authorizedUser') localStorage.setItem('authorizedUser', JSON.stringify(authorizedUser));
 }
-
-localStorage_init();
-localStorage_readVars();
 

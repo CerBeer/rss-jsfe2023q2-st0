@@ -1,3 +1,4 @@
+// Section logic libraryCard.
 
 function libraryCard_action_checkTheCard() {
 

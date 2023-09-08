@@ -1,3 +1,4 @@
+// Open and close the main menu, user menu.
 
     function burgerMenuClickOpen(e) {
         e.stopPropagation();

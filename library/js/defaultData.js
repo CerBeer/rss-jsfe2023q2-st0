@@ -1,3 +1,5 @@
+// Creation and filling of service data structures.
+// Create empty data structures used in page logic.
 
 const arrayOfBooks = [
     {id: '01', season: 'Winter', name: 'The Book Eaters', author: 'Sunyi Dean'},
