@@ -1,0 +1,136 @@
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 600px;
+    height: 650px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #057c91;
+}
+
+.music-payer-cover {
+    width: 100%;
+    height: 560px;
+}
+
+#cover {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+.music-payer-control-box {
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(90deg, rgb(145, 145, 145), rgb(220, 220, 220));
+}
+
+.music-payer-control-box-buttons-play-pause {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/><path d="M15.4137 10.941C16.1954 11.4026 16.1954 12.5974 15.4137 13.059L10.6935 15.8458C9.93371 16.2944 9 15.7105 9 14.7868L9 9.21316C9 8.28947 9.93371 7.70561 10.6935 8.15419L15.4137 10.941Z" stroke="white" stroke-width="1.5"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 65px;
+    height: 65px;
+    margin: auto;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-radius: 50%;
+}
+
+.music-payer-control-box-buttons-play-pause:hover {
+    border: 1px solid transparent;
+}
+
+.music-payer-control-box-buttons-prev {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12Z" stroke="white" stroke-width="1.5"/><path d="M11 8.07141L7.77844 10.3725C6.66174 11.1702 6.66174 12.8298 7.77844 13.6274L11 15.9286M16.5 15.0568V8.94317C16.5 8.1298 15.5806 7.65667 14.9188 8.12944L10.6392 11.1862C10.0809 11.5851 10.0809 12.4149 10.6392 12.8137L14.9188 15.8705C15.5806 16.3433 16.5 15.8702 16.5 15.0568Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-radius: 50%;
+}
+
+.music-payer-control-box-buttons-prev:hover {
+    border: 1px solid transparent;
+}
+
+.music-payer-control-box-buttons-next {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5"/><path d="M13 8.07141L16.2215 10.3725C17.3382 11.1702 17.3382 12.8298 16.2215 13.6274L13 15.9286M7.5 15.0568V8.94317C7.5 8.1298 8.41937 7.65667 9.08124 8.12944L13.3608 11.1862C13.9191 11.5851 13.9191 12.4149 13.3608 12.8137L9.08124 15.8705C8.41937 16.3433 7.5 15.8702 7.5 15.0568Z" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-radius: 50%;
+}
+
+.music-payer-control-box-buttons-next:hover {
+    border: 1px solid transparent;
+}
+
+.music-payer-control-box-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#info-artist {
+    color: #d14cf9;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-shadow: 0 0 15px white;
+}
+
+#info-title {
+    color: white;
+    font-size: 1rem;
+}
+
+.music-payer-control-box-progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#progressBar {
+    appearance: none;
+    height: 5px;
+    background: white;
+    width: 57.5%;
+    outline: none;
+    border-radius: 30px;
+}
+
+.music-payer-control-box-progress-bar-time {
+    grid-area: five;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#currentTime {
+    font-size: 1rem;
+    color: white;
+}
+
+#durationTime {
+    font-size: 1rem;
+    color: #f94c57;
+    text-shadow: 0 0 15px white;
+}

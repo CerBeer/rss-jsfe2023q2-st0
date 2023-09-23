@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./player.css">
+    <link rel="stylesheet" href="./media.css">
+</head>
+
+<body>
+    <div class="outer-box">
+        <img src="./assets/img/rock.png" alt="background" id="background" />
+    </div>
+    <div class="music-player">
+        <audio src="./assets/audio/rock.mp3" id="track"></audio>
+        <div class="music-payer-cover">
+            <img src="./assets/img/rock.png" alt="cover" id="cover" />
+        </div>
+        <div class="music-payer-control-box">
+            <div class="music-payer-control-box-buttons">
+                <div class="music-payer-control-box-buttons-prev">
+                </div>
+                <div class="music-payer-control-box-buttons-play-pause">
+                </div>
+                <div class="music-payer-control-box-buttons-next">
+                </div>
+            </div>
+            <div class="music-payer-control-box-info">
+                <div id="info-artist">MokkaMusic</div>
+                <div id="info-title">Sport Trailer Rock</div>
+            </div>
+            <div class="music-payer-control-box-progress-bar">
+                <input type="range" id="progressBar" min="0" max="" value="0" />
+                <div class="music-payer-control-box-progress-bar-time">
+                  <div id="currentTime"></div>
+                  <div id="durationTime"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
+
