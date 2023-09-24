@@ -119,6 +119,7 @@
     width: 100%;
     outline: none;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 #progressBar::-webkit-slider-thumb {
@@ -189,6 +190,7 @@
     background: white;
     outline: none;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 #volumeBar::-webkit-slider-thumb {

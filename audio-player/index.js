@@ -14,26 +14,48 @@ const prev = document.getElementById("prev");
 const play_pause = document.getElementById("play-pause");
 const next = document.getElementById("next");
 
-tracks = [
+const tracks = [
     "./assets/audio/rock.mp3",
     "./assets/audio/EnergeticRock.mp3",
     "./assets/audio/AnotherLevel.mp3"
 ];
-covers = [
+const covers = [
     "./assets/audio/images/rock.png",
     "./assets/audio/images/EnergeticRock.png",
     "./assets/audio/images/AnotherLevel.png"
 ];
-infoArtists = [
+const infoArtists = [
     "MokkaMusic",
     "MokkaMusic",
     "CRMNL"
 ];
-infoTitles = [
+const infoTitles = [
     "(No Copyright Music) Sport Trailer Rock",
     "(No Copyright Music) Energetic Rock",
     "Another Level"
 ];
+
+let playNow = false;
+let trackIndex = 0;
+
+let muteNow = false;
+volumeBar.value = 2;
+
+function localStorage_init() {
+    let keys = Object.keys(localStorage);
+    if (keys.indexOf('trackIndex') < 0) localStorage.setItem('trackIndex', trackIndex);
+    if (keys.indexOf('volume') < 0) localStorage.setItem('volume', volumeBar.value);
+}
+
+function localStorage_saveVars() {
+    localStorage.setItem('trackIndex', trackIndex);
+    localStorage.setItem('volume', volumeBar.value);
+}
+
+function localStorage_readVars() {
+    trackIndex = localStorage.trackIndex;
+    volumeBar.value = localStorage.volume;
+}
 
 function setState() {
     track.src = tracks[trackIndex];
@@ -80,6 +102,7 @@ function setNext() {
         trackIndex = 0;
     }
     playNow = true;
+    localStorage_saveVars();
     setState();
 }
 
@@ -89,6 +112,7 @@ function setPrev() {
         trackIndex = tracks.length - 1;
     }
     playNow = true;
+    localStorage_saveVars();
     setState();
 }
 
@@ -116,6 +140,7 @@ function changeProgressBar() {
 function changeVolumeBar() {
     track.volume = volumeBar.value / 100;
     muteNow = (volumeBar.value < 0.1);
+    localStorage_saveVars();
     setVolumeState();
 }
 
@@ -124,12 +149,6 @@ function muteVolume() {
     if ((!muteNow) && (volumeBar.value < 0.1)) volumeBar.value = 1;
     setVolumeState();
 }
-
-let playNow = false;
-let trackIndex = 0;
-
-let muteNow = false;
-volumeBar.value = 2;
 
 play_pause.addEventListener("click", playPause);
 next.addEventListener("click", setNext);
@@ -142,5 +161,8 @@ volumeIcon.addEventListener("click", muteVolume);
 progressBar.addEventListener("click", changeProgressBar);
 
 setInterval(progressValue, 500);
+
+localStorage_init();
+localStorage_readVars();
 
 setState();
