@@ -30,6 +30,12 @@ body {
     background: #FFF;
 }
 
+a {
+    color: #015255;
+    text-decoration: none;  
+    transition: color 0.2s;
+}
+
 div {
     display: flex;
     padding: 0;
