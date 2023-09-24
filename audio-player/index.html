@@ -12,25 +12,28 @@
 
 <body>
     <div class="outer-box">
-        <img src="./assets/img/rock.png" alt="background" id="background" />
+        <img src="./assets/audio/images/rock.png" alt="background" id="background" />
     </div>
     <div class="music-player">
         <audio src="./assets/audio/rock.mp3" id="track"></audio>
         <div class="music-payer-cover">
-            <img src="./assets/img/rock.png" alt="cover" id="cover" />
+            <img src="./assets/audio/images/rock.png" alt="cover" id="cover" />
         </div>
         <div class="music-payer-control-box-progress-bar">
             <div id="durationTime" class="music-payer-control-box-progress-bar-time">2:32</div>
             <input type="range" id="progressBar" min="0" max="" value="0" />
-            <div id="currentTime" class="music-payer-control-box-progress-bar-time">0:00</div>
+            <div id="currentTimeLine">
+                <div id="currentTime" class="music-payer-control-box-progress-bar-time">0:00</div>
+                <div id="volume">vol. <input type="range" id="volumeBar" min="0" max="100" value="10" /></div>
+            </div>
         </div>
         <div class="music-payer-control-box">
             <div class="music-payer-control-box-buttons">
-                <div class="music-payer-control-box-buttons-prev">
+                <div id="prev" class="music-payer-control-box-buttons-prev">
                 </div>
-                <div class="music-payer-control-box-buttons-play-pause">
+                <div id="play-pause" class="music-payer-control-box-buttons-play-pause">
                 </div>
-                <div class="music-payer-control-box-buttons-next">
+                <div id="next" class="music-payer-control-box-buttons-next">
                 </div>
             </div>
             <div class="music-payer-control-box-info">
