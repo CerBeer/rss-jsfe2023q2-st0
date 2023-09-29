@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./imgalery.css">
+    <link rel="stylesheet" href="./footer.css">
+</head>
+
+<body onload="searchImage()">
+    <div id="outer-box">
+        <div id="image-gallery">
+            <div id="image-gallery-top">
+                <header id="image-gallery-header">
+                    <div id="image-gallery-header-title">
+                        <img src="./assets/svg/camera.svg" alt="camera" id="image-gallery-header-camera">
+                        <h2>Image galery</h2>
+                    </div>
+                    <div id="image-gallery-header-search-box">
+                        <input id="image-gallery-header-search-box-input" type="text" placeholder="Search..." autofocus autocomplete="off">
+                        <img src="./assets/svg/clear.svg" alt="clear" id="image-gallery-header-search-box-clear">
+                        <img src="./assets/svg/search.svg" alt="search" id="image-gallery-header-search-box-lens">
+                    </div>
+                </header>
+                <div id="image-gallery-top-hr"></div>
+            </div>
+            <main id="image-gallery-main">
+                <div id="image-gallery-main-container">
+                </div>
+            </main>
+            <footer class="footer-rss">
+                <div class="footer-left">2023</div>
+                <div class="footer-school-center">
+                    <a href="https://rs.school/js-stage0/" target="-blank" class="footer-rsschool">
+                        <img src="./assets/svg/rs_school_js.svg" alt="RS School">
+                    </a>
+                </div>
+                <div class="footer-right"><a href="https://github.com/CerBeer" target="-blank" class="link-on-black">CerBeer</a></div>
+            </footer>
+        </div>
+    </div>
+    <div id="body-margin-bottom"></div>
+    <script src="./index.js"></script>
+    <!-- <script src="./selfesteem.js"></script> -->
+</body>
+</html>
+
