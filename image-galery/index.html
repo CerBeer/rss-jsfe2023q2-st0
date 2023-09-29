@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./footer.css">
 </head>
 
-<body>
+<body onload="searchImage()">
     <div id="outer-box">
         <div id="image-gallery">
             <div id="image-gallery-top">
@@ -21,7 +21,7 @@
                         <h2>Image galery</h2>
                     </div>
                     <div id="image-gallery-header-search-box">
-                        <input id="image-gallery-header-search-box-input" type="text" placeholder="Search...">
+                        <input id="image-gallery-header-search-box-input" type="text" placeholder="Search..." autofocus autocomplete="off">
                         <img src="./assets/svg/clear.svg" alt="clear" id="image-gallery-header-search-box-clear">
                         <img src="./assets/svg/search.svg" alt="search" id="image-gallery-header-search-box-lens">
                     </div>
@@ -29,7 +29,7 @@
                 <div id="image-gallery-top-hr"></div>
             </div>
             <main id="image-gallery-main">
-                <div class="image-gallery-main-container">
+                <div id="image-gallery-main-container">
                 </div>
             </main>
             <footer class="footer-rss">
@@ -43,7 +43,9 @@
             </footer>
         </div>
     </div>
+    <div id="body-margin-bottom"></div>
     <script src="./index.js"></script>
+    <!-- <script src="./selfesteem.js"></script> -->
 </body>
 </html>
 
