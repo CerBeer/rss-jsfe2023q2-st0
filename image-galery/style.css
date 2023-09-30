@@ -7,60 +7,47 @@
     font-style: normal;
     font-weight: 400;
     src: url('./assets/fonts/forum-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  
-  /* Basic */
-  * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-  }
-  
-  html {
-      scroll-behavior: smooth; 
-  }
-  
-  body {
-      /* min-height: 100vh; */
-      /* margin: 0 auto; */
-      /* padding: 0; */
-      /* display: flex; */
-      /* flex-direction: column; */
-      /* justify-content: space-between; */
-      font-family: 'Forum', normal;
-      background-color: rgb(24, 24, 24);
-      color: #a9a9a9;
-      /* overflow-x: hidden; */
-  }
-  
-  a {
-      color: #a0a0a0;
-      text-decoration: none;
-      transition: color 0.2s;
-  }
-  
-  div {
-      display: flex;
-      padding: 0;
-      margin: 0;
-  }
-  
-  hr {
-      padding: 0;
-      margin: 0;
-  }
-  
-  h2 {
-      font-size: 2rem;
-  }
-  
-  #outer-box {
-      /* width: 100vw; */
-      /* height: 100vh; */
-      /* margin: 0; */
-      /* padding: 0; */
-      /* display: flex; */
-      /* justify-content: center; */
-      /* align-items: center; */
-  }
-  
+}
+
+/* Basic */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Forum', normal;
+    background-color: rgb(24, 24, 24);
+    color: #a9a9a9;
+}
+
+a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 0;
+}
