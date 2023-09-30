@@ -6,87 +6,60 @@ const topHr = document.querySelector('.image-gallery-top-hr-anno');
 
 const API_KEY = "zMp_vKYIaLpsS44S2nU7oUPgYO1HicPI1zgtQIZo5sk";
 
+const settingsAPI = {
+    thecatapi: {
+        getURL: function () {return `https://api.thecatapi.com/v1/images/search?limit=10`;},
+        getANS: function (data) {return data;},
+        getSRC: function (data) {return data.url;},
+        getALT: function (data) {return data.id;},
+        setVisibleAnn: function (flagLength) {if (flagLength === 0) topHr.classList.add('none'); else topHr.classList.remove('none');}
+    },
+    thedogapi: {
+        getURL: function () {return `https://api.thedogapi.com/v1/images/search?limit=10`;},
+        getANS: function (data) {return data;},
+        getSRC: function (data) {return data.url;},
+        getALT: function (data) {return data.id;},
+        setVisibleAnn: function (flagLength) {if (flagLength === 0) topHr.classList.add('none'); else topHr.classList.remove('none');}
+    },
+    unsplash: {
+        getURL: function (query) {return `https://api.unsplash.com/search/photos?query=${query}&per_page=12&tag_mode=all&orientation=landscape&client_id=${API_KEY}`;},
+        getANS: function (data) {return data.results;},
+        getSRC: function (data) {return data.urls.regular;},
+        getALT: function (data) {return data.alt_description;},
+        setVisibleAnn: function (flagLength) {if (flagLength === 0) topHr.classList.remove('none'); else topHr.classList.add('none');}
+    }
+};
+
 function searchImage() {
 
     image_gallery_main_container.innerHTML = '';
 
     let query = searchBoxInput.value;
-    console.log('query', query);
-    if (query.length == 0) {
-        getTenFreeCats();
-        getTenFreeDogs();
+    if (query.length === 0) {
+        fetchQuery(settingsAPI.thecatapi, query);
+        fetchQuery(settingsAPI.thedogapi, query);
     } else {
-        getUnsplashImages(query);
+        fetchQuery(settingsAPI.unsplash, query);
     }
 }
 
-function getTenFreeCats() {
-    const url = `https://api.thecatapi.com/v1/images/search?limit=10`;
-    fetchQuery(url);
-}
+async function fetchQuery(api, query) {
 
-function getTenFreeDogs() {
-    const url = `https://api.thedogapi.com/v1/images/search?limit=10`;
-    fetchQuery(url);
-}
-
-async function fetchQuery(url) {
-
-    const response = await fetch(url);
+    const response = await fetch(api.getURL(query));
     const data = await response.json();
-    console.log('data', data);
-
-    if (data.length > 0) {
-
-    }
-
-    addImages(data);
-}
-
-function addImages(results) {
-
-    results.map(result => {
-        const imageBox = document.createElement('div');
-        imageBox.classList.add('image-gallery-main-container-image');
-
-        const imageBoxIn = document.createElement('div');
-        imageBoxIn.classList.add('image-gallery-main-containerIn-image');
-
-        const image = document.createElement('img');
-        image.classList.add('image-gallery-main-container-image-image');
-        image.src = result.url;
-        image.alt = result.id;
-
-        imageBoxIn.appendChild(image);
-        imageBox.appendChild(imageBoxIn);
-        image_gallery_main_container.appendChild(imageBox);
-    });
-
-}
-
-function getUnsplashImages(query) {
-    url = `https://api.unsplash.com/search/photos?query=${query}&per_page=12&tag_mode=all&orientation=landscape&client_id=${API_KEY}`;
-    fetchUnsplashQuery(url);
-}
-
-async function fetchUnsplashQuery(url) {
-
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log('data', data);
-    const answer = data.results;
+    const answer = api.getANS(data);
 
     if (answer.length > 0) {
-        topHr.classList.add('none');
-        addUnsplashImages(answer);
+        api.setVisibleAnn(query.length);
+        addImages(answer, api);
     } else {
-        topHr.classList.remove('none');
-        getTenFreeCats();
-        getTenFreeDogs();
+        fetchQuery(settingsAPI.thecatapi, query);
+        fetchQuery(settingsAPI.thedogapi, query);
     }
+
 }
 
-function addUnsplashImages(results) {
+function addImages(results, api) {
 
     results.map(result => {
         const imageBox = document.createElement('div');
@@ -97,19 +70,17 @@ function addUnsplashImages(results) {
 
         const image = document.createElement('img');
         image.classList.add('image-gallery-main-container-image-image');
-        image.src = result.urls.regular;
-        image.alt = result.alt_description;
+        image.src = api.getSRC(result);
+        image.alt = api.getALT(result);
 
         imageBoxIn.appendChild(image);
         imageBox.appendChild(imageBoxIn);
         image_gallery_main_container.appendChild(imageBox);
-
     });
 
 }
 
 function modal_windows_OpenClose(e) {
-    console.log(e);
     if (modalElement !== undefined) {
         modalElement.classList.remove('modal-windows-window-image');
         modalElement = undefined;
