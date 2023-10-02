@@ -15,3 +15,5 @@ Projects:
 [audio-player](https://rolling-scopes-school.github.io/cerbeer-JSFEPRESCHOOL2023Q2/audio-player/)
 
 [image-galery](https://rolling-scopes-school.github.io/cerbeer-JSFEPRESCHOOL2023Q2/image-galery/)
+
+[random-game](https://rolling-scopes-school.github.io/cerbeer-JSFEPRESCHOOL2023Q2/random-game/)
