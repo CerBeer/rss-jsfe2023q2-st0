@@ -1,0 +1,62 @@
+/* General styles for the entire page. */
+
+/* forum-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Forum';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/forum-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Basic */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Forum', normal;
+    color: #242424;
+    background: #FFF;
+}
+
+a {
+    color: #015255;
+    text-decoration: none;  
+    transition: color 0.2s;
+}
+
+div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.outer-box {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#background {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  filter: blur(6px);
+}
