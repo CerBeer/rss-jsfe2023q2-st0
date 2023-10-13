@@ -6,7 +6,7 @@
     font-family: 'Forum';
     font-style: normal;
     font-weight: 400;
-    src: url('./assets/fonts/forum-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('../assets/fonts/forum-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Basic */
@@ -22,8 +22,8 @@ html {
 
 body {
     font-family: 'Forum', normal;
-    background-color: rgb(24, 24, 24);
-    color: #a9a9a9;
+    background-color: #ffffff;
+    color: #475548;
 }
 
 a {
@@ -48,6 +48,8 @@ h2 {
 }
 
 #outer-box {
-    margin: 0;
+    width: 700px;
+    height: 850px;
+    margin: auto;
     padding: 0;
 }
