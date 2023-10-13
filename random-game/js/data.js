@@ -1,5 +1,6 @@
 
 const animals = [
+    './assets/svg/no_image.svg',
     './assets/svg/animal/zebra.svg',
     './assets/svg/animal/bear.svg',
     './assets/svg/animal/boar.svg',
@@ -19,6 +20,7 @@ const animals = [
 ];
 
 const fruits = [
+    './assets/svg/no_image.svg',
     './assets/svg/food/strawberry.svg',
     './assets/svg/food/watermelon.svg',
     './assets/svg/food/apple.svg',
@@ -37,12 +39,15 @@ const fruits = [
     './assets/svg/food/pear.svg',
 ]
 
+const noImage = './assets/svg/no_image.svg';
+
 const game_states = {
     stop: 'stop',
     start: 'start',
     game: 'game',
     pause: 'pause',
-    end: 'end'
+    end: 'end',
+    recast: 'recast'
 }
 
 const figure_states = {
@@ -52,7 +57,8 @@ const figure_states = {
 }
 
 const game_sounds = {
-    change: new Audio('./assets/sounds/zvuk18.mp3')
+    change: new Audio('./assets/sounds/change.mp3'),
+    boom: new Audio('./assets/sounds/boom.mp3')
 }
 
 const game_box_main_gameboard_board = document.querySelector('#game-box-main-gameboard-board');
@@ -74,3 +80,4 @@ let game_state, game_numberFigures_current;
 let game_blinkspeed_current, game_blinkspeed_timeout, game_gameboard_autochange;
 let game_sound_enabled, game_sound_volume;
 let game_score_total, game_score_level, game_time_left, game_time_full;
+let board_state_calc, game_states_recast;
