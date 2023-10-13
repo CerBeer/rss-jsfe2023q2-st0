@@ -1,0 +1,309 @@
+
+/* Library card */
+
+.library-card {
+    display: flex;
+    padding-bottom: 41px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+.library-card-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0 20px 0 20px;
+}
+
+.library-card-card-l {
+    margin: 0 20px 0 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:left;
+    width: 600px;
+    height: 453px;
+    flex-shrink: 0;
+}
+
+.library-card-card-l-title {
+    margin: 0 auto;
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    margin-bottom: 30px;    
+}
+
+.library-card-card-l-form {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 17px 17px 15px 17px;
+    border: 3px solid #BB945F;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.library-card-card-l-form-form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 20px;
+    background-color: #BB945F;
+}
+
+.library-card-card-l-form-form-title {
+    color: #000;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+    margin-bottom: 20px;
+}
+
+.library-card-card-l-form-form-input {
+    width: 520px;
+    height: 66px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    border: 0px solid #BB945F;
+    border-radius: 10px;
+    background: #FFF;
+    color: #000;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+.library-card-card-l-check-cardsprofile{
+    margin-top: -5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-top: -7px;
+    gap: 20px;
+}
+
+.library-card-card-l-form-form-input:hover {
+    cursor: text;
+}
+
+.library-card-card-l-form-form-button {
+    margin: 0 auto;
+    height: 44px;
+    margin-bottom: 12px;
+}
+
+.library-card-card-l-form-form-button-button {
+    padding: 10px 39px;
+}
+
+.library-card-card-l-form-form-button-label {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.library-card-card-login-username {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+}
+
+.library-card-card-login-cardnumber {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+}
+
+.library-card-card-l-cardsprofile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.library-card-card-l-cardsprofile-column-header {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+}
+
+.library-card-card-l-cardsprofile-column {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 1px;
+}
+
+.library-card-card-r {
+    margin: 0 20px 0 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:right;
+}
+
+.library-card-card-r-title {
+    margin:0 0 0 auto;
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.library-card-card-r-descriptions {
+    margin: 35px auto 35px 0;
+    width: 456px;
+    color: #000;
+    text-align: right;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 0.4px;
+}
+
+.library-card-card-r-buttons {
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:right;
+    gap: 20px;
+}
+
+button.library-card-card-r-signup-button {
+    display: flex;
+    width: 75px;
+    height: 30px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.library-card-card-r-signup-button-label {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+button.library-card-card-r-login-button {
+    display: flex;
+    width: 75px;
+    height: 30px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.library-card-card-r-login-button-label {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+
+button.library-card-card-r-profile-button {
+    display: flex;
+    width: 75px;
+    height: 30px;
+    padding: 10px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.library-card-card-r-login-profile-label {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1260px) {
+    
+    .library-card {
+        padding-bottom: 20px
+    }
+
+    .library-card-card-l {
+        margin: 0 auto;
+    }
+
+    .library-card-card-r {
+        margin: 20px auto;
+        align-items: center;
+    }
+
+    .library-card-card-r-title {
+        margin: 0 auto;
+    }
+
+    .library-card-card-r-descriptions {
+        margin: 40px 100px;
+        width: auto;
+        text-align: center;
+    }
+}

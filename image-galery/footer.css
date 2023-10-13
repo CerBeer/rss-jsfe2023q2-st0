@@ -1,0 +1,43 @@
+
+/* Footer */
+.footer-rss {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px white;
+}
+
+.footer-left {
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    color: #aaaaaa;
+}
+
+.footer-school-center {
+    box-shadow: 0 0 15px white;
+    background-color: grey;
+}
+
+.footer-rsschool {
+    justify-self: end;
+    height: 32px;
+    width: 86px;
+}
+
+.footer-right {
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    color: white;
+}
