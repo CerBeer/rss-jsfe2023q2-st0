@@ -24,6 +24,11 @@ body {
     font-family: 'Forum', normal;
     background-color: #ffffff;
     color: #475548;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
 }
 
 a {
@@ -48,8 +53,10 @@ h2 {
 }
 
 #outer-box {
+    display: flex;
     width: 700px;
-    height: 850px;
-    margin: auto;
+    /* height: 840px; */
+    margin: 0 auto;
     padding: 0;
+    justify-content: center;
 }

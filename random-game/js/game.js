@@ -1,6 +1,4 @@
 
-buttons_start.addEventListener('mousedown', game_start);
-
 buttons_blinkspeed_plus.addEventListener('mousedown', game_blinkspeed_plus);
 buttons_blinkspeed_minus.addEventListener('mousedown', game_blinkspeed_minus);
 
@@ -17,35 +15,58 @@ function game_init(e) {
 
     game_blinkspeed_set();
     setTimeout(game_gameboard_autochange_figure, game_blinkspeed_timeout);
+
+    game_modalWindow_show();
 }
 
 function game_init_states() {
+    
+    //number of different figures
     game_numberFigures_current = 6;
+    //current game state
     game_state = game_states.stop;
     game_gameboard_autochange = true;
     game_blinkspeed_current = 0;
 
+    //total points
     game_score_total = 0;
+    //total points in current level
     game_score_level = 0;
-    game_score_level_full = 100;
+    //total points per level
+    game_score_level_full = 1000;
+    //score multiplier if more than three digits are broken
     game_score_multiplier = 1.5;
+    //score multiplication factor if bursts more than once per step
     game_score_multiplier_next = 2;
+    //current score multiplier
     game_score_multiplier_current = 1;
-    game_score_figure = 2;
+    //cost of one burst figure
+    game_score_figure = 50;
 
+    //full game time
     game_time_full = 5 * 60;
+    //game time left
     game_time_left = game_time_full;
+    //reduction of time per piece exchange
+    //increases by 1 when moving to the next level
     game_time_step = 5;
+    //time return for each broken piece
+    game_time_figure = 1;
 
+    //current game level
     game_level = 1;
-    game_level_max = 11;
+    //the maximum level of the game that must be completed to win
+    game_level_max = 5;
+    //the number of different new shapes added when moving to a new level
     game_level_step_addFigure = 2;
 
+    //the game state is recalculated during which user actions are blocked
     // game_states_recast
     game_states_recast = false;
 }
 
 function game_init_board_state() {
+    board_state = [];
     let game_figureCurrent = 1;
     for (let i = 0; i < game_pool_height; i +=1 ) {
         let current_row = [];
@@ -109,6 +130,22 @@ function game_create_board() {
 
 }
 
+function game_update_board_view() {
+
+    for (let i = 0; i < game_pool_height; i +=1 ) {
+        for (let l = 0; l < game_pool_width; l +=1 ) {
+            const numberPlace = game_numberPlaceByCoordinates([i, l]);
+            const image = document.querySelector('[data-placeimg = "' + numberPlace + '"]');
+            image.classList.remove('game-box-main-gameboard-image-image-80');
+            image.dataset.placefig = board_state[i][l];
+            image.src = fruits[board_state[i][l]];
+        }
+    }
+    
+    setTimeout(game_rise_allfigure, game_image_update_timeout);
+
+}
+
 function game_rise_allfigure() {
     const classModal = document.querySelectorAll('.game-box-main-gameboard-image-image');
     for (let el of classModal) {
@@ -146,14 +183,8 @@ function game_gameboard_autochange_figure() {
     }
 }
 
-function game_start(e) {
-
-    console.log('Game will start');
-    game_state = game_states.game;
-    game_timer = setInterval(game_play, 1000);
-}
-
 function game_play(e) {
+    if (game_state !== game_states.game) return;
     //console.log(game_time_left);
     game_time_left -= 1;
     if (game_time_left <= 0) {
@@ -286,11 +317,16 @@ function game_score_calculate(count_figure) {
         game_level += 1;
         game_score_level -= game_score_level_full;
         game_numberFigures_current += game_level_step_addFigure;
+        game_time_step +=1;
     }
 
+    game_time_left += count_figure * game_time_figure;
+    if (game_time_left > game_time_full) game_time_left = game_time_full;
+
+    // console.log(game_level, game_level_max);
     if (game_level > game_level_max) {
-        game_state = game_states.win;
-        console.log('You WIN!');
+        game_state = game_states.won;
+        console.log('You WON!');
     }
 }
 

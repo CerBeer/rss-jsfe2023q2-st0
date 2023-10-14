@@ -43,11 +43,10 @@ const noImage = './assets/svg/no_image.svg';
 
 const game_states = {
     stop: 'stop',
-    start: 'start',
     game: 'game',
     pause: 'pause',
     end: 'end',
-    win: 'win'
+    won: 'won'
 }
 
 const figure_states = {
@@ -64,26 +63,27 @@ const game_sounds = {
 }
 
 const game_box_main_gameboard_board = document.querySelector('#game-box-main-gameboard-board');
-const buttons_start = document.querySelector('#game-box-top-hr-center-button-start');
 const buttons_blinkspeed_plus = document.querySelector('#game-box-top-hr-speed-plus');
 const buttons_blinkspeed_minus = document.querySelector('#game-box-top-hr-speed-minus');
 const buttons_blinkspeed_counter = document.querySelector('#game-box-top-hr-speed-counter');
 
 const game_numberChangesButtons = [];
+//total different shapes available
 const game_numberFigures = fruits.length;
 const game_pool_width = 6;
 const game_pool_height = 8;
 const game_blinkspeed_max = 4;
 const game_blinkspeed_min = 0;
 const game_blinkspeed_timeout_step = 500;
+//pause between changes in the visual representation of figures so that the previous animation has time to work out
 const game_image_update_timeout = 400;
 
-const board_state = [];
+let board_state = [];
 let game_timer;
 let game_state, game_numberFigures_current;
 let game_blinkspeed_current, game_blinkspeed_timeout, game_gameboard_autochange;
 let game_sound_enabled, game_sound_volume;
 let board_state_calc, game_states_recast;
 let game_score_total, game_score_level, game_score_figure, game_score_multiplier, game_score_multiplier_next, game_score_multiplier_current;
-let game_time_left, game_time_full, game_time_step;
+let game_time_left, game_time_full, game_time_step, game_time_figure;
 let game_level, game_level_max, game_level_step_countFigure;

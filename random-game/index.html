@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/game.css">
     <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/modal.css">
 </head>
 
 <body onload="init()">
@@ -16,10 +17,10 @@
         <div id="game-box">
             <div id="game-box-top">
                 <header id="game-box-header">
-                    <div id="game-box-header-title">
+                    <div class="game-box-header-title">
                         Random game
                     </div>
-                    <div id="game-box-header-title-game">
+                    <div class="game-box-header-title-game">
                         <h2>Match-three</h2>
                     </div>
                 </header>
@@ -32,13 +33,19 @@
                         </div>
                     </div>
                     <div id='game-box-top-hr-center'>
-                        <div id="game-box-top-hr-center-button-start">
-                            Click to start
+                        <div id="game-box-top-hr-level-value">
+                            Level: 1
+                        </div>
+                        <div id="game-box-top-hr-totalscore-value">
+                            Total score: 0
                         </div>
                     </div>
                     <div id='game-box-top-hr-right'>
-                        speed:
-                        <div id='game-box-top-hr-speed'>
+                        <div id="game-box-top-hr-button-pause">
+                            Pause
+                        </div>
+                        <div class='game-box-top-hr-speed display-none'>
+                            speed:
                             <div id='game-box-top-hr-speed-minus' class = 'game-box-top-hr-speed-button'>
                                 ^
                             </div>
@@ -79,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </main>
+           </main>
             <footer class="footer-rss">
                 <div class="footer-left">2023</div>
                 <div class="footer-school-center">
@@ -90,6 +97,46 @@
                 <div class="footer-right"><a href="https://github.com/CerBeer" target="-blank" class="link-on-black">CerBeer</a></div>
             </footer>
         </div>
+        <div class='game-box-modal-window'>
+            <div class='game-box-modal-window-top'>
+                <div class="game-box-modal-window-top-header">
+                    <div class="game-box-modal-window-top-header-title">
+                        Match-three
+                    </div>
+                </div>
+            </div>
+            <div id="game-box-modal-window-center">
+                <div id="game-box-button-new" class='game-box-button'>
+                    New game
+                </div>
+                <div id="game-box-button-resume" class='game-box-button'>
+                    Resume game
+                </div>
+            </div>
+            <div id="game-box-modal-window-bottom">
+                <div class="game-box-modal-window-bottom-result">
+                    <div id="game-box-modal-window-bottom-result-title">YOU WON</div>
+                    <div id="game-box-modal-window-bottom-result-score">SCORE: 10000</div>
+                </div>
+                <div id="game-box-modal-window-bottom-best-title">
+                    Best games
+                </div>
+                <div id='game-box-modal-window-bottom-best-list'>
+                    <ol id='game-box-modal-window-bottom-best-list-list'>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                        <li> none</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="body-margin-bottom"></div>
     <script src="./js/utils.js"></script>
@@ -97,6 +144,7 @@
     <script src="./js/data.js"></script>
     <script src="./js/sound.js"></script>
     <script src="./js/dashboard.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="./js/game.js"></script>
     <!-- <script src="./selfesteem.js"></script> -->
 </body>
