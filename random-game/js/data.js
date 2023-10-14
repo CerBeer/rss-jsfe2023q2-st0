@@ -58,7 +58,9 @@ const figure_states = {
 
 const game_sounds = {
     change: new Audio('./assets/sounds/change.mp3'),
-    boom: new Audio('./assets/sounds/boom.mp3')
+    boom: new Audio('./assets/sounds/boom.mp3'),
+    fall: new Audio('./assets/sounds/fall.mp3'),
+    newup: new Audio('./assets/sounds/newup.mp3')
 }
 
 const game_box_main_gameboard_board = document.querySelector('#game-box-main-gameboard-board');
