@@ -8,7 +8,7 @@ function game_init(e) {
     // game_states_recast
     game_states_recast = true;
     game_sound_volume = 0.05;
-    game_sound_enabled = false;
+    game_sound_enabled = true;
     game_init_states();
     game_init_board_state();
     game_create_board();
@@ -24,11 +24,23 @@ function game_init_states() {
     game_state = game_states.stop;
     game_gameboard_autochange = true;
     game_blinkspeed_current = 0;
+
     game_score_total = 0;
     game_score_level = 0;
     game_score_level_full = 100;
+    game_score_multiplier = 1.5;
+    game_score_multiplier_next = 2;
+    game_score_multiplier_current = 1;
+    game_score_figure = 2;
+
     game_time_full = 5 * 60;
     game_time_left = game_time_full;
+    game_time_step = 5;
+
+    game_level = 1;
+    game_level_max = 11;
+    game_level_step_addFigure = 2;
+
     // game_states_recast
     game_states_recast = false;
 }
@@ -135,17 +147,32 @@ function game_gameboard_autochange_figure() {
 }
 
 function game_start(e) {
+
     console.log('Game will start');
+    game_state = game_states.game;
+    game_timer = setInterval(game_play, 1000);
+}
+
+function game_play(e) {
+    //console.log(game_time_left);
+    game_time_left -= 1;
+    if (game_time_left <= 0) {
+        console.log('Game OVER');
+        game_time_left = 0;
+        game_timer = clearTimeout(game_timer);
+    }
+    game_set_markers_state();
 }
 
 function game_click_change_button(e) {
     e.stopPropagation();
     let clickedNumber = Number(e.target.dataset.placebtn);
+    game_time_left -= game_time_step;
     game_change_place(clickedNumber);
 }
 
 function game_change_place(numberButton) {
-    console.log(game_states_recast);
+    // console.log(game_states_recast);
     if (game_states_recast) return;
     // game_states_recast
     game_states_recast = true;
@@ -187,25 +214,28 @@ function game_numberPlaceByCoordinates(place) {
 function game_change_figure(changedPlace) {
     
     const changedElement0 = document.querySelector('[data-placeimg = "' + changedPlace[0] + '"]');
-    const numFigure0 = changedElement0.dataset.placefig;
+    const numberItem0 = changedElement0.dataset.placefig;
     const changedElement1 = document.querySelector('[data-placeimg = "' + changedPlace[1] + '"]');
-    const numFigure1 = changedElement1.dataset.placefig;
+    const numberItem1 = changedElement1.dataset.placefig;
     
-    setTimeout(game_figure_change_start, 100, changedElement0, numFigure1);
-    setTimeout(game_figure_change_start, 100, changedElement1, numFigure0);
+    setTimeout(game_figure_change_start, 100, changedElement0, numberItem1, changedElement1, numberItem0);
 }
 
-function game_figure_change_start(changedElement, numberItem) {
-    changedElement.style.scale = 0;
-    setTimeout(game_figure_change_end, 500, changedElement, numberItem);
+function game_figure_change_start(changedElement0, numberItem0, changedElement1, numberItem1) {
+    changedElement0.style.scale = 0;
+    changedElement1.style.scale = 0;
     game_playSound(game_sounds.change);
+    setTimeout(game_figure_change_end, game_image_update_timeout, changedElement0, numberItem0, changedElement1, numberItem1);
 }
 
-function game_figure_change_end(changedElement, numberItem) {
-    changedElement.src = fruits[numberItem];
-    changedElement.style.scale = 0.8;
-    changedElement.dataset.placefig = numberItem;
-    setTimeout(game_check_gameboard, 200);
+function game_figure_change_end(changedElement0, numberItem0, changedElement1, numberItem1) {
+    changedElement0.src = fruits[numberItem0];
+    changedElement0.style.scale = 0.8;
+    changedElement0.dataset.placefig = numberItem0;
+    changedElement1.src = fruits[numberItem1];
+    changedElement1.style.scale = 0.8;
+    changedElement1.dataset.placefig = numberItem1;
+    setTimeout(game_check_gameboard, 100);
     // game_check_gameboard();
 }
 
@@ -223,11 +253,44 @@ function game_check_gameboard() {
     }
     all_with2 = game_check_gameboard_findAll_with2(placeWith2);
     if (all_with2.size > 0) {
+        game_score_calculate(all_with2.size);
         game_board_clear_place(all_with2);
         // console.log(all_with2);
     } else {
-        // game_states_recast
+        game_score_multiplier_current = 1;
         game_states_recast = false;
+    }
+}
+
+
+
+
+
+
+
+
+
+function game_score_calculate(count_figure) {
+ 
+    let score_add = 3 * game_score_figure;
+    let figure_all = count_figure - 3;
+    if (figure_all > 0) {
+        score_add += figure_all * game_score_figure * game_score_multiplier;
+    }
+    score_add = Math.floor(score_add * game_score_multiplier_current);
+    
+    game_score_total += score_add;
+    game_score_level += score_add;
+    // console.log(game_score_level);
+    if (game_score_level > game_score_level_full) {
+        game_level += 1;
+        game_score_level -= game_score_level_full;
+        game_numberFigures_current += game_level_step_addFigure;
+    }
+
+    if (game_level > game_level_max) {
+        game_state = game_states.win;
+        console.log('You WIN!');
     }
 }
 
@@ -316,7 +379,7 @@ function game_figures_delete_start(deletedPlaces) {
         deletedElement.style.scale = 4;
         deletedElements.push(deletedElement)
     }
-    setTimeout(game_figures_delete_end, 500, deletedElements);
+    setTimeout(game_figures_delete_end, game_image_update_timeout, deletedElements);
     game_playSound(game_sounds.boom);
 }
 
@@ -378,7 +441,11 @@ function game_check_gameboard_update(board_state_new) {
             }
         }
     }
-    setTimeout(game_check_figures_change_start, 500, places_changed);
+    if (places_changed.length > 0) {
+        setTimeout(game_check_figures_change_start, 100, places_changed);
+    } else {
+        setTimeout(game_check_gameboard_fill_empty_places, 100);
+    }
 }
 
 function game_check_figures_change_start(places_changed) {
@@ -388,7 +455,7 @@ function game_check_figures_change_start(places_changed) {
         changedElement.style.scale = 0.1;
         changedElements.push(changedElement);
     }
-    setTimeout(game_check_figures_change_end, 500, changedElements);
+    setTimeout(game_check_figures_change_end, game_image_update_timeout, changedElements);
     game_playSound(game_sounds.fall);
 }
 
@@ -400,16 +467,22 @@ function game_check_figures_change_end(changedElements) {
         changedElement.style.scale = 0.8;
         changedElement.dataset.placefig = figure;
     }
-    setTimeout(game_check_gameboard_fill_empty_places, 500);
+    setTimeout(game_check_gameboard_fill_empty_places, game_image_update_timeout);
 }
 
 function game_check_gameboard_fill_empty_places() {
     let places_changed = [];
+    let last_figure = 0;
     for (let i = 0; i < game_pool_height; i += 1) {
         for (let l = 0; l < game_pool_width; l += 1) {
             if (board_state[i][l] === 0) {
+                let new_figure = random99_range(1, game_numberFigures_current);
+                while (new_figure === last_figure) {
+                    new_figure = random99_range(1, game_numberFigures_current);
+                }
                 board_state[i][l] = random99_range(1, game_numberFigures_current);
                 places_changed.push(game_numberPlaceByCoordinates([i, l]));
+                last_figure = new_figure;
             }
         }
     }
@@ -435,5 +508,6 @@ function game_check_gameboard_fill_empty_places_end(changedElements) {
         changedElement.style.scale = 0.8;
         changedElement.dataset.placefig = figure;
     }
-    setTimeout(game_check_gameboard, 500);
+    game_score_multiplier_current = game_score_multiplier_next;
+    setTimeout(game_check_gameboard, 550);
 }

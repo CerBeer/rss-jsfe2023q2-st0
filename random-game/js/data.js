@@ -47,7 +47,7 @@ const game_states = {
     game: 'game',
     pause: 'pause',
     end: 'end',
-    recast: 'recast'
+    win: 'win'
 }
 
 const figure_states = {
@@ -76,10 +76,14 @@ const game_pool_height = 8;
 const game_blinkspeed_max = 4;
 const game_blinkspeed_min = 0;
 const game_blinkspeed_timeout_step = 500;
+const game_image_update_timeout = 400;
 
 const board_state = [];
+let game_timer;
 let game_state, game_numberFigures_current;
 let game_blinkspeed_current, game_blinkspeed_timeout, game_gameboard_autochange;
 let game_sound_enabled, game_sound_volume;
-let game_score_total, game_score_level, game_time_left, game_time_full;
 let board_state_calc, game_states_recast;
+let game_score_total, game_score_level, game_score_figure, game_score_multiplier, game_score_multiplier_next, game_score_multiplier_current;
+let game_time_left, game_time_full, game_time_step;
+let game_level, game_level_max, game_level_step_countFigure;
