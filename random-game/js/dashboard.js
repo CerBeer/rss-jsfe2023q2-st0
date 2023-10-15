@@ -16,8 +16,8 @@ function game_set_markers_state() {
     marker_scoreBar.style.height = `${scoreBar_style_height}%`;
     marker_scoreDigit.innerText = game_score_level;
 
-    marker_levelValue.innerText = `Level: ${game_level}`;
-    marker_totalScoreValue.innerText = `Total score: ${game_score_total}`;
+    marker_levelValue.innerText = `Level:\n${game_level}`;
+    marker_totalScoreValue.innerText = `Total score:\n${game_score_total}`;
 }
 
 function game_time_minutes(time_in_seconds) {

@@ -191,6 +191,8 @@ function game_play(e) {
         console.log('Game OVER');
         game_time_left = 0;
         game_timer = clearTimeout(game_timer);
+        game_state = game_states.end;
+        game_modalWindow_show();
     }
     game_set_markers_state();
 }
@@ -327,6 +329,9 @@ function game_score_calculate(count_figure) {
     if (game_level > game_level_max) {
         game_state = game_states.won;
         console.log('You WON!');
+        game_score_total += (game_time_left * 9);
+        game_set_markers_state();
+        game_modalWindow_show();
     }
 }
 
