@@ -78,9 +78,21 @@ function game_zeroPadding(numb, len) {
 
 function game_modalWindow_bestgame_show() {
     bestgames = localStorage_read_bestgames();
+    let best_need_add = true;
     let gamesList = '';
     for (let item of bestgames) {
-        gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item"><span class="best-item-dategame">${item[0]}</span> — <span class="best-item-score">${item[1]}</span></li>`;
+        let class_add = '';
+        if (best_need_add) {
+            if (game_state === game_states.won || game_state === game_states.end) {
+                if (item[1] === Math.floor(game_score_total)) {
+                    best_need_add = false;
+                    class_add = 'best-item-current';
+                }
+            }
+        }
+        gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item ${class_add}">
+            <span class="best-item-dategame">${item[0]}</span> — <span class="best-item-score">
+            ${item[1]}</span></li>`;
     }
     for (let i = bestgames.length; i < 10; i += 1) {
         gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item">none</li>`;
@@ -98,7 +110,7 @@ function game_modalWindow_hide() {
 
 function game_start(e) {
     game_timer = clearTimeout(game_timer);
-    console.log('Game will start');
+    // console.log('Game will start');
     game_init_states();
     game_modalWindow_hide();
     game_init_board_state();
@@ -108,13 +120,13 @@ function game_start(e) {
 }
 
 function game_pause(e) {
-    console.log('Game pause');
+    // console.log('Game pause');
     game_state = game_states.pause;
     game_modalWindow_show();
 }
 
 function game_resume(e) {
-    console.log('Game resume');
+    // console.log('Game resume');
     game_state = game_states.game
     game_states_recast = false;
     game_modalWindow_hide();

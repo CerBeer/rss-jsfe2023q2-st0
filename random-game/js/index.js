@@ -1,5 +1,5 @@
 function init() {
-    console.log('Init');
+    // console.log('Init');
     game_init();
 }
 
