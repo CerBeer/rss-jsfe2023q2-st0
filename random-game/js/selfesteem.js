@@ -1,6 +1,6 @@
 // #self-esteemate
 
-let self_esteem = "Self-assessment of work: 0 out of 60 points\n \
+let self_esteem = "Self-assessment of work: 60 out of 60 points\n \
 \n \
 1. Layout +10\n \
  + game interface implemented +5\n \
