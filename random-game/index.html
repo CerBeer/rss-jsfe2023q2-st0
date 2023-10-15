@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random game. Three in a row</title>
+    <title>Random game. Math-three</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./game.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/game.css">
+    <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/modal.css">
 </head>
 
 <body onload="init()">
@@ -16,20 +17,76 @@
         <div id="game-box">
             <div id="game-box-top">
                 <header id="game-box-header">
-                    <div id="game-box-header-title">
-                        <h2>Random game. Three in a row</h2>
+                    <div class="game-box-header-title">
+                        Random game
+                    </div>
+                    <div class="game-box-header-title-game">
+                        <h2>Match-three</h2>
                     </div>
                 </header>
                 <div id="game-box-top-hr">
-                    <div class = 'game-box-top-hr-anno none'>
-                        Start game
+                    <div id='game-box-top-hr-left'>
+                        <div id="game-box-top-hr-left-volumeBox">
+                            <div id="game-box-top-hr-left-volumeIcon" class="game-box-top-hr-left-volumeIcon-mute">
+                            </div>
+                            <input type="range" id="game-box-top-hr-left-volumeBar" min="0" max="100" value="10" />
+                        </div>
+                    </div>
+                    <div id='game-box-top-hr-center'>
+                        <div id="game-box-top-hr-level-value">
+                            Level: 1
+                        </div>
+                        <div id="game-box-top-hr-totalscore-value">
+                            Total score: 0
+                        </div>
+                    </div>
+                    <div id='game-box-top-hr-right'>
+                        <div id="game-box-top-hr-button-pause">
+                            Pause
+                        </div>
+                        <div class='game-box-top-hr-speed display-none'>
+                            speed:
+                            <div id='game-box-top-hr-speed-minus' class = 'game-box-top-hr-speed-button'>
+                                ^
+                            </div>
+                            <div id='game-box-top-hr-speed-counter'>
+                                1
+                            </div>
+                            <div id='game-box-top-hr-speed-plus' class = 'game-box-top-hr-speed-button'>
+                                ^
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <main id="game-box-main">
                 <div id="game-box-main-container">
+                    <div id="game-box-main-time">
+                        time left
+                        <div id="game-box-main-time-digit">
+                            5:00
+                        </div>
+                        <div id="game-box-main-time-box">
+                            <div id="game-box-main-time-volume">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="game-box-main-gameboard">
+                        <div id="game-box-main-gameboard-board">
+                        </div>
+                    </div>
+                    <div id="game-box-main-score">
+                        level score
+                        <div id="game-box-main-score-digit">
+                            0
+                        </div>
+                        <div id="game-box-main-score-box">
+                            <div id="game-box-main-score-volume">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </main>
+           </main>
             <footer class="footer-rss">
                 <div class="footer-left">2023</div>
                 <div class="footer-school-center">
@@ -40,11 +97,50 @@
                 <div class="footer-right"><a href="https://github.com/CerBeer" target="-blank" class="link-on-black">CerBeer</a></div>
             </footer>
         </div>
+        <div class='game-box-modal-window'>
+            <div class='game-box-modal-window-top'>
+                <div class="game-box-modal-window-top-header">
+                    <div class="game-box-modal-window-top-header-title">
+                        Match-three
+                    </div>
+                </div>
+                <div class="game-box-modal-window-top-header-description">
+                    Complete 5 levels in 3 minutes, collecting identical pictures three in a row or column.
+                </div>
+            </div>
+            <div id="game-box-modal-window-center">
+                <div id="game-box-button-new" class='game-box-button'>
+                    New game
+                </div>
+                <div id="game-box-button-resume" class='game-box-button'>
+                    Resume game
+                </div>
+            </div>
+            <div id="game-box-modal-window-bottom">
+                <div class="game-box-modal-window-bottom-result">
+                    <div id="game-box-modal-window-bottom-result-title">YOU WON</div>
+                    <div id="game-box-modal-window-bottom-result-score">SCORE: 10000</div>
+                </div>
+                <div id="game-box-modal-window-bottom-best-title">
+                    Best games
+                </div>
+                <div id='game-box-modal-window-bottom-best-list'>
+                    <ol id='game-box-modal-window-bottom-best-list-list'>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="body-margin-bottom"></div>
-    <script src="./index.js"></script>
-    <script src="./game.js"></script>
-    <script src="./selfesteem.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/sound.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/selfesteem.js"></script>
 </body>
 </html>
 
