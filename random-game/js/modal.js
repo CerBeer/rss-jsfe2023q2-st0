@@ -51,11 +51,11 @@ function game_modalWindow_bestgame_update() {
     nowstr = nowstr + game_zeroPadding(now.getMinutes(), 2) + ':';
     nowstr = nowstr + game_zeroPadding(now.getSeconds(), 2);
 
-    const new_result = [nowstr, game_score_total];
+    let game_score_add = Math.floor(game_score_total);
+    const new_result = [nowstr, game_score_add];
 
     const result = [];
     const bestgames = localStorage_read_bestgames();
-    let game_score_add = game_score_total;
     for (let item of bestgames) {
         if (item[1] < game_score_add && game_score_add > 0) {
             result.push(new_result);
@@ -80,7 +80,7 @@ function game_modalWindow_bestgame_show() {
     bestgames = localStorage_read_bestgames();
     let gamesList = '';
     for (let item of bestgames) {
-        gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item">${item[0]} — ${item[1]}</li>`;
+        gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item"><span class="best-item-dategame">${item[0]}</span> — <span class="best-item-score">${item[1]}</span></li>`;
     }
     for (let i = bestgames.length; i < 10; i += 1) {
         gamesList = `${gamesList}\n<li class="game-box-modal-window-bottom-best-list-list-item">none</li>`;
@@ -115,6 +115,7 @@ function game_pause(e) {
 
 function game_resume(e) {
     console.log('Game resume');
+    game_state = game_states.game
+    game_states_recast = false;
     game_modalWindow_hide();
-    game_state = game_states.game;
 }

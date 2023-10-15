@@ -46,14 +46,16 @@ function game_init_states() {
     game_score_figure = 50;
 
     //full game time
-    game_time_full = 5 * 60;
+    game_time_full = 3 * 60;
     //game time left
     game_time_left = game_time_full;
     //reduction of time per piece exchange
     //increases by 1 when moving to the next level
-    game_time_step = 5;
+    game_time_step = 3;
     //time return for each broken piece
-    game_time_figure = 1;
+    game_time_figure = 2;
+    //increases with increasing level of time penalty per step
+    game_time_level_up = 1;
 
     //current game level
     game_level = 1;
@@ -288,9 +290,7 @@ function game_check_gameboard() {
     all_with2 = game_check_gameboard_findAll_with2(placeWith2);
     if (all_with2.size > 0) {
         game_score_calculate(all_with2.size);
-        if (game_state === game_states.game) {
-            game_board_clear_place(all_with2);
-        }
+        game_board_clear_place(all_with2);
     } else {
         game_score_multiplier_current = 1;
         game_states_recast = false;
@@ -312,7 +312,7 @@ function game_score_calculate(count_figure) {
         game_level += 1;
         game_score_level -= game_score_level_full;
         game_numberFigures_current += game_level_step_addFigure;
-        game_time_step +=1;
+        game_time_step += game_time_level_up;
     }
 
     game_time_left += count_figure * game_time_figure;
@@ -541,5 +541,7 @@ function game_check_gameboard_fill_empty_places_end(changedElements) {
         changedElement.dataset.placefig = figure;
     }
     game_score_multiplier_current = game_score_multiplier_next;
-    setTimeout(game_check_gameboard, 550);
+    if (game_state === game_states.game) {
+        setTimeout(game_check_gameboard, 550);
+    }
 }

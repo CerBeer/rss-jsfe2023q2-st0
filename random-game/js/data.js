@@ -85,5 +85,5 @@ let game_blinkspeed_current, game_blinkspeed_timeout, game_gameboard_autochange;
 let game_sound_enabled, game_sound_volume;
 let board_state_calc, game_states_recast;
 let game_score_total, game_score_level, game_score_figure, game_score_multiplier, game_score_multiplier_next, game_score_multiplier_current;
-let game_time_left, game_time_full, game_time_step, game_time_figure;
+let game_time_left, game_time_full, game_time_step, game_time_figure, game_time_level_up;
 let game_level, game_level_max, game_level_step_countFigure;
