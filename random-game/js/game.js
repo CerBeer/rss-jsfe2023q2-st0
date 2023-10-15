@@ -27,8 +27,6 @@ function game_init_states() {
     game_numberFigures_current = 6;
     //current game state
     game_state = game_states.stop;
-    game_gameboard_autochange = true;
-    game_blinkspeed_current = 0;
 
     //total points
     game_score_total = 0;
@@ -67,6 +65,12 @@ function game_init_states() {
     //the game state is recalculated during which user actions are blocked
     // game_states_recast
     game_states_recast = false;
+
+    // game_gameboard_autochange = true;
+    game_blinkspeed_current = 0;
+    game_blinkspeed_set();
+    setTimeout(game_gameboard_autochange_figure, game_blinkspeed_timeout);
+    
 }
 
 function game_init_board_state() {
@@ -178,13 +182,13 @@ function game_blinkspeed_set() {
 }
 
 function game_gameboard_autochange_figure() {
-    if (game_state === game_states.stop) {
+    if (game_state === game_states.game) {
         if (game_blinkspeed_current > 0) {
             const numberButton = random99_range(0, game_numberChangesButtons.length - 1);
             game_change_place(game_numberChangesButtons[numberButton]);
         }
-        setTimeout(game_gameboard_autochange_figure, game_blinkspeed_timeout);
     }
+    setTimeout(game_gameboard_autochange_figure, game_blinkspeed_timeout);
 }
 
 function game_play(e) {
@@ -195,7 +199,7 @@ function game_play(e) {
     }
     game_set_markers_state();
     if (game_time_left === 0) {
-        console.log('Game OVER');
+        // console.log('Game OVER');
         game_timer = clearTimeout(game_timer);
         game_state = game_states.end;
         game_modalWindow_show();
@@ -320,7 +324,7 @@ function game_score_calculate(count_figure) {
 
     if (game_level > game_level_max) {
         game_state = game_states.won;
-        console.log('You WON!');
+        // console.log('You WON!');
         game_score_total += (game_time_left * 9);
         game_set_markers_state();
         game_modalWindow_show();

@@ -72,7 +72,7 @@ const game_numberChangesButtons = [];
 const game_numberFigures = fruits.length;
 const game_pool_width = 6;
 const game_pool_height = 8;
-const game_blinkspeed_max = 4;
+const game_blinkspeed_max = 3;
 const game_blinkspeed_min = 0;
 const game_blinkspeed_timeout_step = 500;
 //pause between changes in the visual representation of figures so that the previous animation has time to work out
