@@ -13,6 +13,8 @@ function game_init(e) {
     game_set_volume_state();
     game_set_markers_state();
 
+    localStorage_init();
+    
     game_blinkspeed_set();
     setTimeout(game_gameboard_autochange_figure, game_blinkspeed_timeout);
 
@@ -185,16 +187,17 @@ function game_gameboard_autochange_figure() {
 
 function game_play(e) {
     if (game_state !== game_states.game) return;
-    //console.log(game_time_left);
     game_time_left -= 1;
-    if (game_time_left <= 0) {
-        console.log('Game OVER');
+    if (game_time_left < 0) {
         game_time_left = 0;
+    }
+    game_set_markers_state();
+    if (game_time_left === 0) {
+        console.log('Game OVER');
         game_timer = clearTimeout(game_timer);
         game_state = game_states.end;
         game_modalWindow_show();
     }
-    game_set_markers_state();
 }
 
 function game_click_change_button(e) {
@@ -205,7 +208,6 @@ function game_click_change_button(e) {
 }
 
 function game_change_place(numberButton) {
-    // console.log(game_states_recast);
     if (game_states_recast) return;
     // game_states_recast
     game_states_recast = true;
@@ -269,7 +271,6 @@ function game_figure_change_end(changedElement0, numberItem0, changedElement1, n
     changedElement1.style.scale = 0.8;
     changedElement1.dataset.placefig = numberItem1;
     setTimeout(game_check_gameboard, 100);
-    // game_check_gameboard();
 }
 
 function game_check_gameboard() {
@@ -287,24 +288,17 @@ function game_check_gameboard() {
     all_with2 = game_check_gameboard_findAll_with2(placeWith2);
     if (all_with2.size > 0) {
         game_score_calculate(all_with2.size);
-        game_board_clear_place(all_with2);
-        // console.log(all_with2);
+        if (game_state === game_states.game) {
+            game_board_clear_place(all_with2);
+        }
     } else {
         game_score_multiplier_current = 1;
         game_states_recast = false;
     }
 }
 
-
-
-
-
-
-
-
-
 function game_score_calculate(count_figure) {
- 
+
     let score_add = 3 * game_score_figure;
     let figure_all = count_figure - 3;
     if (figure_all > 0) {
@@ -314,7 +308,6 @@ function game_score_calculate(count_figure) {
     
     game_score_total += score_add;
     game_score_level += score_add;
-    // console.log(game_score_level);
     if (game_score_level > game_score_level_full) {
         game_level += 1;
         game_score_level -= game_score_level_full;
@@ -325,7 +318,6 @@ function game_score_calculate(count_figure) {
     game_time_left += count_figure * game_time_figure;
     if (game_time_left > game_time_full) game_time_left = game_time_full;
 
-    // console.log(game_level, game_level_max);
     if (game_level > game_level_max) {
         game_state = game_states.won;
         console.log('You WON!');
@@ -450,7 +442,6 @@ function game_check_gameboard_down() {
             }
         }
     }
-    // console.log(board_state_new);
     return board_state_new;
 }
 

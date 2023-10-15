@@ -10,9 +10,7 @@ let self_esteem = "Self-assessment of work: 0 out of 60 points\n \
 4. At the end of the game, its result is displayed, for example, the number of moves, playing time, points scored, win or loss, etc. +10\n \
 5. The results of the last 10 games are saved in local storage. There is a table of records that stores the results of the previous 10 games +10\n \
 6. Animations or sounds or game settings.\n \
-7. Additional functionality, not provided for in the task that improves the quality of the application +10\n \
- + added zoom image\n \
- + added mock API request when unsplash doesn't provide images";
+7. Very high quality of application design and/or additional functionality not provided for in the task that improves the quality of the application +10";
 console.log(self_esteem);
 
 // #self-esteemate
