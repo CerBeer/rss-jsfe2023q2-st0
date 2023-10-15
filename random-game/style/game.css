@@ -216,7 +216,7 @@
 
 #game-box-main-time-box {
     width: 10px;
-    height: 88%;
+    height: 86%;
     display: flex;
     flex-direction: row;
     border: 2px solid #d5af4f;
@@ -244,7 +244,7 @@
 
 #game-box-main-score-box {
     width: 10px;
-    height: 88%;
+    height: 86%;
     display: flex;
     flex-direction: row;
     border: 2px solid #d5af4f;
