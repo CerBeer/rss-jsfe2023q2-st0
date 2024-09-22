@@ -4,7 +4,7 @@ const searchBoxLens = document.querySelector('#image-gallery-header-search-box-l
 const searchBoxClean = document.querySelector('#image-gallery-header-search-box-clear');
 const topHr = document.querySelector('.image-gallery-top-hr-anno');
 
-const API_KEY = "zMp_vKYIaLpsS44S2nU7oUPgYO1HicPI1zgtQIZo5sk";
+const API_KEY = "";
 
 const settingsAPI = {
     thecatapi: {
